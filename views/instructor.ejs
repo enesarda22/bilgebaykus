@@ -1,12 +1,12 @@
 <%- include('partials/header') %>
 <%- include('partials/alerts') %>
 
-<div class="container-fluid px-5 py-2">
+<div class="container-fluid review-container py-2">
 
   <section class="write-review bg-light mb-5" id="write-review">
 
     <%if(instructor.ratings.length===0 || instructor.ratings==null) {%>
-    <div class="container-fluid review-container pt-3 pb-5 mx-5 mt-4">
+    <div class="container-fluid pt-3 pb-5 mx-5 mt-4">
       <div class="row">
         <div class="col-md-4 col-3">
           <h1><%=instructor.name%></h1>
@@ -146,7 +146,7 @@
 
 
 
-<div class="container-fluid review-container pt-3 pb-5 mx-5 mt-4">
+<div class="container-fluid pt-3 pb-5 mx-3 mt-4">
   <div class="row">
     <div class="col-md-4 col-3">
       <h1><%=instructor.name%></h1>
@@ -160,49 +160,49 @@
   <div class="row">
     <div class="col-md-4">
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-3">
+        <div class="col-lg-5 col-md-6 col-5">
           <h5>genel puan</h5>
         </div>
-        <div style="height: 20px;" class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+        <div style="height: 20px;" class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
           <div class="progress-bar <%=overallAvgClass%>" role="progressbar" style="width: <%=instructor.overallAvg%>%;"><strong>%<%=instructor.overallAvg%></strong></div>
         </div>
       </div>
       <hr>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-3">
+        <div class="col-lg-5 col-md-6 col-5">
           <p>ders anlatımı</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
           <div class="progress-bar <%=lecturingAvgClass%>" role="progressbar" style="width: <%=instructor.lecturingAvg%>%;">%<%=instructor.lecturingAvg%></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-3">
+        <div class="col-lg-5 col-md-6 col-5">
           <p>öğrenciyle iletişim</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
           <div class="progress-bar <%=studentRelAvgClass%>" role="progressbar" style="width: <%=instructor.studentRelAvg%>%;">%<%=instructor.studentRelAvg%></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-3">
+        <div class="col-lg-5 col-md-6 col-5">
           <p>notlandırma</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
           <div class="progress-bar <%=gradingAvgClass%>" role="progressbar" style="width: <%=instructor.gradingAvg%>%;">%<%=instructor.gradingAvg%></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-3">
+        <div class="col-lg-5 col-md-6 col-5">
           <p>sınav zorluğu</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
           <div class="progress-bar <%=difficultyAvgClass%>" role="progressbar" style="width: <%=instructor.difficultyAvg%>%;">%<%=instructor.difficultyAvg%></div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-3">
+        <div class="col-lg-5 col-md-6 col-5">
           <p>yoklama alıyor mu?</p>
         </div>
         <p><strong><%=attendance%></strong> (%<%=attendancePercentage%>)</p>
@@ -210,11 +210,11 @@
       <hr>
 
       <form action="/rate" method="get">
-        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary">hocayı değerlendir</button>
+        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
       </form>
 
     </div>
-    <div class="col-md-7"">
+    <div class="col-md-7 col-10">
 
     <%instructor.ratings.forEach(function(rating) {%>
       <div class="row">
