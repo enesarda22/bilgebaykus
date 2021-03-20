@@ -4,6 +4,7 @@ body {
   width: 100%;
   margin: 0;
 }
+
 textarea {
   resize: none;
 }
@@ -36,18 +37,20 @@ textarea {
 .testimonial-image {
   width: 15%;
   border-radius: 100%;
-
   margin: 20px;
   position: relative;
   overflow: hidden;
 }
+
 .testimonial-text {
   font-size: 5rem;
   margin-bottom: 50px;
 }
+
 #carouselExampleControls {
   height: 100%
 }
+
 .carousel-item {
   padding: 7% 15%;
 }
@@ -74,87 +77,155 @@ textarea {
   margin-left: 1%;
   background-color: #fcd1d1;
 }
+
 .review-title {
   font-size: 1.2rem;
 }
+
 .review-content {
   font-size: 1rem;
 }
+
 .review-container {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
 .progress {
   margin-top: 0.3rem;
 }
 
-/* @media (max-width: 992px) {
-
-  h1{
+@media (max-width: 992px) {
+  h1 {
     font-size: 6.5rem;
   }
-  h2{
+
+  h2 {
     font-size: 5rem;
   }
+
+  /* home section */
   #home {
     height: 100%;
   }
+
+  h1.big-title {
+    font-size: 7rem;
+  }
+
+  /* navbar section */
   .navbar-brand {
     margin-left: 1rem;
   }
+
   .navbar-item {
     font-size: 3rem;
   }
+
   .navbar-toggler {
     width: 7rem;
     height: 7rem;
   }
+
   .navbar-search {
     margin: 2rem 0;
   }
 
-  .review-title  {
+  /* testimonial section */
+  .testimonial-image {
+    width: 25%;
+  }
+
+  .testimonial-text {
+    font-size: 4.5rem;
+  }
+
+  .author {
+    font-size: 2rem;
+  }
+
+  /* search section */
+  .search-div {
+    margin-top: 25%;
+  }
+
+  .fa-search {
+    font-size: 3rem;
+  }
+
+  .btn-main-search {
+    height: 8rem;
+    width: 8rem;
+    font-size: 2.8rem;
+  }
+
+  .row.no-gutters.align-items-center {
+    margin-bottom: 0;
+  }
+
+  input[type="search"] {
+    font-size: 2.2rem;
+  }
+
+  /* rate section */
+  .review-title {
     font-size: 3.4rem;
   }
+
   .review-card, .rating-type, .course-title {
     font-size: 3rem;
   }
+
   .row, .card.course-card {
     margin-bottom: 3rem;
   }
+
   .main-progress.progress {
     height: 4rem;
     margin-top: 0;
   }
+
   .progress {
     height: 3rem;
     margin-top: 0.9rem;
   }
+
   .progress-bar {
     font-size: 2.3rem;
   }
+
   .review-container {
     padding-left: 0.7rem;
     padding-right: 0.7rem;
   }
+
+  .first-review-card {
+    margin-top: 5rem;
+  }
+
   .review-button {
     margin: 3rem 0 6rem;
     height: 10rem;
     width: 28rem;
     font-size: 3rem;
   }
+
   .number-of-reviews {
     display: none;
   }
 
+  /* footer section */
   .footer-paragraph {
     font-size: 1.8rem;
   }
-} */
+
+  i.footer-icon {
+    font-size: 2rem;
+    margin-right: 3rem;
+  }
+}
 
 /* rate form section */
-
-
 /* footer section */
 #footer {
   padding: 4% 10%;
