@@ -26,14 +26,14 @@ textarea {
   right: 20%;
 }
 
-.overlay {
+/* .overlay {
   position: relative;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
   z-index: 1000;
-}
+} */
 
 /* testimoninal section */
 #testimonials {
@@ -94,7 +94,7 @@ textarea {
   padding-left: 3rem;
   padding-right: 3rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .review-container {
     padding-left: 0.7rem;
     padding-right: 0.7rem;
