@@ -1,0 +1,72 @@
+<%- include('partials/header') %>
+
+<section id="rate-section" class="container-fluid p-3">
+  <div class="container-fluid bg-light p-3">
+    <h1><%=instructor.name%></h1>
+    <hr>
+    <form action="/rate" method="post">
+
+      <div class="row">
+        <div class="col-md-3 col-6">
+          <div class="form-group">
+            <label for="formControlRange">ders anlatımı</label>
+            <input type="range" name="lecturingValue" min="0" max="100" class="form-control-range" id="formControlRange">
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="form-group">
+            <label for="formControlRange">öğrenciyle iletişim</label>
+            <input type="range" name="studentRelValue" min="0" max="100" class="form-control-range" id="formControlRange">
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="form-group">
+            <label for="formControlRange">sınav zorluğu</label>
+            <input type="range" name="difficultyValue" min="0" max="100" class="form-control-range" id="formControlRange">
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="form-group">
+            <label for="formControlRange">notlandırma</label>
+            <input type="range" name="gradingValue" min="0" max="100" class="form-control-range" id="formControlRange">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="formGroupExampleInput">kısa bir değerlendirme:</label>
+            <input name="reviewTitle" type="text" class="form-control" id="formGroupExampleInput" placeholder="başlık" autocomplete="off">
+            <textarea name="reviewText" class="form-control mt-1" id="rating-textarea" rows="3" placeholder="değerlendirme" autocomplete="off"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="attendance" id="attendanceRadio1" value=1 checked>
+            <label class="form-check-label" for="attendanceRadio1">
+              yoklama alıyor
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="attendance" id="attendanceRadio2" value=0>
+            <label class="form-check-label" for="attendanceRadio2">
+              yoklama almıyor
+            </label>
+          </div>
+        </div>
+      </div>
+      <br>
+      <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-success">gönder</button>
+      <a href="/instructors/<%=instructor.name%>" class="btn btn-danger ml-2">iptal</a>
+    </form>
+  </div>
+</section>
+
+
+
+
+
+<%- include('partials/footer') %>

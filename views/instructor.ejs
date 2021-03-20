@@ -1,0 +1,276 @@
+<%- include('partials/header') %>
+<%- include('partials/alerts') %>
+
+<div class="container-fluid px-5 py-2">
+
+  <section class="write-review bg-light mb-5" id="write-review">
+
+    <%if(instructor.ratings.length===0 || instructor.ratings==null) {%>
+    <div class="container-fluid review-container pt-3 pb-5 mx-5 mt-4">
+      <div class="row">
+        <div class="col-md-4 col-3">
+          <h1><%=instructor.name%></h1>
+        </div>
+        <div class="col-7 pr-0">
+          <br>
+          <h1 style="float:right; font-size:1.3rem;">0 kişi değerlendirdi</h1>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-3">
+              <h5>genel puan</h5>
+            </div>
+            <div style="height: 20px;" class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-3">
+              <p>ders anlatımı</p>
+            </div>
+            <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-3">
+              <p>öğrenciyle iletişim</p>
+            </div>
+            <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-3">
+              <p>notlandırma</p>
+            </div>
+            <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-3">
+              <p>sınav zorluğu</p>
+            </div>
+            <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-3">
+              <p>yoklama alıyor mu?</p>
+            </div>
+            <p><strong>-</strong></p>
+          </div>
+          <hr>
+
+        </div>
+        <div class="col-md-7"">
+
+
+          <div class=" row">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">değerlendirme yok 😔</h5>
+              <p class="card-text">bu hocayı henüz kimse değerlendirmedi. ilk değerlendiren sen olmak istiyorsan aşağıdaki butona tıklayabilirsin!</p>
+              <form action="/rate" method="get">
+                <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary">hocayı değerlendir</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+<%} else {%>
+
+  <%let numberOfYes = 0;%>
+  <%let attendance = "hayır";%>
+  <%let attendancePercentage;%>
+  <%instructor.ratings.forEach(function(rating) {%>
+    <%if(rating.attendance){%>
+      <%numberOfYes++;%>
+    <%}%>
+  <%});%>
+
+  <%if(numberOfYes>instructor.ratings.length/2) {%>
+    <%attendance = "evet";%>
+    <%attendancePercentage = parseInt((numberOfYes/instructor.ratings.length)*100);%>
+  <%} else{%>
+    <%attendancePercentage = parseInt(((instructor.ratings.length-numberOfYes)/instructor.ratings.length)*100);%>
+  <%}%>
+
+  <%if(instructor.overallAvg>66) {%>
+    <%overallAvgClass = "bg-success";%>
+  <%} else if(instructor.overallAvg<=66 && instructor.overallAvg>33){%>
+    <%overallAvgClass = "bg-warning";%>
+  <%} else{%>
+    <%overallAvgClass = "bg-danger";%>
+  <%}%>
+  <%if(instructor.lecturingAvg>66) {%>
+    <%lecturingAvgClass = "bg-success";%>
+  <%} else if(instructor.lecturingAvg<=66 && instructor.lecturingAvg>33){%>
+    <%lecturingAvgClass = "bg-warning";%>
+  <%} else{%>
+    <%lecturingAvgClass = "bg-danger";%>
+  <%}%>
+  <%if(instructor.studentRelAvg>66) {%>
+    <%studentRelAvgClass = "bg-success";%>
+  <%} else if(instructor.studentRelAvg<=66 && instructor.studentRelAvg>33){%>
+    <%studentRelAvgClass = "bg-warning";%>
+  <%} else{%>
+    <%studentRelAvgClass = "bg-danger";%>
+  <%}%>
+  <%if(instructor.difficultyAvg>66) {%>
+    <%difficultyAvgClass = "bg-danger";%>
+  <%} else if(instructor.difficultyAvg<=66 && instructor.difficultyAvg>33){%>
+    <%difficultyAvgClass = "bg-warning";%>
+  <%} else{%>
+    <%difficultyAvgClass = "bg-success";%>
+  <%}%>
+  <%if(instructor.gradingAvg>66) {%>
+    <%gradingAvgClass = "bg-success";%>
+  <%} else if(instructor.gradingAvg<=66 && instructor.gradingAvg>33){%>
+    <%gradingAvgClass = "bg-warning";%>
+  <%} else{%>
+    <%gradingAvgClass = "bg-danger";%>
+  <%}%>
+
+
+
+
+
+<div class="container-fluid review-container pt-3 pb-5 mx-5 mt-4">
+  <div class="row">
+    <div class="col-md-4 col-3">
+      <h1><%=instructor.name%></h1>
+    </div>
+    <div class="col-7 pr-0">
+      <br>
+      <h1 style="float:right; font-size:1.3rem;"><%=instructor.ratings.length%> kişi değerlendirdi</h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-lg-5 col-md-6 col-3">
+          <h5>genel puan</h5>
+        </div>
+        <div style="height: 20px;" class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+          <div class="progress-bar <%=overallAvgClass%>" role="progressbar" style="width: <%=instructor.overallAvg%>%;"><strong>%<%=instructor.overallAvg%></strong></div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-5 col-md-6 col-3">
+          <p>ders anlatımı</p>
+        </div>
+        <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+          <div class="progress-bar <%=lecturingAvgClass%>" role="progressbar" style="width: <%=instructor.lecturingAvg%>%;">%<%=instructor.lecturingAvg%></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-5 col-md-6 col-3">
+          <p>öğrenciyle iletişim</p>
+        </div>
+        <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+          <div class="progress-bar <%=studentRelAvgClass%>" role="progressbar" style="width: <%=instructor.studentRelAvg%>%;">%<%=instructor.studentRelAvg%></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-5 col-md-6 col-3">
+          <p>notlandırma</p>
+        </div>
+        <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+          <div class="progress-bar <%=gradingAvgClass%>" role="progressbar" style="width: <%=instructor.gradingAvg%>%;">%<%=instructor.gradingAvg%></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-5 col-md-6 col-3">
+          <p>sınav zorluğu</p>
+        </div>
+        <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+          <div class="progress-bar <%=difficultyAvgClass%>" role="progressbar" style="width: <%=instructor.difficultyAvg%>%;">%<%=instructor.difficultyAvg%></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-5 col-md-6 col-3">
+          <p>yoklama alıyor mu?</p>
+        </div>
+        <p><strong><%=attendance%></strong> (%<%=attendancePercentage%>)</p>
+      </div>
+      <hr>
+
+      <form action="/rate" method="get">
+        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary">hocayı değerlendir</button>
+      </form>
+
+    </div>
+    <div class="col-md-7"">
+
+    <%instructor.ratings.forEach(function(rating) {%>
+      <div class="row">
+        <div style="width: 100%;" class="card">
+          <div class="card-body">
+            <h4><%=rating.review.title%></h4>
+            <%=rating.review.text%>
+          </div>
+        </div>
+      </div>
+    <%});%>
+
+
+
+  </div>
+</div>
+</div>
+<%}%>
+
+</section>
+
+<div class="container-fluid bg-light px-5 py-3">
+  <h2>verdiği dersler:</h2>
+
+  <div class="row">
+
+    <%instructor.courses.forEach(function(course) {%>
+    <div class="col-lg-2 col-4">
+      <div class="card text-center mt-3">
+        <div class="card-body">
+          <h5 class="m-0"><a href="/courses/<%=course.title+course.code%>">
+            <%=course.title + course.code%>
+          </a></h5>
+        </div>
+      </div>
+    </div>
+    <%});%>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<%- include('partials/footer') %>
