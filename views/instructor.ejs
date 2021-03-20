@@ -8,12 +8,12 @@
     <%if(instructor.ratings.length===0 || instructor.ratings==null) {%>
     <div class="container-fluid pt-3 pb-5 mx-5 mt-4">
       <div class="row">
-        <div class="col-md-4 col-3">
+        <div class="col-lg-4 col-10">
           <h1><%=instructor.name%></h1>
         </div>
         <div class="col-7 pr-0">
           <br>
-          <h1 style="float:right; font-size:1.3rem;">0 kişi değerlendirdi</h1>
+          <h1 style="float:right; font-size:1.3rem;" class="number-of-reviews">0 kişi değerlendirdi</h1>
         </div>
       </div>
       <br>
@@ -148,64 +148,64 @@
 
 <div class="container-fluid pt-3 pb-5 mx-3 mt-4">
   <div class="row">
-    <div class="col-md-4 col-3">
-      <h1><%=instructor.name%></h1>
+    <div class="col-lg-4 col-10">
+      <h1 class="instructor-title"><%=instructor.name%></h1>
     </div>
     <div class="col-7 pr-0">
       <br>
-      <h1 style="float:right; font-size:1.3rem;"><%=instructor.ratings.length%> kişi değerlendirdi</h1>
+      <h1 style="float:right; font-size:1.3rem;" class="number-of-reviews"><%=instructor.ratings.length%> kişi değerlendirdi</h1>
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col-lg-4 col-md-10">
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-5">
-          <h5>genel puan</h5>
+        <div class="col-lg-5 col-md-7 col-5">
+          <h5 class="rating-type">genel puan</h5>
         </div>
-        <div style="height: 20px;" class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
+        <div class="progress main-progress col-lg-6 col-md-5 col-6 px-0">
           <div class="progress-bar <%=overallAvgClass%>" role="progressbar" style="width: <%=instructor.overallAvg%>%;"><strong>%<%=instructor.overallAvg%></strong></div>
         </div>
       </div>
       <hr>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-5">
-          <p>ders anlatımı</p>
+        <div class="col-lg-5 col-md-7 col-5">
+          <p class="rating-type">ders anlatımı</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-3">
           <div class="progress-bar <%=lecturingAvgClass%>" role="progressbar" style="width: <%=instructor.lecturingAvg%>%;">%<%=instructor.lecturingAvg%></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-5">
-          <p>öğrenciyle iletişim</p>
+        <div class="col-lg-5 col-md-7 col-5">
+          <p class="rating-type">öğrenciyle iletişim</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-3">
           <div class="progress-bar <%=studentRelAvgClass%>" role="progressbar" style="width: <%=instructor.studentRelAvg%>%;">%<%=instructor.studentRelAvg%></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-5">
-          <p>notlandırma</p>
+        <div class="col-lg-5 col-md-7 col-5">
+          <p class="rating-type">notlandırma</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-3">
           <div class="progress-bar <%=gradingAvgClass%>" role="progressbar" style="width: <%=instructor.gradingAvg%>%;">%<%=instructor.gradingAvg%></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-5">
-          <p>sınav zorluğu</p>
+        <div class="col-lg-5 col-md-7 col-5">
+          <p class="rating-type">sınav zorluğu</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-1">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-3">
           <div class="progress-bar <%=difficultyAvgClass%>" role="progressbar" style="width: <%=instructor.difficultyAvg%>%;">%<%=instructor.difficultyAvg%></div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-5">
-          <p>yoklama alıyor mu?</p>
+        <div class="col-lg-5 col-md-7 col-5">
+          <p class="rating-type">yoklama alıyor mu?</p>
         </div>
-        <p><strong><%=attendance%></strong> (%<%=attendancePercentage%>)</p>
+        <p class="rating-type"><strong><%=attendance%></strong> (%<%=attendancePercentage%>)</p>
       </div>
       <hr>
 
@@ -214,13 +214,13 @@
       </form>
 
     </div>
-    <div class="col-md-7 col-10">
+    <div class="col-lg-7 col-11">
 
     <%instructor.ratings.forEach(function(rating) {%>
       <div class="row">
         <div style="width: 100%;" class="card">
-          <div class="card-body">
-            <h4><%=rating.review.title%></h4>
+          <div class="card-body review-card">
+            <h4 class="review-title"><%=rating.review.title%></h4>
             <%=rating.review.text%>
           </div>
         </div>
