@@ -20,66 +20,66 @@
       <div class="row">
         <div class="col-lg-4 col-md-10">
           <div class="row">
-            <div class="col-lg-5 col-md-6 col-3">
-              <h5>genel puan</h5>
+            <div class="col-lg-5 col-md-7 col-5">
+              <h5 class="rating-type">genel puan</h5>
             </div>
-            <div style="height: 20px;" class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
+            <div class="progress main-progress col-lg-6 col-md-5 col-6 px-0">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;"><strong>%50</strong></div>
             </div>
           </div>
           <hr>
           <div class="row">
-            <div class="col-lg-5 col-md-6 col-3">
-              <p>ders anlatımı</p>
+            <div class="col-lg-5 col-md-7 col-5">
+              <p class="rating-type">ders anlatımı</p>
             </div>
-            <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+            <div class="progress col-lg-6 col-md-5 col-6 px-0">
               <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-5 col-md-6 col-3">
-              <p>öğrenciyle iletişim</p>
+            <div class="col-lg-5 col-md-7 col-5">
+              <p class="rating-type">öğrenciyle iletişim</p>
             </div>
-            <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+            <div class="progress col-lg-6 col-md-5 col-6 px-0">
               <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-5 col-md-6 col-3">
-              <p>notlandırma</p>
+            <div class="col-lg-5 col-md-7 col-5">
+              <p class="rating-type">notlandırma</p>
             </div>
-            <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+            <div class="progress col-lg-6 col-md-5 col-6 px-0">
               <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-5 col-md-6 col-3">
-              <p>sınav zorluğu</p>
+            <div class="col-lg-5 col-md-7 col-5">
+              <p class="rating-type">sınav zorluğu</p>
             </div>
-            <div class="progress col-lg-6 col-md-5 col-7 px-0 mt-1">
+            <div class="progress col-lg-6 col-md-5 col-6 px-0">
               <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;">%50</div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-lg-5 col-md-6 col-3">
-              <p>yoklama alıyor mu?</p>
+            <div class="col-lg-5 col-md-7 col-5">
+              <p class="rating-type">yoklama alıyor mu?</p>
             </div>
-            <p><strong>-</strong></p>
+            <p class="rating-type"><strong>-</strong></p>
           </div>
           <hr>
+
 
         </div>
-        <div class="col-md-7"">
 
-
-          <div class=" row">
+        <div class="col-lg-7 col-11">
+          <div class="row">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">değerlendirme yok 😔</h5>
+            <div class="card-body review-card">
+              <h5 class="card-title review-title">değerlendirme yok 😔</h5>
               <p class="card-text">bu hocayı henüz kimse değerlendirmedi. ilk değerlendiren sen olmak istiyorsan aşağıdaki butona tıklayabilirsin!</p>
               <form action="/rate" method="get">
-                <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary">hocayı değerlendir</button>
+                <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button mb-0">hocayı değerlendir</button>
               </form>
             </div>
           </div>
