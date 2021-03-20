@@ -229,12 +229,42 @@ app.post("/rate", function(req, res) {
     attendance: (req.body.attendance === '1')
   }
 
-  Instructor.findOneAndUpdate({
+  // Instructor.findOneAndUpdate({
+  //   name: req.body.instructor
+  // }, {
+  //   $push: {
+  //     ratings: newRating
+  //   }
+  // }, function(err, foundInstructor) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.ratings.length + 1) + newRating.lecturingValue) / (foundInstructor.ratings.length + 2);
+  //     const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.ratings.length + 1) + newRating.studentRelValue) / (foundInstructor.ratings.length + 2);
+  //     const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.ratings.length + 1) + newRating.difficultyValue) / (foundInstructor.ratings.length + 2);
+  //     const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.ratings.length + 1) + newRating.gradingValue) / (foundInstructor.ratings.length + 2);
+  //     const overallAvg = (lecturingAvg + studentRelAvg + gradingAvg) / 3
+  //
+  //     foundInstructor.lecturingAvg = parseInt(lecturingAvg);
+  //     foundInstructor.studentRelAvg = parseInt(studentRelAvg);
+  //     foundInstructor.difficultyAvg = parseInt(difficultyAvg);
+  //     foundInstructor.gradingAvg = parseInt(gradingAvg);
+  //     foundInstructor.overallAvg = parseInt(overallAvg);
+  //     foundInstructor.save(function(err) {
+  //       if (err) {
+  //         console.log(err);
+  //         req.flash('error', 'değerlendirmeniz eklenirken sorun oluştu');
+  //         res.redirect("/instructors/" + foundInstructor.name);
+  //       } else {
+  //         req.flash('success', 'değerlendirmeniz başarılı bir şekilde eklendi');
+  //         res.redirect("/instructors/" + foundInstructor.name);
+  //       }
+  //     });
+  //   }
+  // });
+
+  Instructor.findOne({
     name: req.body.instructor
-  }, {
-    $push: {
-      ratings: newRating
-    }
   }, function(err, foundInstructor) {
     if (err) {
       console.log(err);
@@ -250,6 +280,7 @@ app.post("/rate", function(req, res) {
       foundInstructor.difficultyAvg = parseInt(difficultyAvg);
       foundInstructor.gradingAvg = parseInt(gradingAvg);
       foundInstructor.overallAvg = parseInt(overallAvg);
+      foundInstructor.ratings.push(newRating);
       foundInstructor.save(function(err) {
         if (err) {
           console.log(err);
