@@ -172,7 +172,7 @@
         <div class="col-lg-5 col-md-7 col-5">
           <p class="rating-type">ders anlatımı</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-3">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0">
           <div class="progress-bar <%=lecturingAvgClass%>" role="progressbar" style="width: <%=instructor.lecturingAvg%>%;">%<%=instructor.lecturingAvg%></div>
         </div>
       </div>
@@ -180,7 +180,7 @@
         <div class="col-lg-5 col-md-7 col-5">
           <p class="rating-type">öğrenciyle iletişim</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-3">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0">
           <div class="progress-bar <%=studentRelAvgClass%>" role="progressbar" style="width: <%=instructor.studentRelAvg%>%;">%<%=instructor.studentRelAvg%></div>
         </div>
       </div>
@@ -188,7 +188,7 @@
         <div class="col-lg-5 col-md-7 col-5">
           <p class="rating-type">notlandırma</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-3">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0">
           <div class="progress-bar <%=gradingAvgClass%>" role="progressbar" style="width: <%=instructor.gradingAvg%>%;">%<%=instructor.gradingAvg%></div>
         </div>
       </div>
@@ -196,7 +196,7 @@
         <div class="col-lg-5 col-md-7 col-5">
           <p class="rating-type">sınav zorluğu</p>
         </div>
-        <div class="progress col-lg-6 col-md-5 col-6 px-0 mt-3">
+        <div class="progress col-lg-6 col-md-5 col-6 px-0">
           <div class="progress-bar <%=difficultyAvgClass%>" role="progressbar" style="width: <%=instructor.difficultyAvg%>%;">%<%=instructor.difficultyAvg%></div>
         </div>
       </div>
@@ -236,16 +236,21 @@
 
 </section>
 
-<div class="container-fluid bg-light px-5 py-3">
-  <h2>verdiği dersler:</h2>
+<div class="container-fluid bg-light py-3">
+  <div class="row">
+    <div class="col-12">
+        <h2>verdiği dersler:</h2>
+    </div>
+  </div>
+
 
   <div class="row">
 
     <%instructor.courses.forEach(function(course) {%>
     <div class="col-lg-2 col-4">
-      <div class="card text-center mt-3">
+      <div class="card course-card text-center mt-3">
         <div class="card-body">
-          <h5 class="m-0"><a href="/courses/<%=course.title+course.code%>">
+          <h5 class="m-0 course-title"><a href="/courses/<%=course.title+course.code%>">
             <%=course.title + course.code%>
           </a></h5>
         </div>

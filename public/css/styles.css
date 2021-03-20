@@ -54,7 +54,6 @@ textarea {
   font-size: 5rem;
   margin-bottom: 50px;
 }
-
 #carouselExampleControls {
   height: 100%
 }
@@ -94,41 +93,71 @@ textarea {
   padding-left: 3rem;
   padding-right: 3rem;
 }
+.progress {
+  margin-top: 0.3rem;
+}
+
 @media (max-width: 992px) {
+
+  h1{
+    font-size: 6.5rem;
+  }
+  h2{
+    font-size: 5rem;
+  }
   #home {
     height: 100%;
   }
-  .instructor-title{
-    font-size: 6.5rem;
+  .navbar-brand {
+    margin-left: 1rem;
   }
+  .navbar-item {
+    font-size: 3rem;
+  }
+  .navbar-toggler {
+    width: 7rem;
+    height: 7rem;
+  }
+  .navbar-search {
+    margin: 2rem 0;
+  }
+
   .review-title  {
     font-size: 4rem;
   }
-  .review-card {
+  .review-card, .rating-type, .course-title {
     font-size: 3rem;
   }
-  .rating-type {
-    font-size: 3rem;
+  .row, .card.course-card {
+    margin-bottom: 3rem;
   }
   .main-progress.progress {
     height: 4rem;
+    margin-top: 0;
   }
   .progress {
     height: 3rem;
+    margin-top: 0.9rem;
   }
-
+  .progress-bar {
+    font-size: 2.3rem;
+  }
   .review-container {
     padding-left: 0.7rem;
     padding-right: 0.7rem;
   }
   .review-button {
-    margin-bottom: 1.5rem;
+    margin: 3rem 0 6rem;
     height: 10rem;
-    width: 20rem;
-    font-size: 2.5rem;
+    width: 28rem;
+    font-size: 3rem;
   }
   .number-of-reviews {
     display: none;
+  }
+
+  .footer-paragraph {
+    font-size: 1.8rem;
   }
 }
 
