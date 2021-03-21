@@ -49,60 +49,60 @@
 
 
 
-          <div class="col-lg-4 col-md-6 col-12">
+          <div class="col-lg-4 col-md-12 col-12">
             <div class="card mt-3">
               <div class="card-header text-center">
-                <h5 class="card-title m-0"><a href="/instructors/<%=instructor.name%>"><%=instructor.name%></a></h5>
+                <h5 class="card-title instructor-name m-0"><a href="/instructors/<%=instructor.name%>"><%=instructor.name%></a></h5>
               </div>
               <div class="card-body pb-1 pr-0">
 
                 <div class="row">
-                  <div class="col-5">
-                    <h5 class="my-auto">genel puan</h5>
+                  <div class="col-lg-5 col-md-6">
+                    <h5 class="my-auto rating-type">genel puan</h5>
                   </div>
-                  <div class="col-6">
-                    <div style="height: 20px;" class="progress row mt-1">
+                  <div class="col-lg-6 col-md-5">
+                    <div class="main-progress progress row">
                       <div class="progress-bar <%=overallAvgClass%>" role="progressbar" style="width: <%=instructor.overallAvg%>%;"><strong>%<%=instructor.overallAvg%></strong></div>
                     </div>
                   </div>
                 </div>
                 <hr>
                 <div class="row mt-2">
-                  <div class="col-5">
-                    <p>ders anlatımı</p>
+                  <div class="col-lg-5 col-md-6">
+                    <p class="rating-type">ders anlatımı</p>
                   </div>
-                  <div class="col-6">
-                    <div style="" class="progress row mt-1">
+                  <div class="col-lg-6 col-md-5">
+                    <div style="" class="progress row">
                       <div class="progress-bar <%=lecturingAvgClass%>" role="progressbar" style="width: <%=instructor.lecturingAvg%>%;"><strong>%<%=instructor.lecturingAvg%></strong></div>
                     </div>
                   </div>
                 </div>
                 <div class="row mt-2">
-                  <div class="col-5">
-                    <p>öğrenciyle iletişim</p>
+                  <div class="col-lg-5 col-md-6">
+                    <p class="rating-type">öğrenciyle iletişim</p>
                   </div>
-                  <div class="col-6">
-                    <div style="" class="progress row mt-1">
+                  <div class="col-lg-6 col-md-5">
+                    <div style="" class="progress row">
                       <div class="progress-bar <%=studentRelAvgClass%>" role="progressbar" style="width: <%=instructor.studentRelAvg%>%;"><strong>%<%=instructor.studentRelAvg%></strong></div>
                     </div>
                   </div>
                 </div>
                 <div class="row mt-2">
-                  <div class="col-5">
-                    <p>notlandırma</p>
+                  <div class="col-lg-5 col-md-6">
+                    <p class="rating-type">notlandırma</p>
                   </div>
-                  <div class="col-6">
-                    <div style="" class="progress row mt-1">
+                  <div class="col-lg-6 col-md-5">
+                    <div style="" class="progress row">
                       <div class="progress-bar <%=gradingAvgClass%>" role="progressbar" style="width: <%=instructor.gradingAvg%>%;"><strong>%<%=instructor.gradingAvg%></strong></div>
                     </div>
                   </div>
                 </div>
                 <div class="row mt-2">
-                  <div class="col-5">
-                    <p>sınav zorluğu</p>
+                  <div class="col-lg-5 col-md-6">
+                    <p class="rating-type">sınav zorluğu</p>
                   </div>
-                  <div class="col-6">
-                    <div style="" class="progress row mt-1">
+                  <div class="col-lg-6 col-md-5">
+                    <div style="" class="progress row">
                       <div class="progress-bar <%=difficultyAvgClass%>" role="progressbar" style="width: <%=instructor.difficultyAvg%>%;"><strong>%<%=instructor.difficultyAvg%></strong></div>
                     </div>
                   </div>

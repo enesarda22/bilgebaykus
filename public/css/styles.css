@@ -94,6 +94,10 @@ textarea {
 .progress {
   margin-top: 0.3rem;
 }
+/* rate section */
+.btn-rate.btn-danger {
+  margin-left: 0.5rem;
+}
 
 @media (max-width: 992px) {
   h1 {
@@ -106,7 +110,7 @@ textarea {
 
   /* home section */
   #home {
-    height: 100%;
+    height: 80%;
   }
 
   h1.big-title {
@@ -114,8 +118,13 @@ textarea {
   }
 
   /* navbar section */
-  .navbar-brand {
+  .navbar-brand img {
     margin-left: 1rem;
+    width: 7.5rem;
+  }
+
+  .navbar-toggler-icon {
+    font-size: 4rem;
   }
 
   .navbar-item {
@@ -131,6 +140,12 @@ textarea {
     margin: 2rem 0;
   }
 
+  .navbar-search button {
+    height: 4rem;
+    width: 5.3rem;
+    font-size: 2rem;
+  }
+
   /* testimonial section */
   .testimonial-image {
     width: 25%;
@@ -144,6 +159,14 @@ textarea {
     font-size: 2rem;
   }
 
+  #testimonials {
+    height: 100%;
+  }
+
+  .carousel-item {
+    margin-top: 10%;
+  }
+
   /* search section */
   .search-div {
     margin-top: 25%;
@@ -154,7 +177,7 @@ textarea {
   }
 
   .btn-main-search {
-    height: 8rem;
+    height: 5rem;
     width: 8rem;
     font-size: 2.8rem;
   }
@@ -167,7 +190,147 @@ textarea {
     font-size: 2.2rem;
   }
 
+  /* index section */
+  tbody, thead {
+    font-size: 4rem;
+  }
+
+  .page-link {
+    display: none;
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+  }
+
+  .page-link[aria-label="Previous"], .page-link[aria-label="Next"] {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+  }
+
   /* rate section */
+  input[type="range"] {
+    height: 5rem;
+  }
+
+  .form-group label, input[type="text"], #rating-textarea {
+    font-size: 3.5rem;
+  }
+
+  label.form-check-label {
+    font-size: 3rem;
+    margin-left: 3.2rem;
+  }
+
+  input[type='radio'] {
+    transform: scale(3);
+    margin-top: 2.2rem;
+    margin-left: 1rem;
+  }
+
+  input[type="range"] {
+    width: 300px;
+    background: transparent;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  input[type="range"]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 48px;
+    width: 48px;
+    background: #555;
+    cursor: pointer;
+    margin-top: -12px;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    height: 48px;
+    width: 48px;
+    background: #555;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-ms-thumb {
+    height: 48px;
+    width: 48px;
+    background: #555;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 24px;
+    cursor: pointer;
+    background: #ccc;
+  }
+
+  input[type="range"]:active::-webkit-slider-runnable-track {
+    background: #d6d6d6;
+  }
+
+  input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 24px;
+    cursor: pointer;
+    background: #ccc;
+  }
+
+  input[type="range"]::-ms-track {
+    width: 100%;
+    height: 24px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  input[type="range"]::-ms-fill-lower {
+    background: #ccc;
+  }
+
+  input[type="range"]:focus::-ms-fill-lower {
+    background: #ddd;
+  }
+
+  input[type="range"]::-ms-fill-upper {
+    background: #ccc;
+  }
+
+  input[type="range"]:focus::-ms-fill-upper {
+    background: #ddd;
+  }
+
+  .btn-rate {
+    height: 5rem;
+    width: 10rem;
+    font-size: 2.4rem;
+  }
+  .btn-rate.btn-danger {
+    margin-left: 2rem;
+  }
+
+  /* instructor section */
   .review-title {
     font-size: 3.4rem;
   }
@@ -214,6 +377,16 @@ textarea {
     display: none;
   }
 
+  /* courses section */
+  .card-title.instructor-name {
+    font-size: 3.5rem;
+  }
+  .card-header {
+    padding: 2.5rem 0;
+  }
+
+
+
   /* footer section */
   .footer-paragraph {
     font-size: 1.8rem;
@@ -225,7 +398,6 @@ textarea {
   }
 }
 
-/* rate form section */
 /* footer section */
 #footer {
   padding: 4% 10%;
