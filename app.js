@@ -108,7 +108,7 @@ app.get("/index", function(req, res) {
     Instructor.countDocuments({name: regex}, function(err, instructorCount) {
       Course.countDocuments({fullName: regex2}, function(err2, courseCount) {
 
-        const initialPage = Math.ceil(instructorCount/15);
+        const initialPage = Math.floor(instructorCount/15)+1;
 
         Instructor.find({name: regex}).sort({name:1}).skip(15*(page-1)).limit(15).exec(function(err, foundInstructors) {
           if (err) {
