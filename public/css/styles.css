@@ -159,10 +159,6 @@ textarea {
     font-size: 2rem;
   }
 
-  .carousel-item {
-    margin-top: 10%;
-  }
-
   /* search section */
   .search-div {
     margin-top: 25%;
@@ -364,8 +360,8 @@ textarea {
 
   .review-button {
     margin: 3rem 0 6rem;
-    height: 10rem;
-    width: 28rem;
+    height: 8rem;
+    width: 26rem;
     font-size: 3rem;
   }
 
