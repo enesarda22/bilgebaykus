@@ -1,35 +1,9 @@
 <%- include('partials/header') %>
 
-
-<%const foundItemsLength = instructors.length+courses.length;%>
-<%const numberOfPages = Math.ceil(foundItemsLength/15);%>
-<%let numberOfPagesShown;%>
-<%let numberOfItems;%>
-<%let numberOfInstructorsInPage;%>
-<%let numberOfCoursesInPage;%>
-<%const initialPageForCourses = Math.floor(instructors.length/15)+1;%>
-<%let initialNumberOfCourses;%>
-<%if(courses.length>=15-(instructors.length-(15*(initialPageForCourses-1)))) {%>
-  <%initialNumberOfCourses=15-(instructors.length-(15*(initialPageForCourses-1)));%>
-<%}else {%>
-  <%initialNumberOfCourses=courses.length;%>
-<%}%>
+<%let count = 15*(page-1)+1%>
 
 
-<%if(instructors.length>=15*page) {%>
-  <%numberOfInstructorsInPage=15;%>
-  <%numberOfCoursesInPage=0;%>
-<%} else {%>
-  <%numberOfInstructorsInPage=instructors.length-(15*(page-1));%>
-  <%if(numberOfInstructorsInPage<=0) {%>
-    <%numberOfCoursesInPage=15;%>
-  <%} else {%>
-    <%numberOfCoursesInPage=15-numberOfInstructorsInPage;%>
-  <%}%>
-<%}%>
-
-
-<%if(instructors.length===0 && courses.length===0) {%>
+<%if(items[0].length===0 && items[1].length===0) {%>
 <p>hoca veya ders bulunamadi</p>
 <%} else {%>
   <div class="container-fluid px-0 py-3">
@@ -42,55 +16,41 @@
   </thead>
   <tbody>
 
-<%for(let i=(15*(page-1)); i<(15*(page-1))+numberOfInstructorsInPage; i++) {%>
-  <%if(instructors[i]) {%>
+<%items[0].forEach(function(instructor) {%>
+
+    <tr>
+    <th scope="row" class="text-center"><%=count%></th>
+    <td><a href="/instructors/<%=instructor.name%>">
+      <%=instructor.name%>
+    </a></td>
+    </tr>
+
+
+
+<%count++;%>
+<%});%>
+
+<%if(items[1]!=null) {%>
+  <%items[1].forEach(function(course) {%>
+
 
       <tr>
-      <th scope="row" class="text-center"><%=i+1%></th>
-      <td><a href="/instructors/<%=instructors[i].name%>">
-        <%=instructors[i].name%>
+      <th scope="row" class="text-center"><%=count%></th>
+      <td><a href="/courses/<%=course.fullName%>">
+        <%=course.fullName%>
       </a></td>
       </tr>
 
-  <%} else {%>
-  <%break;%>
-  <%}%>
+
+
+  <%count++;%>
+  <%});%>
 <%}%>
 
 
-<%if(page==initialPageForCourses) {%>
-  <%for(let i=0; i<initialNumberOfCourses; i++) {%>
-    <%if(courses[i]) {%>
-
-      <tr>
-      <th scope="row" class="text-center"><%=i+1+instructors.length%></th>
-      <td><a href="/courses/<%=courses[i].title+courses[i].code%>">
-        <%=courses[i].title+courses[i].code%>
-      </a></td>
-      </tr>
 
 
-    <%} else {%>
-    <%break;%>
-    <%}%>
-  <%}%>
 
-<%} else {%>
-  <%for(let i=(15*(page-initialPageForCourses-1)+initialNumberOfCourses); i<(15*(page-initialPageForCourses-1)+initialNumberOfCourses)+15; i++) {%>
-    <%if(courses[i]) {%>
-      <tr>
-      <th scope="row" class="text-center"><%=i+1+instructors.length%></th>
-      <td><a href="/courses/<%=courses[i].title+courses[i].code%>">
-        <%=courses[i].title+courses[i].code%>
-      </a></td>
-      </tr>
-
-    <%} else {%>
-    <%break;%>
-    <%}%>
-  <%}%>
-
-<%}%>
 </tbody>
 </table>
 </div>
