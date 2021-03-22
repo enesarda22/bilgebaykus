@@ -507,7 +507,7 @@ app.post("/register", function(req, res) {
         }, function(err, emailToken) {
           sendEmail({
             subject: "Bilge Baykuş Aktivasyon",
-            text: "Hesabınızı aktifleştirmek için lütfen linke tıklayın: http://localhost:3000/confirmation/" + emailToken + " Link bir gün sonra geçerliliğini yitirecektir.",
+            text: "Hesabınızı aktifleştirmek için lütfen linke tıklayın: https://bilgebaykus.herokuapp.com/confirmation/" + emailToken + " Link bir gün sonra geçerliliğini yitirecektir.",
             to: req.body.username + "@boun.edu.tr",
             from: "enesarda22@gmail.com"
           });
