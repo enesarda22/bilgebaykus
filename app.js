@@ -10,6 +10,51 @@ const findOrCreate = require("mongoose-findorcreate");
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const _ = require('lodash');
+const nodemailer = require("nodemailer");
+const {
+  google
+} = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
+const jwt = require('jsonwebtoken');
+
+const createTransporter = async () => {
+  const oauth2Client = new OAuth2(
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    "https://developers.google.com/oauthplayground"
+  );
+  oauth2Client.setCredentials({
+    refresh_token: process.env.REFRESH_TOKEN
+  });
+  const accessToken = await new Promise((resolve, reject) => {
+    oauth2Client.getAccessToken((err, token) => {
+      if (err) {
+        reject();
+      }
+      resolve(token);
+    });
+  });
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: process.env.EMAIL,
+      accessToken,
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      refreshToken: process.env.REFRESH_TOKEN
+    }
+  });
+
+  return transporter;
+};
+
+const sendEmail = async (emailOptions) => {
+  let emailTransporter = await createTransporter();
+  await emailTransporter.sendMail(emailOptions);
+};
+
 
 const app = express();
 
@@ -26,6 +71,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(flash());
 
 const options = {
@@ -35,11 +83,36 @@ const options = {
   useCreateIndex: true,
 };
 
+mongoose.Promise = global.Promise;
 ////uncomment to use local db
-// mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
-mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
+mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
+// mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
 mongoose.set("useCreateIndex", true);
 mongoose.set('useFindAndModify', false);
+
+const userSchema = new mongoose.Schema({
+  username: String,
+  password: String,
+  isConfirmed: {
+    type: Boolean,
+    default: false
+  }
+});
+
+userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(findOrCreate);
+
+const User = mongoose.model("user", userSchema);
+
+passport.use(User.createStrategy());
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
 
 const courseSchema = new mongoose.Schema({
   title: String,
@@ -93,7 +166,13 @@ function escapeRegex(text) {
 
 app.get("/", function(req, res) {
 
-  res.render("home");
+  console.log(req.isAuthenticated());
+
+  res.render("home", {
+    success: req.flash('success'),
+    fail: req.flash('error'),
+    isAuth: req.isAuthenticated()
+  });
 
 });
 
@@ -105,51 +184,70 @@ app.get("/index", function(req, res) {
     const regex = new RegExp(escapeRegex(searchedName), 'gi');
     const regex2 = new RegExp(escapeRegex(req.query.search), 'gi');
 
-    Instructor.countDocuments({name: regex}, function(err, instructorCount) {
-      Course.countDocuments({fullName: regex2}, function(err2, courseCount) {
+    Instructor.countDocuments({
+      name: regex
+    }, function(err, instructorCount) {
+      Course.countDocuments({
+        fullName: regex2
+      }, function(err2, courseCount) {
 
-        const initialPage = Math.floor(instructorCount/15)+1;
+        const initialPage = Math.floor(instructorCount / 15) + 1;
+        const initialAmount = 15 - (instructorCount - (initialPage - 1) * 15);
 
-        Instructor.find({name: regex}).sort({name:1}).skip(15*(page-1)).limit(15).exec(function(err, foundInstructors) {
+        Instructor.find({
+          name: regex
+        }).sort({
+          name: 1
+        }).skip(15 * (page - 1)).limit(15).exec(function(err, foundInstructors) {
           if (err) {
             console.log(err);
           } else {
-            const initialAmount = 15-foundInstructors.length;
-            if(foundInstructors.length===15) {
+            if (foundInstructors.length === 15) {
               res.render("index", {
                 items: [foundInstructors],
                 page: page,
-                numberOfPages: Math.ceil((instructorCount+courseCount)/15),
-                search: req.query.search
+                numberOfPages: Math.ceil((instructorCount + courseCount) / 15),
+                search: req.query.search,
+                isAuth: req.isAuthenticated()
               });
             } else {
 
-              if(page===initialPage) {
+              if (page === initialPage) {
 
-                Course.find({fullName: regex2}).sort({fullName: 1}).skip(0).limit(initialAmount).exec(function(err, foundCourses) {
+                Course.find({
+                  fullName: regex2
+                }).sort({
+                  fullName: 1
+                }).skip(0).limit(initialAmount).exec(function(err, foundCourses) {
                   if (err) {
                     console.log(err);
                   } else {
                     res.render("index", {
                       items: [foundInstructors, foundCourses],
                       page: page,
-                      numberOfPages: Math.ceil((instructorCount+courseCount)/15),
-                      search: req.query.search
+                      numberOfPages: Math.ceil((instructorCount + courseCount) / 15),
+                      search: req.query.search,
+                      isAuth: req.isAuthenticated()
                     });
                   }
                 });
 
               } else {
 
-                Course.find({fullName: regex2}).sort({fullName: 1}).skip(initialAmount + 15*(page-initialPage-1)).limit(15).exec(function(err, foundCourses) {
+                Course.find({
+                  fullName: regex2
+                }).sort({
+                  fullName: 1
+                }).skip(initialAmount + 15 * (page - initialPage - 1)).limit(15).exec(function(err, foundCourses) {
                   if (err) {
                     console.log(err);
                   } else {
                     res.render("index", {
                       items: [foundInstructors, foundCourses],
                       page: page,
-                      numberOfPages: Math.ceil((instructorCount+courseCount)/15),
-                      search: req.query.search
+                      numberOfPages: Math.ceil((instructorCount + courseCount) / 15),
+                      search: req.query.search,
+                      isAuth: req.isAuthenticated()
                     });
                   }
                 });
@@ -169,63 +267,67 @@ app.get("/index", function(req, res) {
     Instructor.countDocuments({}, function(err, instructorCount) {
       Course.countDocuments({}, function(err2, courseCount) {
 
-        const initialPage = Math.ceil(instructorCount/15);
+        const initialPage = Math.floor(instructorCount / 15) + 1;
+        const initialAmount = 15 - (instructorCount - (initialPage - 1) * 15);
 
-        Instructor.find({}).sort({name:1}).skip(15*(page-1)).limit(15).exec(function(err, foundInstructors) {
+        Instructor.find({}).sort({
+          name: 1
+        }).skip(15 * (page - 1)).limit(15).exec(function(err, foundInstructors) {
           if (err) {
             console.log(err);
           } else {
-            const initialAmount = 15-foundInstructors.length;
-            if(foundInstructors.length===15) {
+
+            if (foundInstructors.length === 15) {
               res.render("index", {
                 items: [foundInstructors],
                 page: page,
-                numberOfPages: Math.ceil((instructorCount+courseCount)/15),
-                search: req.query.search
+                numberOfPages: Math.ceil((instructorCount + courseCount) / 15),
+                search: req.query.search,
+                isAuth: req.isAuthenticated()
               });
             } else {
 
-              if(page===initialPage) {
+              if (page === initialPage) {
 
-                Course.find({}).sort({fullName: 1}).skip(0).limit(initialAmount).exec(function(err, foundCourses) {
+                Course.find({}).sort({
+                  fullName: 1
+                }).skip(0).limit(initialAmount).exec(function(err, foundCourses) {
                   if (err) {
                     console.log(err);
                   } else {
                     res.render("index", {
                       items: [foundInstructors, foundCourses],
                       page: page,
-                      numberOfPages: Math.ceil((instructorCount+courseCount)/15),
-                      search: req.query.search
+                      numberOfPages: Math.ceil((instructorCount + courseCount) / 15),
+                      search: req.query.search,
+                      isAuth: req.isAuthenticated()
                     });
                   }
                 });
 
               } else {
 
-                Course.find({}).sort({fullName: 1}).skip(initialAmount + 15*(page-initialPage-1)).limit(15).exec(function(err, foundCourses) {
+                Course.find({}).sort({
+                  fullName: 1
+                }).skip(initialAmount + 15 * (page - initialPage - 1)).limit(15).exec(function(err, foundCourses) {
                   if (err) {
                     console.log(err);
                   } else {
                     res.render("index", {
                       items: [foundInstructors, foundCourses],
                       page: page,
-                      numberOfPages: Math.ceil((instructorCount+courseCount)/15),
-                      search: req.query.search
+                      numberOfPages: Math.ceil((instructorCount + courseCount) / 15),
+                      search: req.query.search,
+                      isAuth: req.isAuthenticated()
                     });
                   }
                 });
-
               }
-
             }
           }
         });
-
-
       });
     });
-
-
   }
 });
 
@@ -241,7 +343,8 @@ app.get("/instructors/:instructorName", function(req, res) {
         res.render("instructor", {
           instructor: foundInstructor,
           success: req.flash('success'),
-          fail: req.flash('error')
+          fail: req.flash('error'),
+          isAuth: req.isAuthenticated()
         });
       } else {
         res.send("no such instructor");
@@ -265,10 +368,13 @@ app.get("/courses/:courseName", function(req, res) {
             code: foundCourse.code
           }
         }
-      }).sort({overallAvg: -1 }).exec(function(err, foundInstructors) {
+      }).sort({
+        overallAvg: -1
+      }).exec(function(err, foundInstructors) {
         res.render("course", {
           instructors: foundInstructors,
-          course: req.params.courseName
+          course: req.params.courseName,
+          isAuth: req.isAuthenticated()
         });
       });
     }
@@ -277,23 +383,30 @@ app.get("/courses/:courseName", function(req, res) {
 });
 
 app.get("/rate", function(req, res) {
-  console.log(req.query);
 
-  Instructor.findOne({
-    name: req.query.instructor
-  }, function(err, foundInstructor) {
-    if (err) {
-      console.log(err);
-    } else {
-      if (foundInstructor) {
-        res.render("rate", {
-          instructor: foundInstructor
-        });
+  if(req.isAuthenticated()) {
+
+    Instructor.findOne({
+      name: req.query.instructor
+    }, function(err, foundInstructor) {
+      if (err) {
+        console.log(err);
       } else {
-        res.send("no such instructor");
+        if (foundInstructor) {
+          res.render("rate", {
+            instructor: foundInstructor
+          });
+        } else {
+          res.send("no such instructor");
+        }
       }
-    }
-  });
+    });
+
+  } else {
+    res.redirect("/login")
+  }
+
+
 
 });
 
@@ -341,13 +454,144 @@ app.post("/rate", function(req, res) {
     }
   });
 
+});
 
+app.get("/login", function(req, res) {
+  let queryPage = "/";
+  if(req.query.page != null) {
+    queryPage = encodeURI(req.query.page);
+  }
 
-
-
+  if(!req.isAuthenticated()) {
+    res.render("login", {
+      success: req.flash('success'),
+      fail: req.flash('error'),
+      page: queryPage
+    });
+  } else {
+    res.redirect("/");
+  }
 
 });
 
+
+
+app.get("/register", function(req, res) {
+  if(!req.isAuthenticated()){
+    res.render("register", {
+      success: req.flash('success'),
+      fail: req.flash('error')
+    });
+  } else {
+    res.redirect("/");
+  }
+
+});
+
+
+app.post("/register", function(req, res) {
+  if (req.body.password === req.body.secondPassword) {
+    User.register({
+      username: req.body.username
+    }, req.body.password, function(err, user) {
+      if (err) {
+        console.log(err);
+        req.flash('error', 'bu mail adresini kullanamazsınız');
+        res.redirect("/register");
+      } else {
+
+        jwt.sign({
+          data: user.id
+        }, process.env.EMAIL_SECRET, {
+          expiresIn: '1d'
+        }, function(err, emailToken) {
+          sendEmail({
+            subject: "Bilge Baykuş Aktivasyon",
+            text: "Hesabınızı aktifleştirmek için lütfen linke tıklayın: http://localhost:3000/confirmation/" + emailToken + " Link bir gün sonra geçerliliğini yitirecektir.",
+            to: req.body.username + "@boun.edu.tr",
+            from: "enesarda22@gmail.com"
+          });
+          req.flash('success', req.body.username + '@boun.edu.tr adresine onaylama maili gönderildi');
+          res.redirect("/");
+        });
+
+      }
+    });
+  } else {
+    req.flash('error', 'paralolar aynı degil');
+    res.redirect("/register");
+  }
+});
+
+app.post("/login", function(req, res) {
+  const page = req.body.page;
+
+  const user = new User({
+    username: req.body.username,
+    password: req.body.password
+  });
+
+  req.login(user, function(err) {
+    if (err) {
+      console.log(err);
+      req.flash('error', 'hatalı kullanıcı adı ya da şifre');
+      res.redirect("/login");
+    } else {
+
+      User.findOne({
+        username: req.body.username
+      }, function(err, foundUser) {
+
+
+        if (!foundUser.isConfirmed) {
+          req.flash('error', 'aktivasyon mailini onaylayın');
+          res.redirect("/");
+        } else {
+          passport.authenticate("local")(req, res, function() {
+            req.flash('success', 'başarılı bir şekilde giriş yaptınız.');
+            res.redirect(page);
+          });
+        }
+
+      });
+    }
+  });
+});
+
+app.get("/confirmation/:token", function(req, res) {
+
+  const token = req.params.token;
+
+  jwt.verify(token, process.env.EMAIL_SECRET, function(err, decoded) {
+
+    if(err) {
+      req.flash('error', 'üyeliğiniz onaylanamadı.');
+      res.redirect("/login");
+    } else {
+      id = decoded.data;
+
+      User.findByIdAndUpdate(id, {
+        isConfirmed: true
+      }, function(err) {
+
+        if (!err) {
+          req.flash('success', 'üyeliğiniz onaylandı.');
+          res.redirect("/login");
+        } else {
+          req.flash('error', 'bir hata gerçekleşti.');
+          res.redirect("/register");
+        }
+
+      });
+    }
+
+  });
+});
+
+app.post("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
+});
 
 let port = process.env.PORT;
 if (port == null || port == "") {

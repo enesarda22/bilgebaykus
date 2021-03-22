@@ -1,4 +1,27 @@
-<%- include('partials/homeHeader') %>
+<%- include('partials/header') %>
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <a class="navbar-brand" href="/"><img src="/images/owl.png" alt="icon-img"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav ml-auto mr-3">
+      <%if(!isAuth) {%>
+        <li class="navbar-item"><a class="nav-link" href="/login">giriş</a></li>
+        <li class="navbar-item"><a class="nav-link" href="/register">üye ol</a></li>
+      <%}%>
+    </ul>
+    <%if(isAuth) {%>
+      <form action="/logout" method="post" class="form-inline ml-3">
+        <button type="submit" class="btn btn-outline-dark">çıkış</button>
+      </form>
+    <%}%>
+  </div>
+</nav>
+<%- include('partials/alerts') %>
 
 <section id="home">
   <div class="container search-div">
