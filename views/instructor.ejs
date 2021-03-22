@@ -112,11 +112,11 @@
                       <p class="card-text">bu hocayı henüz kimse değerlendirmedi. ilk değerlendiren sen olmak istiyorsan aşağıdaki butona tıklayabilirsin!</p>
                       <%if(isAuth){%>
                       <form action="/rate" method="get">
-                        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button mb-0">hocayı değerlendir</button>
+                        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
                       </form>
                       <%}else {%>
                       <span class="d-inline-block disabledButton" data-trigger="hover" data-toggle="popover" data-content="değerlendirmek için giriş yapmanız gerekiyor">
-                        <button class="btn btn-primary review-button mb-0" style="pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
+                        <button class="btn btn-primary review-button" style="pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
                       </span>
                       <%}%>
 
@@ -254,7 +254,7 @@
                         </form>
                       <%} else {%>
                         <span class="d-inline-block disabledButton" data-trigger="hover" data-toggle="popover" data-content="değerlendirmek için giriş yapmanız gerekiyor">
-                          <button class="btn btn-primary review-button mb-0" style="pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
+                          <button class="btn btn-primary review-button style="pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
                         </span>
                       <%}%>
 
