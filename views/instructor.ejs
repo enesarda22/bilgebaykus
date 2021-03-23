@@ -25,7 +25,7 @@
       <form action="/logout" method="post" class="form-inline ml-3">
         <button type="submit" class="btn btn-outline-dark">çıkış</button>
       </form>
-    <%}%>
+      <%}%>
   </div>
 
 
@@ -37,7 +37,7 @@
 
         <section class="write-review bg-light mb-5" id="write-review">
 
-          <%if(instructor.ratings.length===0 || instructor.ratings==null) {%>
+          <%if(instructor.reviews.length===0 || instructor.reviews==null) {%>
           <div class="container-fluid pt-3 pb-5 mx-5 mt-4">
             <div class="row">
               <div class="col-lg-4 col-10">
@@ -129,20 +129,15 @@
 </div>
 <%} else {%>
 
-                      <%let numberOfYes = 0;%>
+
                       <%let attendance = "hayır";%>
                       <%let attendancePercentage;%>
-                      <%instructor.ratings.forEach(function(rating) {%>
-                      <%if(rating.attendance){%>
-                      <%numberOfYes++;%>
-                      <%}%>
-  <%});%>
 
-                      <%if(numberOfYes>instructor.ratings.length/2) {%>
+                      <%if(instructor.numberOfYes>instructor.reviews.length/2) {%>
                       <%attendance = "evet";%>
-                      <%attendancePercentage = parseInt((numberOfYes/instructor.ratings.length)*100);%>
+                      <%attendancePercentage = parseInt((instructor.numberOfYes/instructor.reviews.length)*100);%>
                       <%} else{%>
-                      <%attendancePercentage = parseInt(((instructor.ratings.length-numberOfYes)/instructor.ratings.length)*100);%>
+                      <%attendancePercentage = parseInt(((instructor.reviews.length-instructor.numberOfYes)/instructor.reviews.length)*100);%>
                       <%}%>
 
   <%if(instructor.overallAvg>66) {%>
@@ -192,7 +187,7 @@
                     </div>
                     <div class="col-7 pr-0">
                       <br>
-                      <h1 style="float:right; font-size:1.3rem;" class="number-of-reviews"><%=instructor.ratings.length%> kişi değerlendirdi</h1>
+                      <h1 style="float:right; font-size:1.3rem;" class="number-of-reviews"><%=instructor.reviews.length%> kişi değerlendirdi</h1>
                     </div>
                   </div>
                   <br>
@@ -249,28 +244,47 @@
                       <hr>
 
                       <%if(isAuth) {%>
-                        <form action="/rate" method="get">
-                          <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
-                        </form>
+                      <%if(!hasAlreadyReviewed) {%>
+                      <form action="/rate" method="get">
+                        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
+                      </form>
                       <%} else {%>
-                        <span class="d-inline-block disabledButton" data-trigger="hover" data-toggle="popover" data-content="değerlendirmek için giriş yapmanız gerekiyor">
-                          <button class="btn btn-primary review-button style="pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
-                        </span>
+                      <p style="color: green;"><i class="far fa-check-circle"></i> bu hocayı değerlendirdiniz</p>
+                      <%}%>
+
+                      <%} else {%>
+                      <span class="d-inline-block disabledButton" data-trigger="hover" data-toggle="popover" data-content="değerlendirmek için giriş yapmanız gerekiyor">
+                        <button class="btn btn-primary review-button style=" pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
+                      </span>
                       <%}%>
 
 
                     </div>
                     <div class="col-lg-7 col-11">
 
-                      <%instructor.ratings.forEach(function(rating) {%>
-                      <div class="row">
-                        <div style="width: 100%;" class="card">
+
+                      <%if(hasAlreadyReviewed) {%>
+                      <div class="row mb-3">
+                        <div style="width: 100%;" class="card border-primary">
                           <div class="card-body review-card">
-                            <h4 class="review-title"><%=rating.review.title%></h4>
-                            <%=rating.review.text%>
+                            <h4 class="review-title"><%=initialReview.title%></h4>
+                            <%=initialReview.text%>
                           </div>
                         </div>
                       </div>
+                      <%}%>
+
+                      <%instructor.reviews.forEach(function(review) {%>
+                      <%if(!hasAlreadyReviewed || review!=initialReview) {%>
+                      <div class="row">
+                        <div style="width: 100%;" class="card">
+                          <div class="card-body review-card">
+                            <h4 class="review-title"><%=review.title%></h4>
+                            <%=review.text%>
+                          </div>
+                        </div>
+                      </div>
+                      <%}%>
                       <%});%>
 
 

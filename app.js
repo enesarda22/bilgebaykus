@@ -93,6 +93,7 @@ mongoose.set('useFindAndModify', false);
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
+  reviewedInstructors:[String],
   isConfirmed: {
     type: Boolean,
     default: false
@@ -121,28 +122,23 @@ const courseSchema = new mongoose.Schema({
 });
 const Course = mongoose.model("course", courseSchema);
 
-const ratingSchema = {
-  lecturingValue: Number,
-  studentRelValue: Number,
-  difficultyValue: Number,
-  gradingValue: Number,
-  review: {
-    title: String,
-    text: String
-  },
-  attendance: Boolean
+const reviewSchema = {
+  title: String,
+  text: String,
+  userID: String
 }
 
 
 const instructorSchema = new mongoose.Schema({
   name: String,
   courses: [courseSchema],
-  ratings: [ratingSchema],
+  reviews: [reviewSchema],
   overallAvg: Number,
   lecturingAvg: Number,
   studentRelAvg: Number,
   difficultyAvg: Number,
-  gradingAvg: Number
+  gradingAvg: Number,
+  numberOfYes: Number
 });
 const Instructor = mongoose.model("instructor", instructorSchema);
 
@@ -163,10 +159,50 @@ function escapeRegex(text) {
 //   }
 // });
 
+// Instructor.find({}, function(err, foundInstructors) {
+//   foundInstructors.forEach(function(instructor){
+//     instructor.ratings= undefined;
+//     instructor.reviews= [];
+//     instructor.overallAvg= 50;
+//     instructor.lecturingAvg= 50;
+//     instructor.studentRelAvg= 50;
+//     instructor.difficultyAvg= 50;
+//     instructor.gradingAvg= 50;
+//     instructor.numberOfYes= 0;
+//
+//     instructor.save();
+//   });
+// });
+
+// Instructor.update({name: "enes arda"}, { $set: { ratings: undefined }}, function(err) {
+//   if(!err){
+//     console.log("done");
+//   }
+// })
+
+// User.findById("6059d32b6263a065dc8d29f0", function(err, foundUser){
+//   Instructor.find({}, function(err, foundInstructors) {
+//     foundInstructors.forEach(function(instructor){
+//       instructor.ratings.forEach(function(rating){
+//         rating.userID=foundUser._id;
+//       });
+//       instructor.save();
+//     });
+//   });
+// });
+
+// User.findById("6059d32b6263a065dc8d29f0", function(err, foundUser){
+//
+//   foundUser.reviewedInstructors.push("enes arda");
+//   foundUser.save();
+//
+// });
+
 
 app.get("/", function(req, res) {
 
   console.log(req.isAuthenticated());
+  console.log(req.user);
 
   res.render("home", {
     success: req.flash('success'),
@@ -340,12 +376,30 @@ app.get("/instructors/:instructorName", function(req, res) {
       console.log(err);
     } else {
       if (foundInstructor) {
+        let initialReview;
+        let hasAlreadyReviewed = false;
+
+        if(req.user!=null && req.user.reviewedInstructors.includes(foundInstructor.name)){
+
+          hasAlreadyReviewed = true;
+          foundInstructor.reviews.forEach(function(review) {
+
+            if(review.userID==req.user._id){
+              initialReview = review;
+            }
+
+          });
+        }
         res.render("instructor", {
           instructor: foundInstructor,
           success: req.flash('success'),
           fail: req.flash('error'),
-          isAuth: req.isAuthenticated()
+          isAuth: req.isAuthenticated(),
+          initialReview: initialReview,
+          hasAlreadyReviewed: hasAlreadyReviewed
         });
+
+
       } else {
         res.send("no such instructor");
       }
@@ -384,7 +438,8 @@ app.get("/courses/:courseName", function(req, res) {
 
 app.get("/rate", function(req, res) {
 
-  if(req.isAuthenticated()) {
+
+  if (req.isAuthenticated()) {
 
     Instructor.findOne({
       name: req.query.instructor
@@ -393,9 +448,14 @@ app.get("/rate", function(req, res) {
         console.log(err);
       } else {
         if (foundInstructor) {
-          res.render("rate", {
-            instructor: foundInstructor
-          });
+          if(!req.user.reviewedInstructors.includes(foundInstructor.name)){
+            res.render("rate", {
+              instructor: foundInstructor
+            });
+          } else {
+            res.redirect("/");
+          }
+
         } else {
           res.send("no such instructor");
         }
@@ -411,16 +471,10 @@ app.get("/rate", function(req, res) {
 });
 
 app.post("/rate", function(req, res) {
-  const newRating = {
-    lecturingValue: Number(req.body.lecturingValue),
-    studentRelValue: Number(req.body.studentRelValue),
-    difficultyValue: Number(req.body.difficultyValue),
-    gradingValue: Number(req.body.gradingValue),
-    review: {
-      title: req.body.reviewTitle,
-      text: req.body.reviewText
-    },
-    attendance: (req.body.attendance === '1')
+  const newReview = {
+    title: req.body.reviewTitle,
+    text: req.body.reviewText,
+    userID: req.user._id
   }
 
   Instructor.findOne({
@@ -429,10 +483,10 @@ app.post("/rate", function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.ratings.length + 1) + newRating.lecturingValue) / (foundInstructor.ratings.length + 2);
-      const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.ratings.length + 1) + newRating.studentRelValue) / (foundInstructor.ratings.length + 2);
-      const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.ratings.length + 1) + newRating.difficultyValue) / (foundInstructor.ratings.length + 2);
-      const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.ratings.length + 1) + newRating.gradingValue) / (foundInstructor.ratings.length + 2);
+      const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue)) / (foundInstructor.reviews.length + 2);
+      const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue)) / (foundInstructor.reviews.length + 2);
+      const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length + 1) + Number(req.body.difficultyValue)) / (foundInstructor.reviews.length + 2);
+      const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.gradingValue)) / (foundInstructor.reviews.length + 2);
       const overallAvg = (lecturingAvg + studentRelAvg + gradingAvg) / 3
 
       foundInstructor.lecturingAvg = parseInt(lecturingAvg);
@@ -440,14 +494,26 @@ app.post("/rate", function(req, res) {
       foundInstructor.difficultyAvg = parseInt(difficultyAvg);
       foundInstructor.gradingAvg = parseInt(gradingAvg);
       foundInstructor.overallAvg = parseInt(overallAvg);
-      foundInstructor.ratings.push(newRating);
-      foundInstructor.save(function(err) {
-        if (err) {
+      if(req.body.attendance=='1') {
+        foundInstructor.numberOfYes++;
+      }
+      foundInstructor.reviews.push(newReview);
+      req.user.reviewedInstructors.push(foundInstructor.name);
+      req.user.save(function(err) {
+        if(!err) {
+          foundInstructor.save(function(err) {
+            if (err) {
+              console.log(err);
+              req.flash('error', 'değerlendirmeniz eklenirken sorun oluştu');
+              res.redirect("/instructors/" + foundInstructor.name);
+            } else {
+              req.flash('success', 'değerlendirmeniz başarılı bir şekilde eklendi');
+              res.redirect("/instructors/" + foundInstructor.name);
+            }
+          });
+        } else {
           console.log(err);
           req.flash('error', 'değerlendirmeniz eklenirken sorun oluştu');
-          res.redirect("/instructors/" + foundInstructor.name);
-        } else {
-          req.flash('success', 'değerlendirmeniz başarılı bir şekilde eklendi');
           res.redirect("/instructors/" + foundInstructor.name);
         }
       });
@@ -458,11 +524,11 @@ app.post("/rate", function(req, res) {
 
 app.get("/login", function(req, res) {
   let queryPage = "/";
-  if(req.query.page != null) {
+  if (req.query.page != null) {
     queryPage = encodeURI(req.query.page);
   }
 
-  if(!req.isAuthenticated()) {
+  if (!req.isAuthenticated()) {
     res.render("login", {
       success: req.flash('success'),
       fail: req.flash('error'),
@@ -477,7 +543,7 @@ app.get("/login", function(req, res) {
 
 
 app.get("/register", function(req, res) {
-  if(!req.isAuthenticated()){
+  if (!req.isAuthenticated()) {
     res.render("register", {
       success: req.flash('success'),
       fail: req.flash('error')
@@ -523,7 +589,7 @@ app.post("/register", function(req, res) {
   }
 });
 
-app.post("/login", function(req, res) {
+app.post("/login", function(req, res, next) {
   const page = req.body.page;
 
   const user = new User({
@@ -531,31 +597,41 @@ app.post("/login", function(req, res) {
     password: req.body.password
   });
 
-  req.login(user, function(err) {
-    if (err) {
-      console.log(err);
+  User.findOne({
+    username: req.body.username
+  }, function(err, foundUser) {
+
+    if (!foundUser) {
       req.flash('error', 'hatalı kullanıcı adı ya da şifre');
       res.redirect("/login");
     } else {
+      if (!foundUser.isConfirmed) {
+        req.flash('error', 'aktivasyon mailini onaylayın');
+        res.redirect("/login");
+      } else {
 
-      User.findOne({
-        username: req.body.username
-      }, function(err, foundUser) {
-
-
-        if (!foundUser.isConfirmed) {
-          req.flash('error', 'aktivasyon mailini onaylayın');
-          res.redirect("/");
-        } else {
-          passport.authenticate("local")(req, res, function() {
+        passport.authenticate('local', function(err, user, info) {
+          if (err) {
+            return next(err);
+          }
+          if (!user) {
+            req.flash('error', 'hatalı kullanıcı adı ya da şifre');
+            return res.redirect('/login');
+          }
+          req.logIn(user, function(err) {
+            if (err) {
+              return next(err);
+            }
             req.flash('success', 'başarılı bir şekilde giriş yaptınız.');
-            res.redirect(page);
+            return res.redirect(page);
           });
-        }
+        })(req, res, next);
 
-      });
+      }
     }
+
   });
+
 });
 
 app.get("/confirmation/:token", function(req, res) {
@@ -564,7 +640,7 @@ app.get("/confirmation/:token", function(req, res) {
 
   jwt.verify(token, process.env.EMAIL_SECRET, function(err, decoded) {
 
-    if(err) {
+    if (err) {
       req.flash('error', 'üyeliğiniz onaylanamadı.');
       res.redirect("/login");
     } else {
