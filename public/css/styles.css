@@ -78,8 +78,11 @@ textarea {
   background-color: #fcd1d1;
 }
 
-.review-title {
-  font-size: 1.2rem;
+.review-author {
+  /* font-size: 1.2rem; */
+  margin-top: 1rem;
+  margin-bottom: 0;
+  float: right;
 }
 
 .review-content {
@@ -89,6 +92,12 @@ textarea {
 .review-container {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.date {
+  color: #8f8f8f;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
 }
 
 .progress {
@@ -323,7 +332,7 @@ textarea {
   }
 
   /* instructor section */
-  .review-title {
+  .review-author {
     font-size: 3.4rem;
   }
 

@@ -267,8 +267,10 @@
                       <div class="row mb-3">
                         <div style="width: 100%;" class="card border-primary">
                           <div class="card-body review-card">
-                            <h4 class="review-title"><%=initialReview.title%></h4>
+                            <p class="date"><%=initialReview.date%></p>
                             <%=initialReview.text%>
+                            <span class="review-author"><strong>ders: </strong><%=initialReview.course%> <span class="ml-2"><strong>yazar: </strong></span><%=initialReview.author%></span>
+
                           </div>
                         </div>
                       </div>
@@ -279,8 +281,11 @@
                       <div class="row">
                         <div style="width: 100%;" class="card">
                           <div class="card-body review-card">
-                            <h4 class="review-title"><%=review.title%></h4>
+
+                            <p class="date"><%=review.date%></p>
                             <%=review.text%>
+                            <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
+
                           </div>
                         </div>
                       </div>
@@ -321,16 +326,9 @@
 
 
 
-              </div>
-            </div>
-
-
-
-
-
-
-
-          </div>
+  </div>
+</div>
+</div>
 
 
 

@@ -16,6 +16,7 @@ const {
 } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const jwt = require('jsonwebtoken');
+const anonymus = require("anonymus");
 
 const createTransporter = async () => {
   const oauth2Client = new OAuth2(
@@ -93,7 +94,7 @@ mongoose.set('useFindAndModify', false);
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
-  reviewedInstructors:[String],
+  reviewedInstructors: [String],
   isConfirmed: {
     type: Boolean,
     default: false
@@ -123,9 +124,11 @@ const courseSchema = new mongoose.Schema({
 const Course = mongoose.model("course", courseSchema);
 
 const reviewSchema = {
-  title: String,
+  author: String,
   text: String,
-  userID: String
+  userID: String,
+  date: String,
+  course: String
 }
 
 
@@ -152,7 +155,21 @@ function escapeRegex(text) {
 //   studentRelAvg: 50,
 //   difficultyAvg: 50,
 //   gradingAvg: 50,
-//   ratings: []
+//   numberOfYes: 0,
+//   reviews: []
+// }, function(err){
+//   if(err) {
+//     console.log(err);
+//   }
+// });
+// Instructor.findOneAndUpdate({name: "arda yalcinkaya"}, {
+//   overallAvg: 50,
+//   lecturingAvg: 50,
+//   studentRelAvg: 50,
+//   difficultyAvg: 50,
+//   gradingAvg: 50,
+//   numberOfYes: 0,
+//   reviews: []
 // }, function(err){
 //   if(err) {
 //     console.log(err);
@@ -379,12 +396,12 @@ app.get("/instructors/:instructorName", function(req, res) {
         let initialReview;
         let hasAlreadyReviewed = false;
 
-        if(req.user!=null && req.user.reviewedInstructors.includes(foundInstructor.name)){
+        if (req.user != null && req.user.reviewedInstructors.includes(foundInstructor.name)) {
 
           hasAlreadyReviewed = true;
           foundInstructor.reviews.forEach(function(review) {
 
-            if(review.userID==req.user._id){
+            if (review.userID == req.user._id) {
               initialReview = review;
             }
 
@@ -448,7 +465,7 @@ app.get("/rate", function(req, res) {
         console.log(err);
       } else {
         if (foundInstructor) {
-          if(!req.user.reviewedInstructors.includes(foundInstructor.name)){
+          if (!req.user.reviewedInstructors.includes(foundInstructor.name)) {
             res.render("rate", {
               instructor: foundInstructor
             });
@@ -470,55 +487,81 @@ app.get("/rate", function(req, res) {
 
 });
 
+
+
 app.post("/rate", function(req, res) {
-  const newReview = {
-    title: req.body.reviewTitle,
-    text: req.body.reviewText,
-    userID: req.user._id
+
+  if (req.isAuthenticated()) {
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+
+    let author = "";
+    if (req.body.author == '1') {
+      author = _.lowerCase(anonymus.create()[0]);
+    } else {
+      author = _.lowerCase(req.user.username);
+    }
+
+    const newReview = {
+      author: author,
+      text: req.body.reviewText,
+      userID: req.user._id,
+      date: today,
+      course: req.body.course
+    }
+
+    Instructor.findOne({
+      name: req.body.instructor
+    }, function(err, foundInstructor) {
+      if (err) {
+        console.log(err);
+      } else {
+        const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue)) / (foundInstructor.reviews.length + 2);
+        const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue)) / (foundInstructor.reviews.length + 2);
+        const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length + 1) + Number(req.body.difficultyValue)) / (foundInstructor.reviews.length + 2);
+        const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.gradingValue)) / (foundInstructor.reviews.length + 2);
+        const overallAvg = (lecturingAvg + studentRelAvg + gradingAvg) / 3
+
+        foundInstructor.lecturingAvg = parseInt(lecturingAvg);
+        foundInstructor.studentRelAvg = parseInt(studentRelAvg);
+        foundInstructor.difficultyAvg = parseInt(difficultyAvg);
+        foundInstructor.gradingAvg = parseInt(gradingAvg);
+        foundInstructor.overallAvg = parseInt(overallAvg);
+        if (req.body.attendance == '1') {
+          foundInstructor.numberOfYes++;
+        }
+        foundInstructor.reviews.push(newReview);
+        req.user.reviewedInstructors.push(foundInstructor.name);
+        req.user.save(function(err) {
+          if (!err) {
+            foundInstructor.save(function(err) {
+              if (err) {
+                console.log(err);
+                req.flash('error', 'değerlendirmeniz eklenirken sorun oluştu');
+                res.redirect("/instructors/" + foundInstructor.name);
+              } else {
+                req.flash('success', 'değerlendirmeniz başarılı bir şekilde eklendi');
+                res.redirect("/instructors/" + foundInstructor.name);
+              }
+            });
+          } else {
+            console.log(err);
+            req.flash('error', 'değerlendirmeniz eklenirken sorun oluştu');
+            res.redirect("/instructors/" + foundInstructor.name);
+          }
+        });
+      }
+    });
+
+  } else {
+    res.redirect("/");
   }
 
-  Instructor.findOne({
-    name: req.body.instructor
-  }, function(err, foundInstructor) {
-    if (err) {
-      console.log(err);
-    } else {
-      const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue)) / (foundInstructor.reviews.length + 2);
-      const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue)) / (foundInstructor.reviews.length + 2);
-      const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length + 1) + Number(req.body.difficultyValue)) / (foundInstructor.reviews.length + 2);
-      const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.gradingValue)) / (foundInstructor.reviews.length + 2);
-      const overallAvg = (lecturingAvg + studentRelAvg + gradingAvg) / 3
 
-      foundInstructor.lecturingAvg = parseInt(lecturingAvg);
-      foundInstructor.studentRelAvg = parseInt(studentRelAvg);
-      foundInstructor.difficultyAvg = parseInt(difficultyAvg);
-      foundInstructor.gradingAvg = parseInt(gradingAvg);
-      foundInstructor.overallAvg = parseInt(overallAvg);
-      if(req.body.attendance=='1') {
-        foundInstructor.numberOfYes++;
-      }
-      foundInstructor.reviews.push(newReview);
-      req.user.reviewedInstructors.push(foundInstructor.name);
-      req.user.save(function(err) {
-        if(!err) {
-          foundInstructor.save(function(err) {
-            if (err) {
-              console.log(err);
-              req.flash('error', 'değerlendirmeniz eklenirken sorun oluştu');
-              res.redirect("/instructors/" + foundInstructor.name);
-            } else {
-              req.flash('success', 'değerlendirmeniz başarılı bir şekilde eklendi');
-              res.redirect("/instructors/" + foundInstructor.name);
-            }
-          });
-        } else {
-          console.log(err);
-          req.flash('error', 'değerlendirmeniz eklenirken sorun oluştu');
-          res.redirect("/instructors/" + foundInstructor.name);
-        }
-      });
-    }
-  });
 
 });
 

@@ -59,8 +59,33 @@
         <div class="col-12">
           <div class="form-group">
             <label for="formGroupExampleInput">kısa bir değerlendirme:</label>
-            <input name="reviewTitle" type="text" class="form-control" id="formGroupExampleInput" placeholder="başlık" autocomplete="off" required>
             <textarea name="reviewText" class="form-control mt-1" id="rating-textarea" rows="3" placeholder="değerlendirme" autocomplete="off" required></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="courseSelect">aldığınız dersi seçin:</label>
+            <select name="course" class="custom-select form-control" id="courseSelect">
+
+              <%instructor.courses.forEach(function(course){%>
+                <option value="<%=course.title+course.code%>"><%=course.title+course.code%></option>
+              <%});%>
+              <option value="diğer">diğer</option>
+
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="courseSelect">yazar:</label>
+            <select name="author" class="custom-select form-control" id="courseSelect">
+              <option selected value="1">anonim</option>
+              <option value="2">ismim gözüksün</option>
+            </select>
           </div>
         </div>
       </div>
