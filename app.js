@@ -16,7 +16,6 @@ const {
 } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const jwt = require('jsonwebtoken');
-const anonymus = require("anonymus");
 
 const createTransporter = async () => {
   const oauth2Client = new OAuth2(
@@ -495,13 +494,13 @@ app.post("/rate", function(req, res) {
 
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
     let yyyy = today.getFullYear();
     today = dd + '/' + mm + '/' + yyyy;
 
     let author = "";
     if (req.body.author == '1') {
-      author = _.lowerCase(anonymus.create()[0]);
+      author = "anonim";
     } else {
       author = _.lowerCase(req.user.username);
     }
@@ -560,9 +559,53 @@ app.post("/rate", function(req, res) {
   } else {
     res.redirect("/");
   }
+});
+
+app.post("/update", function(req, res){
+  if(req.user._id == req.body.userID) {
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+
+    let author = "";
+    if (req.body.author == '1') {
+      author = "anonim";
+    } else {
+      author = _.lowerCase(req.user.username);
+    }
+    const newReview = {
+      author: author,
+      text: req.body.reviewText,
+      userID: req.user._id,
+      date: today,
+      course: req.body.course
+    }
+
+    Instructor.findOne({name: req.body.instructor}, function(err, foundInstructor) {
+      if(!err) {
+
+        foundInstructor.reviews.forEach(function(review) {
+          if(review.userID==req.user._id) {
+            foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
+          }
+        });
+        foundInstructor.reviews.push(newReview);
+        foundInstructor.save(function(err) {
+          if(!err) {
+            res.redirect("/instructors/" + req.body.instructor);
+          }
+        });
+
+      }
+    });
 
 
-
+  } else {
+    res.redirect("/instructors/" + req.body.instructor);
+  }
 });
 
 app.get("/login", function(req, res) {

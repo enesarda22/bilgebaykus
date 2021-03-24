@@ -254,7 +254,7 @@
 
                       <%} else {%>
                       <span class="d-inline-block disabledButton" data-trigger="hover" data-toggle="popover" data-content="değerlendirmek için giriş yapmanız gerekiyor">
-                        <button class="btn btn-primary review-button style=" pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
+                        <button class="btn btn-primary review-button" style="pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
                       </span>
                       <%}%>
 
@@ -263,20 +263,76 @@
                     <div class="col-lg-7 col-11">
 
 
+
+
+
                       <%if(hasAlreadyReviewed) {%>
                       <div class="row mb-3">
                         <div style="width: 100%;" class="card border-primary">
                           <div class="card-body review-card">
-                            <p class="date"><%=initialReview.date%></p>
+                            <p class="date"><%=initialReview.date%> <a href="#" data-toggle="modal" data-target="#editModal"><i style="float: right;" class="far fa-edit"></i></a></p>
                             <%=initialReview.text%>
                             <span class="review-author"><strong>ders: </strong><%=initialReview.course%> <span class="ml-2"><strong>yazar: </strong></span><%=initialReview.author%></span>
 
                           </div>
                         </div>
                       </div>
+
+                      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">düzenle</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <form action="/update" method="post">
+                            <div class="modal-body">
+
+                              <div class="form-group">
+                                <textarea name="reviewText" class="form-control mt-1" id="rating-textarea" rows="8" placeholder="değerlendirme" autocomplete="off" required><%=initialReview.text%></textarea>
+                              </div>
+
+                              <div class="form-group">
+                                <select name="course" class="custom-select form-control" id="courseSelect">
+
+                                  <option selected value="<%=initialReview.course%>"><%=initialReview.course%></option>
+                                  <%instructor.courses.forEach(function(course){%>
+                                    <%if(course.title+course.code != initialReview.course) {%>
+                                      <option value="<%=course.title+course.code%>"><%=course.title+course.code%></option>
+                                    <%}%>
+                                  <%});%>
+                                  <%if(initialReview.course != "diğer") {%>
+                                    <option value="diğer">diğer</option>
+                                  <%}%>
+                                </select>
+                              </div>
+
+                              <div class="form-group">
+                                <select name="author" class="custom-select form-control" id="authorSelect">
+                                  <%if(initialReview.author == "anonim") {%>
+                                    <option selected value="1">anonim</option>
+                                    <option value="2">ismim gözüksün</option>
+                                  <%} else {%>
+                                    <option value="1">anonim</option>
+                                    <option selected value="2">ismim gözüksün</option>
+                                  <%}%>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">çıkış</button>
+                              <input type="hidden" name="userID" value="<%=initialReview.userID%>"/>
+                              <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary">kaydet</button>
+                            </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
                       <%}%>
 
-                      <%instructor.reviews.forEach(function(review) {%>
+                      <%instructor.reviews.slice().reverse().forEach(function(review) {%>
                       <%if(!hasAlreadyReviewed || review!=initialReview) {%>
                       <div class="row">
                         <div style="width: 100%;" class="card">
