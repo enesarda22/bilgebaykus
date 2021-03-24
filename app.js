@@ -519,10 +519,10 @@ app.post("/rate", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue)) / (foundInstructor.reviews.length + 2);
-        const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue)) / (foundInstructor.reviews.length + 2);
-        const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length + 1) + Number(req.body.difficultyValue)) / (foundInstructor.reviews.length + 2);
-        const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.gradingValue)) / (foundInstructor.reviews.length + 2);
+        const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue)*10) / (foundInstructor.reviews.length + 2);
+        const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue)*10) / (foundInstructor.reviews.length + 2);
+        const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length + 1) + Number(req.body.difficultyValue)*10) / (foundInstructor.reviews.length + 2);
+        const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.gradingValue)*10) / (foundInstructor.reviews.length + 2);
         const overallAvg = (lecturingAvg + studentRelAvg + gradingAvg) / 3
 
         foundInstructor.lecturingAvg = parseInt(lecturingAvg);

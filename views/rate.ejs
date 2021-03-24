@@ -32,25 +32,29 @@
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
             <label for="formControlRange">ders anlatımı</label>
-            <input type="range" name="lecturingValue" min="0" max="100" class="form-control-range" id="formControlRange">
+            <input type="range" name="lecturingValue" min="0" max="10" class="form-control-range" id="formControlRange" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
             <label for="formControlRange">öğrenciyle iletişim</label>
-            <input type="range" name="studentRelValue" min="0" max="100" class="form-control-range" id="formControlRange">
+            <input type="range" name="studentRelValue" min="0" max="10" class="form-control-range" id="formControlRange" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
-            <label for="formControlRange">sınav zorluğu</label>
-            <input type="range" name="difficultyValue" min="0" max="100" class="form-control-range" id="formControlRange">
+            <label for="formControlRange">sınav zorluğu (fazlaysa zor)</label>
+            <input type="range" name="difficultyValue" min="0" max="10" class="form-control-range" id="formControlRange" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
             <label for="formControlRange">notlandırma</label>
-            <input type="range" name="gradingValue" min="0" max="100" class="form-control-range" id="formControlRange">
+            <input type="range" name="gradingValue" min="0" max="10" class="form-control-range" id="formControlRange" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
           </div>
         </div>
       </div>
@@ -70,7 +74,7 @@
             <select name="course" class="custom-select form-control" id="courseSelect">
 
               <%instructor.courses.forEach(function(course){%>
-                <option value="<%=course.title+course.code%>"><%=course.title+course.code%></option>
+              <option value="<%=course.title+course.code%>"><%=course.title+course.code%></option>
               <%});%>
               <option value="diğer">diğer</option>
 
@@ -105,7 +109,15 @@
           </div>
         </div>
       </div>
-      <br>
+      <div class="row mt-3">
+        <div class="col-12">
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+            <label class="form-check-label" for="exampleCheck1">yazdığım değerlendirme hakaret içermemektedir.</label>
+          </div>
+        </div>
+      </div>
+
       <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-success btn-rate">gönder</button>
       <a href="/instructors/<%=instructor.name%>" class="btn btn-danger btn-rate">iptal</a>
     </form>
