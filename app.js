@@ -443,7 +443,7 @@ app.get("/rate", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        if (foundInstructor) {
+        if (foundInstructor && !req.user.reviewedInstructors.includes(req.query.instructor)) {
           if (!req.user.reviewedInstructors.includes(foundInstructor.name)) {
             res.render("rate", {
               instructor: foundInstructor
@@ -470,7 +470,7 @@ app.get("/rate", function(req, res) {
 
 app.post("/rate", function(req, res) {
 
-  if (req.isAuthenticated()) {
+  if (req.isAuthenticated() && !req.user.reviewedInstructors.includes(req.body.instructor)) {
 
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -537,7 +537,7 @@ app.post("/rate", function(req, res) {
     });
 
   } else {
-    res.redirect("/");
+    res.redirect("/instructors/" + req.body.instructor);
   }
 });
 
