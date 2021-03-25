@@ -18,32 +18,12 @@ const OAuth2 = google.auth.OAuth2;
 const jwt = require('jsonwebtoken');
 
 const createTransporter = async () => {
-  const oauth2Client = new OAuth2(
-    process.env.CLIENT_ID,
-    process.env.CLIENT_SECRET,
-    "https://developers.google.com/oauthplayground"
-  );
-  oauth2Client.setCredentials({
-    refresh_token: process.env.REFRESH_TOKEN
-  });
-  const accessToken = await new Promise((resolve, reject) => {
-    oauth2Client.getAccessToken((err, token) => {
-      if (err) {
-        reject();
-      }
-      resolve(token);
-    });
-  });
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "FastMail",
     auth: {
-      type: "OAuth2",
-      user: process.env.EMAIL,
-      accessToken,
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      refreshToken: process.env.REFRESH_TOKEN
+      user: process.env.FASTMAIL_USERNAME,
+      pass: process.env.FASTMAIL_PASSWORD
     }
   });
 
@@ -663,7 +643,7 @@ app.post("/register", function(req, res) {
             subject: "Bilge Baykuş Aktivasyon",
             text: "Hesabınızı aktifleştirmek için lütfen linke tıklayın: https://bilgebaykus.herokuapp.com/confirmation/" + emailToken + " Link bir gün sonra geçerliliğini yitirecektir.",
             to: req.body.username + "@boun.edu.tr",
-            from: "enesarda22@gmail.com"
+            from: process.env.FASTMAIL_USERNAME
           });
           req.flash('success', req.body.username + '@boun.edu.tr adresine onaylama maili gönderildi');
           res.redirect("/");
@@ -774,7 +754,7 @@ app.post("/reset", function(req, res) {
           subject: "Bilge Baykuş Şifre Yenileme",
           text: "Şifrenizi yenilemek için tıklayın: https://bilgebaykus.herokuapp.com/reset/" + emailToken + " Link bir gün sonra geçerliliğini yitirecektir.",
           to: req.body.username + "@boun.edu.tr",
-          from: "enesarda22@gmail.com"
+          from: process.env.FASTMAIL_USERNAME
         });
         req.flash('success', req.body.username + '@boun.edu.tr adresine şifre yenileme maili gönderildi');
         res.redirect("/login");
@@ -875,7 +855,7 @@ app.post("/activation", function(req, res) {
             subject: "Bilge Baykuş Aktivasyon",
             text: "Hesabınızı aktifleştirmek için lütfen linke tıklayın: https://bilgebaykus.herokuapp.com/confirmation/" + emailToken + " Link bir gün sonra geçerliliğini yitirecektir.",
             to: req.body.username + "@boun.edu.tr",
-            from: "enesarda22@gmail.com"
+            from: process.env.FASTMAIL_USERNAME
           });
           req.flash('success', req.body.username + '@boun.edu.tr adresine şifre yenileme maili gönderildi');
           res.redirect("/login");
