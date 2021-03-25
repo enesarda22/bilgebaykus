@@ -519,10 +519,10 @@ app.post("/rate", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue)*10) / (foundInstructor.reviews.length + 2);
-        const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue)*10) / (foundInstructor.reviews.length + 2);
-        const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length + 1) + Number(req.body.difficultyValue)*10) / (foundInstructor.reviews.length + 2);
-        const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.gradingValue)*10) / (foundInstructor.reviews.length + 2);
+        const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue) * 10) / (foundInstructor.reviews.length + 2);
+        const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue) * 10) / (foundInstructor.reviews.length + 2);
+        const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length + 1) + Number(req.body.difficultyValue) * 10) / (foundInstructor.reviews.length + 2);
+        const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.gradingValue) * 10) / (foundInstructor.reviews.length + 2);
         const overallAvg = (lecturingAvg + studentRelAvg + gradingAvg) / 3
 
         foundInstructor.lecturingAvg = parseInt(lecturingAvg);
@@ -561,8 +561,8 @@ app.post("/rate", function(req, res) {
   }
 });
 
-app.post("/update", function(req, res){
-  if(req.user._id == req.body.userID) {
+app.post("/update", function(req, res) {
+  if (req.user._id == req.body.userID) {
 
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -584,17 +584,19 @@ app.post("/update", function(req, res){
       course: req.body.course
     }
 
-    Instructor.findOne({name: req.body.instructor}, function(err, foundInstructor) {
-      if(!err) {
+    Instructor.findOne({
+      name: req.body.instructor
+    }, function(err, foundInstructor) {
+      if (!err) {
 
         foundInstructor.reviews.forEach(function(review) {
-          if(review.userID==req.user._id) {
+          if (review.userID == req.user._id) {
             foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
           }
         });
         foundInstructor.reviews.push(newReview);
         foundInstructor.save(function(err) {
-          if(!err) {
+          if (!err) {
             res.redirect("/instructors/" + req.body.instructor);
           }
         });
@@ -754,6 +756,145 @@ app.post("/logout", function(req, res) {
   req.logout();
   res.redirect("/");
 });
+
+app.post("/reset", function(req, res) {
+
+  User.findOne({
+    username: req.body.username
+  }, function(err, foundUser) {
+
+    if (!err && foundUser) {
+
+      jwt.sign({
+        data: foundUser._id
+      }, process.env.EMAIL_SECRET, {
+        expiresIn: '1d'
+      }, function(err, emailToken) {
+        sendEmail({
+          subject: "Bilge Baykuş Şifre Yenileme",
+          text: "Şifrenizi yenilemek için tıklayın: https://bilgebaykus.herokuapp.com/reset/" + emailToken + " Link bir gün sonra geçerliliğini yitirecektir.",
+          to: req.body.username + "@boun.edu.tr",
+          from: "enesarda22@gmail.com"
+        });
+        req.flash('success', req.body.username + '@boun.edu.tr adresine şifre yenileme maili gönderildi');
+        res.redirect("/login");
+      });
+
+    } else {
+      req.flash('error', 'böyle bir kullanıcı yok.');
+      res.redirect("/register");
+    }
+
+  });
+});
+app.get("/reset/:token", function(req, res) {
+
+  const token = req.params.token;
+
+  jwt.verify(token, process.env.EMAIL_SECRET, function(err, decoded) {
+
+    if (err) {
+      req.flash('error', 'bir sorun gerçekleşti');
+      res.redirect("/login");
+    } else {
+      id = decoded.data;
+
+      User.findById(id, function(err, foundUser) {
+
+        if (!err && foundUser) {
+          res.render("reset", {
+            user: foundUser,
+            token: token
+          });
+        } else {
+          req.flash('error', 'üyelik bulunamadı');
+          res.redirect("/register");
+        }
+
+      });
+    }
+  });
+});
+app.post("/reset/:token", function(req, res) {
+
+  if(req.body.password == req.body.secondPassword) {
+
+    const token = req.params.token;
+
+    jwt.verify(token, process.env.EMAIL_SECRET, function(err, decoded) {
+
+      if (err) {
+        req.flash('error', 'bir sorun gerçekleşti');
+        res.redirect("/login");
+      } else {
+        id = decoded.data;
+
+        User.findById(id, function(err, foundUser) {
+
+          if (!err && foundUser) {
+            foundUser.setPassword(req.body.password, function() {
+              foundUser.save(function(err) {
+                if(!err) {
+                  req.flash('success', 'şifreniz başarılı bir şekilde yenilendi')
+                  res.redirect("/login");
+                }
+              });
+            });
+          } else {
+            req.flash('error', 'üyelik bulunamadı');
+            res.redirect("/register");
+          }
+
+        });
+      }
+    });
+
+  } else {
+    req.flash('error', 'şifreler aynı değil');
+    res.redirect("/reset/" + token);
+  }
+});
+
+app.post("/activation", function(req, res) {
+
+  User.findOne({
+    username: req.body.username
+  }, function(err, foundUser) {
+
+    if (!err && foundUser) {
+
+      if(foundUser.isConfirmed==false) {
+        jwt.sign({
+          data: foundUser._id
+        }, process.env.EMAIL_SECRET, {
+          expiresIn: '1d'
+        }, function(err, emailToken) {
+          sendEmail({
+            subject: "Bilge Baykuş Aktivasyon",
+            text: "Hesabınızı aktifleştirmek için lütfen linke tıklayın: https://bilgebaykus.herokuapp.com/confirmation/" + emailToken + " Link bir gün sonra geçerliliğini yitirecektir.",
+            to: req.body.username + "@boun.edu.tr",
+            from: "enesarda22@gmail.com"
+          });
+          req.flash('success', req.body.username + '@boun.edu.tr adresine şifre yenileme maili gönderildi');
+          res.redirect("/login");
+        });
+      } else {
+        req.flash('success', 'üyeliğiniz zaten onaylanmış');
+        res.redirect("/login");
+      }
+
+
+
+    } else {
+      req.flash('error', 'böyle bir kullanıcı yok.');
+      res.redirect("/register");
+    }
+
+  });
+
+});
+
+
 
 let port = process.env.PORT;
 if (port == null || port == "") {

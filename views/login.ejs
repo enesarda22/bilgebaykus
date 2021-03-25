@@ -28,7 +28,7 @@
 
   <div class="row">
     <div class="col-sm-12">
-      <div class="card col-sm-8 col-md-6 col-lg-3 login-card mx-auto">
+      <div class="card col-sm-8 col-md-6 col-lg-3 login-card mx-auto px-0">
         <div class="card-body">
 
           <!-- Makes POST request to /login route -->
@@ -52,8 +52,48 @@
             <input type="hidden" name="page" value=<%=page%> />
           </form>
 
+
+        </div>
+        <div class="card-footer">
+          <a class="mt-2" href="#" data-toggle="modal" data-target="#forgotPasswordModal">şifremi unuttum</a>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">şifre yenileme</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/reset" method="post">
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label for="email">e-mail</label>
+          <div class="row">
+            <div class="col-4">
+              <input type="text" class="form-control" name="username" autocomplete="off">
+            </div>
+            <div class="col-4">
+              <input type="text" readonly class="form-control-plaintext" id="staticDomain" value="@boun.edu.tr">
+            </div>
+          </div>
+        </div>
+        <small id="resetPasswordHelp" class="form-text text-muted">mailinize şifre yenileme linki gönderilecektir.</small>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">çıkış</button>
+        <button type="submit" class="btn btn-primary">gönder</button>
+      </div>
+      </form>
     </div>
   </div>
 </div>
