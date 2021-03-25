@@ -804,7 +804,9 @@ app.get("/reset/:token", function(req, res) {
         if (!err && foundUser) {
           res.render("reset", {
             user: foundUser,
-            token: token
+            token: token,
+            success: req.flash('success'),
+            fail: req.flash('error')
           });
         } else {
           req.flash('error', 'üyelik bulunamadı');
