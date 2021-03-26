@@ -107,6 +107,7 @@ textarea {
 .progress {
   margin-top: 0.3rem;
 }
+
 /* rate section */
 .btn-rate.btn-danger {
   margin-left: 0.5rem;
@@ -120,9 +121,11 @@ textarea {
   h2 {
     font-size: 5rem;
   }
+
   h5 {
     font-size: 3.5rem;
   }
+
   p, select[name="course"], select[name="author"] {
     font-size: 3rem;
   }
@@ -135,8 +138,6 @@ textarea {
   h1.big-title {
     font-size: 7rem;
   }
-
-
 
   /* navbar section */
   .navbar-brand img {
@@ -245,7 +246,7 @@ textarea {
     height: 5rem;
   }
 
-  .form-group label, input[type="text"], #rating-textarea {
+  .form-group label, input[type="text"], input[type="password"], #rating-textarea {
     font-size: 3.5rem;
   }
 
@@ -357,6 +358,7 @@ textarea {
     width: 10rem;
     font-size: 2.4rem;
   }
+
   .btn-rate.btn-danger {
     margin-left: 2rem;
   }
@@ -416,6 +418,7 @@ textarea {
   .date {
     font-size: 2.5rem;
   }
+
   .reviewed-alert {
     margin-bottom: 3rem;
   }
@@ -424,11 +427,22 @@ textarea {
   .card-title.instructor-name {
     font-size: 3.5rem;
   }
+
   .card-header {
     padding: 2.5rem 0;
   }
 
+  /* login section */
+  .login-button {
+    height: 5rem;
+    width: 10rem;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
 
+  .card .card-footer {
+    font-size: 3rem;
+  }
 
   /* footer section */
   .footer-paragraph {
