@@ -65,8 +65,8 @@ const options = {
 
 mongoose.Promise = global.Promise;
 ////uncomment to use local db
-mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
-// mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
+// mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
+mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
 mongoose.set("useCreateIndex", true);
 mongoose.set('useFindAndModify', false);
 
