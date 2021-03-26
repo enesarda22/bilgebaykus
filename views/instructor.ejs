@@ -22,8 +22,8 @@
       <button class="btn btn-outline-light my-2 my-sm-0" name="page" value=1 type="submit">ara</button>
     </form>
     <%if(isAuth) {%>
-      <form action="/logout" method="post" class="form-inline ml-3">
-        <button type="submit" class="btn btn-outline-dark">çıkış</button>
+      <form action="/logout" method="post" class="form-inline">
+        <button type="submit" class="btn btn-outline-dark exit-button">çıkış</button>
       </form>
       <%}%>
   </div>
@@ -249,7 +249,7 @@
                         <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
                       </form>
                       <%} else {%>
-                      <p style="color: green;"><i class="far fa-check-circle"></i> bu hocayı değerlendirdiniz</p>
+                      <p class="reviewed-alert" style="color: green;"><i class="far fa-check-circle"></i> bu hocayı değerlendirdiniz</p>
                       <%}%>
 
                       <%} else {%>
@@ -279,7 +279,7 @@
                       </div>
 
                       <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
+                        <div class="modal-dialog modal-xl">
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">düzenle</h5>
@@ -334,23 +334,41 @@
 
                       <%instructor.reviews.slice().reverse().forEach(function(review) {%>
                       <%if(!hasAlreadyReviewed || review!=initialReview) {%>
-                      <div class="row">
-                        <div style="width: 100%;" class="card">
-                          <div class="card-body review-card">
 
-                            <p class="date"><%=review.date%></p>
-                            <%=review.text%>
-                            <br>
-                            <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
+                        <%if(!isAuth) {%>
 
+                          <div class="row">
+                            <div style="width: 100%;" class="card">
+                              <div class="card-body review-card">
 
+                                <p class="date"><%=review.date%></p>
+                                <%=review.text%>
+                                <br>
+                                <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
+
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
+
+                        <%} else {%>
+
+                          <div class="row">
+                            <div style="width: 100%;" class="card">
+                              <div class="card-body review-card">
+
+                                <p class="date"><%=review.date%> <a href="/report?instructor=<%=instructor._id%>&reporteduser=<%=review.userID%>" class="text-danger"><i style="float: right;" class="far fa-flag"></i></a></p>
+                                <%=review.text%>
+                                <br>
+                                <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
+
+                              </div>
+                            </div>
+                          </div>
+
+                        <%}%>
+
                       <%}%>
                       <%});%>
-
-
 
                     </div>
                   </div>

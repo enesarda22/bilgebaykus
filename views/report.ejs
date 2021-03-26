@@ -1,0 +1,65 @@
+<%- include('partials/header') %>
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <a class="navbar-brand" href="/"><img src="/images/owl.png" alt="icon-img"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav ml-auto mr-3">
+    </ul>
+
+    <form action="/index" method="get" class="form-inline navbar-search">
+      <input class="form-control mr-sm-2" type="search" name="search" placeholder="ee202..." autocomplete="off">
+      <button class="btn btn-outline-light my-2 my-sm-0" name="page" value=1 type="submit">ara</button>
+    </form>
+
+    <form action="/logout" method="post" class="form-inline">
+      <button type="submit" class="btn btn-outline-dark exit-button">çıkış</button>
+    </form>
+
+  </div>
+
+
+</nav>
+
+<div class="container-fluid p-3">
+  <div class="container-fluid bg-light p-3">
+    <h1>raporlama</h1>
+    <form class="" action="/report" method="post">
+    <div class="row">
+      <div class="col-12">
+        <div style="width: 100%;" class="card">
+          <div class="card-body review-card">
+
+            <p class="date"><%=review.date%></p>
+            <%=review.text%>
+            <br>
+            <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="formGroupExampleInput">raporlama nedeniniz:</label>
+          <textarea name="reportText" class="form-control mt-1" id="rating-textarea" rows="3" autocomplete="off" required></textarea>
+        </div>
+        <input type="hidden" name="reportedUser" value=<%=review.userID%> />
+        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-success btn-rate">gönder</button>
+        <a href="/instructors/<%=instructor.name%>" class="btn btn-danger btn-rate">iptal</a>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') %>

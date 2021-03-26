@@ -27,6 +27,10 @@ textarea {
   right: 20%;
 }
 
+.exit-button {
+  margin-left: 1rem;
+}
+
 /* testimoninal section */
 #testimonials {
   text-align: center;
@@ -116,6 +120,12 @@ textarea {
   h2 {
     font-size: 5rem;
   }
+  h5 {
+    font-size: 3.5rem;
+  }
+  p, select[name="course"], select[name="author"] {
+    font-size: 3rem;
+  }
 
   /* home section */
   #home {
@@ -125,6 +135,8 @@ textarea {
   h1.big-title {
     font-size: 7rem;
   }
+
+
 
   /* navbar section */
   .navbar-brand img {
@@ -153,6 +165,13 @@ textarea {
     height: 4rem;
     width: 5.3rem;
     font-size: 2rem;
+  }
+
+  .exit-button {
+    height: 4rem;
+    width: 5.3rem;
+    font-size: 2rem;
+    margin-left: 0;
   }
 
   /* testimonial section */
@@ -211,6 +230,17 @@ textarea {
   }
 
   /* rate section */
+  .range-value {
+    font-size: 3rem;
+    margin-left: 1rem;
+  }
+
+  input[type='checkbox'] {
+    transform: scale(3);
+    margin-top: 2.2rem;
+    margin-left: 1rem;
+  }
+
   input[type="range"] {
     height: 5rem;
   }
@@ -375,8 +405,19 @@ textarea {
     font-size: 3rem;
   }
 
+  .card-body .review-button {
+    margin-bottom: 2rem;
+  }
+
   .number-of-reviews {
     display: none;
+  }
+
+  .date {
+    font-size: 2.5rem;
+  }
+  .reviewed-alert {
+    margin-bottom: 3rem;
   }
 
   /* courses section */

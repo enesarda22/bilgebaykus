@@ -16,8 +16,8 @@
       <input class="form-control mr-sm-2" type="search" name="search" placeholder="ee202..." autocomplete="off">
       <button class="btn btn-outline-light my-2 my-sm-0" name="page" value=1 type="submit">ara</button>
     </form>
-    <form action="/logout" method="post" class="form-inline ml-3">
-      <button type="submit" class="btn btn-outline-dark">çıkış</button>
+    <form action="/logout" method="post" class="form-inline">
+      <button type="submit" class="btn btn-outline-dark exit-button">çıkış</button>
     </form>
   </div>
 </nav>
@@ -31,30 +31,30 @@
       <div class="row">
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
-            <label for="formControlRange">ders anlatımı</label>
-            <input type="range" name="lecturingValue" min="0" max="10" class="form-control-range" id="formControlRange" oninput="this.nextElementSibling.value = this.value">
-            <output>5</output>
+            <label for="formControlRange">ders anlatımı: </label>
+            <output id="amount0" name="amount0" for="lecturingValue" class="range-value">5</output>
+            <input type="range" name="lecturingValue" min="0" max="10" class="form-control-range" id="lecturingValue" oninput="amount0.value=lecturingValue.value">
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
-            <label for="formControlRange">öğrenciyle iletişim</label>
-            <input type="range" name="studentRelValue" min="0" max="10" class="form-control-range" id="formControlRange" oninput="this.nextElementSibling.value = this.value">
-            <output>5</output>
+            <label for="formControlRange">öğrenciyle iletişim: </label>
+            <output id="amount1" name="amount1" for="studentRelValue" class="range-value">5</output>
+            <input type="range" name="studentRelValue" min="0" max="10" class="form-control-range" id="studentRelValue" oninput="amount1.value=studentRelValue.value">
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
-            <label for="formControlRange">sınav zorluğu (fazlaysa zor)</label>
-            <input type="range" name="difficultyValue" min="0" max="10" class="form-control-range" id="formControlRange" oninput="this.nextElementSibling.value = this.value">
-            <output>5</output>
+            <label for="formControlRange">notlandırma: </label>
+            <output id="amount2" name="amount2" for="gradingValue" class="range-value">5</output>
+            <input type="range" name="gradingValue" min="0" max="10" class="form-control-range" id="gradingValue" oninput="amount2.value=gradingValue.value">
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
-            <label for="formControlRange">notlandırma</label>
-            <input type="range" name="gradingValue" min="0" max="10" class="form-control-range" id="formControlRange" oninput="this.nextElementSibling.value = this.value">
-            <output>5</output>
+            <label for="formControlRange">sınav zorluğu (fazlaysa zor): </label>
+            <output id="amount3" name="amount3" for="difficultyValue" class="range-value">5</output>
+            <input type="range" name="difficultyValue" min="0" max="10" class="form-control-range" id="difficultyValue" oninput="amount3.value=difficultyValue.value">
           </div>
         </div>
       </div>
@@ -73,10 +73,12 @@
             <label for="courseSelect">aldığınız dersi seçin:</label>
             <select name="course" class="custom-select form-control" id="courseSelect">
 
-              <%instructor.courses.forEach(function(course){%>
-              <option value="<%=course.title+course.code%>"><%=course.title+course.code%></option>
-              <%});%>
-              <option value="diğer">diğer</option>
+              <optgroup>
+                <%instructor.courses.forEach(function(course){%>
+                <option value="<%=course.title+course.code%>"><%=course.title+course.code%></option>
+                <%});%>
+                <option value="diğer">diğer</option>
+              </optgroup>
 
             </select>
           </div>
@@ -93,6 +95,7 @@
           </div>
         </div>
       </div>
+      <hr>
       <div class="row">
         <div class="col-12">
           <div class="form-check">

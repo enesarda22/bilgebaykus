@@ -65,8 +65,8 @@ const options = {
 
 mongoose.Promise = global.Promise;
 ////uncomment to use local db
-// mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
-mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
+mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
+// mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
 mongoose.set("useCreateIndex", true);
 mongoose.set('useFindAndModify', false);
 
@@ -74,6 +74,7 @@ const userSchema = new mongoose.Schema({
   username: String,
   password: String,
   reviewedInstructors: [String],
+  reportedBy: [String],
   isConfirmed: {
     type: Boolean,
     default: false
@@ -127,6 +128,17 @@ const Instructor = mongoose.model("instructor", instructorSchema);
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
+
+
+// User.find({},function(err, foundUsers) {
+//
+//   foundUsers.forEach(function(user) {
+//
+//     console.log(user.reportedBy.length);
+//
+//   });
+//
+// });
 
 // Instructor.findOneAndUpdate({name: "enes arda"}, {
 //   overallAvg: 50,
@@ -453,7 +465,8 @@ app.get("/rate", function(req, res) {
           }
 
         } else {
-          res.send("no such instructor");
+          req.flash('error', 'bir sorun oluştu');
+          res.redirect("/");
         }
       }
     });
@@ -799,7 +812,7 @@ app.get("/reset/:token", function(req, res) {
 });
 app.post("/reset/:token", function(req, res) {
 
-  if(req.body.password == req.body.secondPassword) {
+  if (req.body.password == req.body.secondPassword) {
 
     const token = req.params.token;
 
@@ -816,7 +829,7 @@ app.post("/reset/:token", function(req, res) {
           if (!err && foundUser) {
             foundUser.setPassword(req.body.password, function() {
               foundUser.save(function(err) {
-                if(!err) {
+                if (!err) {
                   req.flash('success', 'şifreniz başarılı bir şekilde yenilendi')
                   res.redirect("/login");
                 }
@@ -845,7 +858,7 @@ app.post("/activation", function(req, res) {
 
     if (!err && foundUser) {
 
-      if(foundUser.isConfirmed==false) {
+      if (foundUser.isConfirmed == false) {
         jwt.sign({
           data: foundUser._id
         }, process.env.EMAIL_SECRET, {
@@ -873,6 +886,84 @@ app.post("/activation", function(req, res) {
     }
 
   });
+
+});
+
+app.get("/report", function(req, res) {
+
+  if (req.isAuthenticated()) {
+
+    User.findById(req.query.reporteduser, function(err, foundUser) {
+
+      Instructor.findById(req.query.instructor, function(err, foundInstructor) {
+
+        if (!err) {
+
+          if (foundUser.reportedBy.length != 0 && foundUser.reportedBy.includes(req.user._id)) {
+            req.flash('error', 'bu kullanıcıyı zaten raporladınız');
+            res.redirect("/instructors/" + foundInstructor.name);
+          } else {
+            foundInstructor.reviews.forEach(function(review) {
+
+              if (review.userID == req.query.reporteduser) {
+                res.render("report", {
+                  instructor: foundInstructor,
+                  review: review
+                })
+              }
+
+            });
+          }
+
+        } else {
+          req.flash('error', 'bir hata gerçekleşti');
+          res.redirect("/instructors/" + foundInstructor.name);
+        }
+      });
+
+
+    });
+
+
+
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.post("/report", function(req, res) {
+
+  if (req.isAuthenticated()) {
+
+    User.findById(req.body.reportedUser, function(err, foundUser) {
+      if (foundUser.reportedBy.includes(req.user._id)) {
+        req.flash('success', 'bu kullanıcıyı zaten raporladınız');
+        res.redirect("/instructors/" + req.body.instructor);
+      } else {
+        foundUser.reportedBy.push(req.user._id);
+        foundUser.save(function(err) {
+          if (!err) {
+            sendEmail({
+              subject: "Yeni Rapor",
+              text: req.user._id + " tarafindan " + req.body.reportedUser + " " + req.body.instructor + "'a yazdigi yorumdan dolayi rapor edildi. Nedeni: " + req.body.reportText,
+              to: "enesarda22@gmail.com",
+              from: process.env.FASTMAIL_USERNAME
+            });
+
+            req.flash('success', 'raporunuz başarılı bir şekilde gönderildi.');
+            res.redirect("/instructors/" + req.body.instructor);
+          } else {
+            req.flash('error', 'bir hata gerçekleşti');
+            res.redirect("/");
+          }
+        });
+
+      }
+    });
+
+  } else {
+    res.redirect("/login");
+  }
 
 });
 
