@@ -98,6 +98,10 @@ textarea {
   padding-right: 2rem;
 }
 
+.initial-row {
+  margin-bottom: 1rem;
+}
+
 .date {
   color: #8f8f8f;
   margin-bottom: 0.3rem;
@@ -132,6 +136,14 @@ textarea {
 
   small {
     font-size: 1.75rem;
+  }
+
+  .alert {
+    font-size: 2rem;
+  }
+
+  .alert button {
+    font-size: 3rem;
   }
 
   /* home section */
@@ -400,6 +412,10 @@ textarea {
     padding-right: 0.7rem;
   }
 
+  .initial-row {
+    margin-bottom: 5rem;
+  }
+
   .first-review-card {
     margin-top: 5rem;
   }
@@ -455,7 +471,7 @@ textarea {
   }
 
   .modal .modal-dialog {
-    max-width:100%;
+    max-width: 100%;
   }
 
   /* footer section */

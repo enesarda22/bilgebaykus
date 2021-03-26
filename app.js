@@ -134,7 +134,8 @@ function escapeRegex(text) {
 //
 //   foundUsers.forEach(function(user) {
 //
-//     console.log(user.reportedBy.length);
+//     user.reportedBy = [];
+//     user.save();
 //
 //   });
 //
