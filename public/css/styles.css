@@ -129,6 +129,9 @@ textarea {
   p, select[name="course"], select[name="author"] {
     font-size: 3rem;
   }
+  small {
+    font-size: 1.75rem;
+  }
 
   /* home section */
   #home {
@@ -434,11 +437,17 @@ textarea {
 
   /* login section */
   .login-button {
-    height: 5rem;
-    width: 10rem;
-    font-size: 2rem;
+    height: 7rem;
+    width: 14rem;
+    font-size: 3rem;
     margin: 3rem 0;
   }
+  .modal-footer button {
+    height: 5rem;
+    width: 8rem;
+    font-size: 2rem;
+  }
+
 
   .card .card-footer {
     font-size: 3rem;
