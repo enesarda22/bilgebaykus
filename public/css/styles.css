@@ -129,6 +129,7 @@ textarea {
   p, select[name="course"], select[name="author"] {
     font-size: 3rem;
   }
+
   small {
     font-size: 1.75rem;
   }
@@ -442,15 +443,19 @@ textarea {
     font-size: 3rem;
     margin: 3rem 0;
   }
+
   .modal-footer button {
     height: 5rem;
     width: 8rem;
     font-size: 2rem;
   }
 
-
   .card .card-footer {
     font-size: 3rem;
+  }
+
+  .modal .modal-dialog {
+    max-width:100%;
   }
 
   /* footer section */
