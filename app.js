@@ -53,7 +53,6 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.use(flash());
 
 const options = {
@@ -154,58 +153,6 @@ function escapeRegex(text) {
 //     console.log(err);
 //   }
 // });
-// Instructor.findOneAndUpdate({name: "arda yalcinkaya"}, {
-//   overallAvg: 50,
-//   lecturingAvg: 50,
-//   studentRelAvg: 50,
-//   difficultyAvg: 50,
-//   gradingAvg: 50,
-//   numberOfYes: 0,
-//   reviews: []
-// }, function(err){
-//   if(err) {
-//     console.log(err);
-//   }
-// });
-
-// Instructor.find({}, function(err, foundInstructors) {
-//   foundInstructors.forEach(function(instructor){
-//     instructor.ratings= undefined;
-//     instructor.reviews= [];
-//     instructor.overallAvg= 50;
-//     instructor.lecturingAvg= 50;
-//     instructor.studentRelAvg= 50;
-//     instructor.difficultyAvg= 50;
-//     instructor.gradingAvg= 50;
-//     instructor.numberOfYes= 0;
-//
-//     instructor.save();
-//   });
-// });
-
-// Instructor.update({name: "enes arda"}, { $set: { ratings: undefined }}, function(err) {
-//   if(!err){
-//     console.log("done");
-//   }
-// })
-
-// User.findById("6059d32b6263a065dc8d29f0", function(err, foundUser){
-//   Instructor.find({}, function(err, foundInstructors) {
-//     foundInstructors.forEach(function(instructor){
-//       instructor.ratings.forEach(function(rating){
-//         rating.userID=foundUser._id;
-//       });
-//       instructor.save();
-//     });
-//   });
-// });
-
-// User.findById("6059d32b6263a065dc8d29f0", function(err, foundUser){
-//
-//   foundUser.reviewedInstructors.push("enes arda");
-//   foundUser.save();
-//
-// });
 
 
 app.get("/", function(req, res) {
@@ -245,7 +192,7 @@ app.get("/index", function(req, res) {
           name: 1
         }).skip(15 * (page - 1)).limit(15).exec(function(err, foundInstructors) {
           if (err) {
-            console.log(err);
+            res.render("error");
           } else {
             if (foundInstructors.length === 15) {
               res.render("index", {
@@ -265,7 +212,7 @@ app.get("/index", function(req, res) {
                   fullName: 1
                 }).skip(0).limit(initialAmount).exec(function(err, foundCourses) {
                   if (err) {
-                    console.log(err);
+                    res.render("error");
                   } else {
                     res.render("index", {
                       items: [foundInstructors, foundCourses],
@@ -285,7 +232,7 @@ app.get("/index", function(req, res) {
                   fullName: 1
                 }).skip(initialAmount + 15 * (page - initialPage - 1)).limit(15).exec(function(err, foundCourses) {
                   if (err) {
-                    console.log(err);
+                    res.render("error");
                   } else {
                     res.render("index", {
                       items: [foundInstructors, foundCourses],
@@ -319,7 +266,7 @@ app.get("/index", function(req, res) {
           name: 1
         }).skip(15 * (page - 1)).limit(15).exec(function(err, foundInstructors) {
           if (err) {
-            console.log(err);
+            res.render("error");
           } else {
 
             if (foundInstructors.length === 15) {
@@ -338,7 +285,7 @@ app.get("/index", function(req, res) {
                   fullName: 1
                 }).skip(0).limit(initialAmount).exec(function(err, foundCourses) {
                   if (err) {
-                    console.log(err);
+                    res.render("error");
                   } else {
                     res.render("index", {
                       items: [foundInstructors, foundCourses],
@@ -356,7 +303,7 @@ app.get("/index", function(req, res) {
                   fullName: 1
                 }).skip(initialAmount + 15 * (page - initialPage - 1)).limit(15).exec(function(err, foundCourses) {
                   if (err) {
-                    console.log(err);
+                    res.render("error");
                   } else {
                     res.render("index", {
                       items: [foundInstructors, foundCourses],
@@ -382,7 +329,7 @@ app.get("/instructors/:instructorName", function(req, res) {
     name: req.params.instructorName
   }, function(err, foundInstructor) {
     if (err) {
-      console.log(err);
+      res.render("error");
     } else {
       if (foundInstructor) {
         let initialReview;
@@ -422,7 +369,7 @@ app.get("/courses/:courseName", function(req, res) {
     fullName: req.params.courseName
   }, function(err, foundCourse) {
     if (err) {
-      console.log(err);
+      res.render("error");
     } else {
       Instructor.find({
         courses: {
@@ -454,7 +401,7 @@ app.get("/rate", function(req, res) {
       name: req.query.instructor
     }, function(err, foundInstructor) {
       if (err) {
-        console.log(err);
+        res.render("error");
       } else {
         if (foundInstructor && !req.user.reviewedInstructors.includes(req.query.instructor)) {
           if (!req.user.reviewedInstructors.includes(foundInstructor.name)) {
@@ -511,7 +458,7 @@ app.post("/rate", function(req, res) {
       name: req.body.instructor
     }, function(err, foundInstructor) {
       if (err) {
-        console.log(err);
+        res.render("error");
       } else {
         const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue) * 10) / (foundInstructor.reviews.length + 2);
         const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue) * 10) / (foundInstructor.reviews.length + 2);
@@ -892,43 +839,47 @@ app.post("/activation", function(req, res) {
 
 app.get("/report", function(req, res) {
 
-  if (req.isAuthenticated()) {
+  if (req.query.reporteduser == null || req.query.instructor == null) {
+    res.render("error");
+  } else {
 
-    User.findById(req.query.reporteduser, function(err, foundUser) {
+    if (req.isAuthenticated()) {
 
-      Instructor.findById(req.query.instructor, function(err, foundInstructor) {
+      User.findById(req.query.reporteduser, function(err, foundUser) {
+        Instructor.findById(req.query.instructor, function(err, foundInstructor) {
 
-        if (!err) {
+          if (!err) {
 
-          if (foundUser.reportedBy.length != 0 && foundUser.reportedBy.includes(req.user._id)) {
-            req.flash('error', 'bu kullanıcıyı zaten raporladınız');
-            res.redirect("/instructors/" + foundInstructor.name);
+            if (foundUser.reportedBy.length != 0 && foundUser.reportedBy.includes(req.user._id)) {
+              req.flash('error', 'bu kullanıcıyı zaten raporladınız');
+              res.redirect("/instructors/" + foundInstructor.name);
+            } else {
+              foundInstructor.reviews.forEach(function(review) {
+
+                if (review.userID == req.query.reporteduser) {
+                  res.render("report", {
+                    instructor: foundInstructor,
+                    review: review
+                  })
+                }
+
+              });
+            }
+
           } else {
-            foundInstructor.reviews.forEach(function(review) {
-
-              if (review.userID == req.query.reporteduser) {
-                res.render("report", {
-                  instructor: foundInstructor,
-                  review: review
-                })
-              }
-
-            });
+            req.flash('error', 'bir hata gerçekleşti');
+            res.redirect("/instructors/" + foundInstructor.name);
           }
+        });
 
-        } else {
-          req.flash('error', 'bir hata gerçekleşti');
-          res.redirect("/instructors/" + foundInstructor.name);
-        }
+
       });
 
 
-    });
 
-
-
-  } else {
-    res.redirect("/login");
+    } else {
+      res.redirect("/login");
+    }
   }
 });
 
@@ -967,7 +918,9 @@ app.post("/report", function(req, res) {
   }
 
 });
-
+app.get('*', function(req, res) {
+  res.render('error');
+});
 
 
 let port = process.env.PORT;
