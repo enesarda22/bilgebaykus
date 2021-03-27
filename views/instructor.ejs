@@ -388,15 +388,18 @@
   <div class="row">
 
     <%instructor.courses.forEach(function(course) {%>
-                <div class="col-lg-2 col-4">
-                  <div class="card course-card text-center mt-3">
-                    <div class="card-body">
-                      <h5 class="m-0 course-title"><a href="/courses/<%=course.title+course.code%>">
-                          <%=course.title + course.code%>
-                        </a></h5>
+                <%if(course!=null) {%>
+                  <div class="col-lg-2 col-4">
+                    <div class="card course-card text-center mt-3">
+                      <div class="card-body">
+                        <h5 class="m-0 course-title"><a href="/courses/<%=course.title+course.code%>">
+                            <%=course.title + course.code%>
+                          </a></h5>
+                      </div>
                     </div>
                   </div>
-                </div>
+                <%}%>
+
                 <%});%>
 
 
