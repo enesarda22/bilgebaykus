@@ -288,24 +288,24 @@
                               </button>
                             </div>
                             <form action="/update" method="post">
-                            <div class="modal-body">
+                              <div class="modal-body">
 
-                              <div class="form-group">
-                                <textarea name="reviewText" class="form-control mt-1" id="rating-textarea" rows="8" placeholder="değerlendirme" autocomplete="off" required><%=initialReview.text%></textarea>
-                              </div>
+                                <div class="form-group">
+                                  <textarea name="reviewText" class="form-control mt-1" id="rating-textarea" rows="8" placeholder="değerlendirme" autocomplete="off" required><%=initialReview.text%></textarea>
+                                </div>
 
-                              <div class="form-group">
-                                <select name="course" class="custom-select form-control" id="courseSelect">
+                                <div class="form-group">
+                                  <select name="course" class="custom-select form-control" id="courseSelect">
 
-                                  <option selected value="<%=initialReview.course%>"><%=initialReview.course%></option>
-                                  <%instructor.courses.forEach(function(course){%>
+                                    <option selected value="<%=initialReview.course%>"><%=initialReview.course%></option>
+                                    <%instructor.courses.forEach(function(course){%>
                                     <%if(course.title+course.code != initialReview.course) {%>
-                                      <option value="<%=course.title+course.code%>"><%=course.title+course.code%></option>
+                                    <option value="<%=course.title+course.code%>"><%=course.title+course.code%></option>
                                     <%}%>
                                   <%});%>
-                                  <%if(initialReview.course != "diğer") {%>
+                                    <%if(initialReview.course != "diğer") {%>
                                     <option value="diğer">diğer</option>
-                                  <%}%>
+                                    <%}%>
                                 </select>
                               </div>
 
@@ -314,61 +314,89 @@
                                   <%if(initialReview.author == "anonim") {%>
                                     <option selected value="1">anonim</option>
                                     <option value="2">ismim gözüksün</option>
-                                  <%} else {%>
+                                    <%} else {%>
                                     <option value="1">anonim</option>
                                     <option selected value="2">ismim gözüksün</option>
-                                  <%}%>
+                                    <%}%>
                                 </select>
                               </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">çıkış</button>
                               <input type="hidden" name="userID" value="<%=initialReview.userID%>"/>
-                              <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary">kaydet</button>
-                            </div>
+                                    <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary">kaydet</button>
+                                </div>
                             </form>
                           </div>
                         </div>
                       </div>
                       <%}%>
 
-                      <%instructor.reviews.slice().reverse().forEach(function(review) {%>
+                      <%instructor.reviews.slice().reverse().slice((page-1)*10,page*10).forEach(function(review) {%>
                       <%if(!hasAlreadyReviewed || review!=initialReview) {%>
 
-                        <%if(!isAuth) {%>
+                      <%if(!isAuth) {%>
 
-                          <div class="row">
-                            <div style="width: 100%;" class="card">
-                              <div class="card-body review-card">
+                      <div class="row">
+                        <div style="width: 100%;" class="card">
+                          <div class="card-body review-card">
 
-                                <p class="date"><%=review.date%></p>
-                                <%=review.text%>
-                                <br>
-                                <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
+                            <p class="date"><%=review.date%></p>
+                            <%=review.text%>
+                            <br>
+                            <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
 
-                              </div>
-                            </div>
                           </div>
+                        </div>
+                      </div>
 
-                        <%} else {%>
+                      <%} else {%>
 
-                          <div class="row">
-                            <div style="width: 100%;" class="card">
-                              <div class="card-body review-card">
+                      <div class="row">
+                        <div style="width: 100%;" class="card">
+                          <div class="card-body review-card">
 
-                                <p class="date"><%=review.date%> <a href="/report?instructor=<%=instructor._id%>&reporteduser=<%=review.userID%>" class="text-danger"><i style="float: right;" class="far fa-flag"></i></a></p>
-                                <%=review.text%>
-                                <br>
-                                <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
+                            <p class="date"><%=review.date%> <a href="/report?instructor=<%=instructor._id%>&review=<%=review._id%>" class="text-danger"><i style="float: right;" class="far fa-flag"></i></a></p>
+                            <%=review.text%>
+                            <br>
+                            <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
 
-                              </div>
-                            </div>
                           </div>
+                        </div>
+                      </div>
 
-                        <%}%>
+                      <%}%>
 
                       <%}%>
                       <%});%>
+
+                      <%let classOne="";%>
+                      <%let classLast="";%>
+                      <%if(page==1) {%>
+                      <%classOne = "disabled";%>
+                      <%}%>
+                      <%if(page==numberOfPages) {%>
+                      <%classLast= "disabled";%>
+                      <%}%>
+
+                      <ul class="pagination justify-content-center mt-3">
+                        <li class="page-item <%=classOne%>">
+                          <form action="/instructors/<%=instructor.name%>" method="get">
+                            <button class="page-link" type="submit" name="page" value=<%=page-1%> aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                              <span class="sr-only">Previous</span>
+                            </button>
+                          </form>
+                        </li>
+                        <li class="page-item <%=classLast%>">
+                          <form action="/instructors/<%=instructor.name%>" method="get">
+                            <button class="page-link" type="submit" name="page" value=<%=page+1%> aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                              <span class="sr-only">Next</span>
+                            </button>
+                          </form>
+                        </li>
+                      </ul>
 
                     </div>
                   </div>
@@ -389,15 +417,15 @@
 
     <%instructor.courses.forEach(function(course) {%>
                 <%if(course!=null) {%>
-                  <div class="col-lg-2 col-4">
-                    <div class="card course-card text-center mt-3">
-                      <div class="card-body">
-                        <h5 class="m-0 course-title"><a href="/courses/<%=course.title+course.code%>">
-                            <%=course.title + course.code%>
-                          </a></h5>
-                      </div>
+                <div class="col-lg-2 col-4">
+                  <div class="card course-card text-center mt-3">
+                    <div class="card-body">
+                      <h5 class="m-0 course-title"><a href="/courses/<%=course.title+course.code%>">
+                          <%=course.title + course.code%>
+                        </a></h5>
                     </div>
                   </div>
+                </div>
                 <%}%>
 
                 <%});%>
@@ -405,9 +433,9 @@
 
 
 
-  </div>
-</div>
-</div>
+              </div>
+            </div>
+          </div>
 
 
 

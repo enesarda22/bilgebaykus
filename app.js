@@ -64,8 +64,8 @@ const options = {
 
 mongoose.Promise = global.Promise;
 ////uncomment to use local db
-// mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
-mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
+mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
+// mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
 mongoose.set("useCreateIndex", true);
 mongoose.set('useFindAndModify', false);
 
@@ -73,7 +73,6 @@ const userSchema = new mongoose.Schema({
   username: String,
   password: String,
   reviewedInstructors: [String],
-  reportedBy: [String],
   isConfirmed: {
     type: Boolean,
     default: false
@@ -107,6 +106,7 @@ const reviewSchema = {
   text: String,
   userID: String,
   date: String,
+  reportedBy: [String],
   course: String
 }
 
@@ -153,7 +153,6 @@ function escapeRegex(text) {
 //     console.log(err);
 //   }
 // });
-
 
 app.get("/", function(req, res) {
 
@@ -325,6 +324,14 @@ app.get("/index", function(req, res) {
 
 app.get("/instructors/:instructorName", function(req, res) {
 
+
+  let page;
+  if(req.query.page == null) {
+    page = 1;
+  } else {
+    page = Number(req.query.page);
+  }
+
   Instructor.findOne({
     name: req.params.instructorName
   }, function(err, foundInstructor) {
@@ -334,6 +341,7 @@ app.get("/instructors/:instructorName", function(req, res) {
       if (foundInstructor) {
         let initialReview;
         let hasAlreadyReviewed = false;
+        const numberOfPages = Math.ceil(foundInstructor.reviews.length/10);
 
         if (req.user != null && req.user.reviewedInstructors.includes(foundInstructor.name)) {
 
@@ -352,12 +360,14 @@ app.get("/instructors/:instructorName", function(req, res) {
           fail: req.flash('error'),
           isAuth: req.isAuthenticated(),
           initialReview: initialReview,
-          hasAlreadyReviewed: hasAlreadyReviewed
+          hasAlreadyReviewed: hasAlreadyReviewed,
+          numberOfPages: numberOfPages,
+          page: page
         });
 
 
       } else {
-        res.send("no such instructor");
+        res.render("error");
       }
     }
   });
@@ -839,43 +849,35 @@ app.post("/activation", function(req, res) {
 
 app.get("/report", function(req, res) {
 
-  if (req.query.reporteduser == null || req.query.instructor == null) {
+  if (req.query.review == null || req.query.instructor == null) {
     res.render("error");
   } else {
 
     if (req.isAuthenticated()) {
 
-      User.findById(req.query.reporteduser, function(err, foundUser) {
-        Instructor.findById(req.query.instructor, function(err, foundInstructor) {
+      Instructor.findById(req.query.instructor, function(err, foundInstructor) {
 
-          if (!err) {
+        if (!err) {
 
-            if (foundUser.reportedBy.length != 0 && foundUser.reportedBy.includes(req.user._id)) {
-              req.flash('error', 'bu kullanıcıyı zaten raporladınız');
-              res.redirect("/instructors/" + foundInstructor.name);
-            } else {
-              foundInstructor.reviews.forEach(function(review) {
-
-                if (review.userID == req.query.reporteduser) {
-                  res.render("report", {
-                    instructor: foundInstructor,
-                    review: review
-                  })
-                }
-
-              });
+          foundInstructor.reviews.forEach(function(review) {
+            if(review._id == req.query.review) {
+              if(review.reportedBy.includes(req.user._id)) {
+                req.flash('error', 'bu yorumu zaten raporladınız');
+                res.redirect("/instructors/" + foundInstructor.name);
+              } else {
+                res.render("report", {
+                  instructor: foundInstructor,
+                  review: review
+                })
+              }
             }
+          });
 
-          } else {
-            req.flash('error', 'bir hata gerçekleşti');
-            res.redirect("/instructors/" + foundInstructor.name);
-          }
-        });
-
-
+        } else {
+          req.flash('error', 'bir hata gerçekleşti');
+          res.redirect("/instructors/" + foundInstructor.name);
+        }
       });
-
-
 
     } else {
       res.redirect("/login");
@@ -887,30 +889,36 @@ app.post("/report", function(req, res) {
 
   if (req.isAuthenticated()) {
 
-    User.findById(req.body.reportedUser, function(err, foundUser) {
-      if (foundUser.reportedBy.includes(req.user._id)) {
-        req.flash('success', 'bu kullanıcıyı zaten raporladınız');
-        res.redirect("/instructors/" + req.body.instructor);
-      } else {
-        foundUser.reportedBy.push(req.user._id);
-        foundUser.save(function(err) {
-          if (!err) {
-            sendEmail({
-              subject: "Yeni Rapor",
-              text: req.user._id + " tarafindan " + req.body.reportedUser + " " + req.body.instructor + "'a yazdigi yorumdan dolayi rapor edildi. Nedeni: " + req.body.reportText,
-              to: "enesarda22@gmail.com",
-              from: process.env.FASTMAIL_USERNAME
-            });
+    Instructor.findById(req.body.instructor, function(err, foundInstructor) {
 
-            req.flash('success', 'raporunuz başarılı bir şekilde gönderildi.');
+      foundInstructor.reviews.forEach(function(review) {
+        if(review._id == req.body.reportedReview) {
+          if(review.reportedBy.includes(req.user._id)) {
+            req.flash('success', 'bu yorumu zaten raporladınız');
             res.redirect("/instructors/" + req.body.instructor);
           } else {
-            req.flash('error', 'bir hata gerçekleşti');
-            res.redirect("/");
-          }
-        });
+            review.reportedBy.push(req.user._id);
+            foundInstructor.save(function(err) {
+              if(!err) {
+                sendEmail({
+                  subject: "Yeni Rapor",
+                  text: req.user._id + " tarafindan " + req.body.reportedReview + " " + req.body.instructor + "'a yazdigi yorumdan dolayi rapor edildi. Nedeni: " + req.body.reportText,
+                  to: "enesarda22@gmail.com",
+                  from: process.env.FASTMAIL_USERNAME
+                });
 
-      }
+                req.flash('success', 'raporunuz başarılı bir şekilde gönderildi.');
+                res.redirect("/instructors/" + foundInstructor.name);
+              } else {
+                req.flash('error', 'bir hata gerçekleşti');
+                res.redirect("/");
+              }
+            });
+          }
+        }
+
+      });
+
     });
 
   } else {

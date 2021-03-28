@@ -49,10 +49,10 @@
       <div class="col-12">
         <div class="form-group">
           <label for="formGroupExampleInput">raporlama nedeniniz:</label>
-          <textarea name="reportText" class="form-control mt-1" id="rating-textarea" rows="3" autocomplete="off" required></textarea>
+          <textarea maxlength="500" name="reportText" class="form-control mt-1" id="rating-textarea" rows="3" autocomplete="off" required></textarea>
         </div>
-        <input type="hidden" name="reportedUser" value=<%=review.userID%> />
-        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-success btn-rate">gönder</button>
+        <input type="hidden" name="reportedReview" value=<%=review._id%> />
+        <button type="submit" name="instructor" value="<%=instructor._id%>" class="btn btn-success btn-rate">gönder</button>
         <a href="/instructors/<%=instructor.name%>" class="btn btn-danger btn-rate">iptal</a>
       </div>
     </div>
