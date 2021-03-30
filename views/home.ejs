@@ -2,9 +2,6 @@
 <!-- Nav Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-info">
   <a class="navbar-brand" href="/"><img src="/images/owl.png" alt="icon-img"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -14,12 +11,20 @@
         <li class="navbar-item"><a class="nav-link" href="/register">üye ol</a></li>
       <%}%>
     </ul>
-    <%if(isAuth) {%>
-      <form action="/logout" method="post" class="form-inline">
-        <button type="submit" class="btn btn-outline-dark exit-button">çıkış</button>
-      </form>
-    <%}%>
   </div>
+
+  <%if(isAuth) {%>
+    <form action="/logout" method="post" class="form-inline">
+      <button type="submit" class="btn btn-outline-dark exit-button">çıkış</button>
+    </form>
+  <%}%>
+
+  <%if(!isAuth) {%>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%}%>
+
 </nav>
 <%- include('partials/alerts') %>
 

@@ -147,7 +147,8 @@ function escapeRegex(text) {
 //   difficultyAvg: 50,
 //   gradingAvg: 50,
 //   numberOfYes: 0,
-//   reviews: []
+//   reviews: [],
+//   courses: []
 // }, function(err){
 //   if(err) {
 //     console.log(err);

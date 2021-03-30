@@ -17064,5 +17064,5640 @@
         "code" : "49a",
         "__v" : 0,
         "fullName" : "fa49a"
+    },
+    {
+        "_id" : ObjectId("6060c7ce77cd93dbfdbca711"),
+        "title" : "ec",
+        "code" : "489",
+        "fullName" : "ec489",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7ce77cd93dbfdbca713"),
+        "title" : "ec",
+        "code" : "48b",
+        "fullName" : "ec48b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7ce77cd93dbfdbca719"),
+        "title" : "ec",
+        "code" : "48l",
+        "fullName" : "ec48l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7cf77cd93dbfdbca71c"),
+        "title" : "ef",
+        "code" : "558",
+        "fullName" : "ef558",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7cf77cd93dbfdbca71d"),
+        "title" : "ef",
+        "code" : "562",
+        "fullName" : "ef562",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7cf77cd93dbfdbca72b"),
+        "title" : "ef",
+        "code" : "552",
+        "fullName" : "ef552",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7cf77cd93dbfdbca72d"),
+        "title" : "ef",
+        "code" : "561",
+        "fullName" : "ef561",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d277cd93dbfdbca73d"),
+        "title" : "adex",
+        "code" : "543",
+        "fullName" : "adex543",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d277cd93dbfdbca73e"),
+        "title" : "adex",
+        "code" : "560",
+        "fullName" : "adex560",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d277cd93dbfdbca740"),
+        "title" : "adex",
+        "code" : "58z",
+        "fullName" : "adex58z",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d277cd93dbfdbca742"),
+        "title" : "adex",
+        "code" : "595",
+        "fullName" : "adex595",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d277cd93dbfdbca74c"),
+        "title" : "adex",
+        "code" : "599",
+        "fullName" : "adex599",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d277cd93dbfdbca757"),
+        "title" : "adex",
+        "code" : "521",
+        "fullName" : "adex521",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d277cd93dbfdbca759"),
+        "title" : "adex",
+        "code" : "559",
+        "fullName" : "adex559",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d277cd93dbfdbca75a"),
+        "title" : "adex",
+        "code" : "58y",
+        "fullName" : "adex58y",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d377cd93dbfdbca772"),
+        "title" : "fled",
+        "code" : "691",
+        "fullName" : "fled691",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d377cd93dbfdbca774"),
+        "title" : "fled",
+        "code" : "512",
+        "fullName" : "fled512",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d577cd93dbfdbca781"),
+        "title" : "hist",
+        "code" : "425",
+        "fullName" : "hist425",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d577cd93dbfdbca782"),
+        "title" : "hist",
+        "code" : "482",
+        "fullName" : "hist482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d577cd93dbfdbca787"),
+        "title" : "hist",
+        "code" : "487",
+        "fullName" : "hist487",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d577cd93dbfdbca788"),
+        "title" : "hist",
+        "code" : "303",
+        "fullName" : "hist303",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d577cd93dbfdbca78c"),
+        "title" : "hist",
+        "code" : "455",
+        "fullName" : "hist455",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d577cd93dbfdbca78d"),
+        "title" : "hist",
+        "code" : "484",
+        "fullName" : "hist484",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d577cd93dbfdbca791"),
+        "title" : "hist",
+        "code" : "48t",
+        "fullName" : "hist48t",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d577cd93dbfdbca794"),
+        "title" : "ie",
+        "code" : "48a",
+        "fullName" : "ie48a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d677cd93dbfdbca797"),
+        "title" : "mir",
+        "code" : "530",
+        "fullName" : "mir530",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d677cd93dbfdbca79d"),
+        "title" : "mir",
+        "code" : "524",
+        "fullName" : "mir524",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d677cd93dbfdbca79f"),
+        "title" : "mir",
+        "code" : "560",
+        "fullName" : "mir560",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d777cd93dbfdbca7a4"),
+        "title" : "intt",
+        "code" : "485",
+        "fullName" : "intt485",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d777cd93dbfdbca7a7"),
+        "title" : "ls",
+        "code" : "684",
+        "fullName" : "ls684",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d977cd93dbfdbca7aa"),
+        "title" : "ad",
+        "code" : "432",
+        "fullName" : "ad432",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d977cd93dbfdbca7ab"),
+        "title" : "ad",
+        "code" : "59a",
+        "fullName" : "ad59a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d977cd93dbfdbca7ad"),
+        "title" : "ad",
+        "code" : "415",
+        "fullName" : "ad415",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7d977cd93dbfdbca7af"),
+        "title" : "ad",
+        "code" : "485",
+        "fullName" : "ad485",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7da77cd93dbfdbca7ba"),
+        "title" : "math",
+        "code" : "48m",
+        "fullName" : "math48m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7da77cd93dbfdbca7bd"),
+        "title" : "math",
+        "code" : "361",
+        "fullName" : "math361",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7da77cd93dbfdbca7be"),
+        "title" : "math",
+        "code" : "48x",
+        "fullName" : "math48x",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7db77cd93dbfdbca7c1"),
+        "title" : "sced",
+        "code" : "330",
+        "fullName" : "sced330",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7db77cd93dbfdbca7c4"),
+        "title" : "sced",
+        "code" : "576",
+        "fullName" : "sced576",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7db77cd93dbfdbca7c8"),
+        "title" : "sced",
+        "code" : "551",
+        "fullName" : "sced551",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7dc77cd93dbfdbca7ca"),
+        "title" : "phil",
+        "code" : "435",
+        "fullName" : "phil435",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7dc77cd93dbfdbca7cf"),
+        "title" : "phil",
+        "code" : "48s",
+        "fullName" : "phil48s",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7dc77cd93dbfdbca7d4"),
+        "title" : "phil",
+        "code" : "484",
+        "fullName" : "phil484",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7dc77cd93dbfdbca7d6"),
+        "title" : "phil",
+        "code" : "48v",
+        "fullName" : "phil48v",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7dd77cd93dbfdbca7dd"),
+        "title" : "sts",
+        "code" : "205",
+        "fullName" : "sts205",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7dd77cd93dbfdbca7e0"),
+        "title" : "phys",
+        "code" : "205",
+        "fullName" : "phys205",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7dd77cd93dbfdbca7e4"),
+        "title" : "sts",
+        "code" : "401",
+        "fullName" : "sts401",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7de77cd93dbfdbca7e6"),
+        "title" : "pols",
+        "code" : "330",
+        "fullName" : "pols330",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7de77cd93dbfdbca7e9"),
+        "title" : "pols",
+        "code" : "485",
+        "fullName" : "pols485",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7de77cd93dbfdbca7ec"),
+        "title" : "psy",
+        "code" : "466",
+        "fullName" : "psy466",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7df77cd93dbfdbca7f5"),
+        "title" : "sfl",
+        "code" : "13a",
+        "fullName" : "sfl13a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7df77cd93dbfdbca7fb"),
+        "title" : "sfl",
+        "code" : "13b",
+        "fullName" : "sfl13b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e077cd93dbfdbca814"),
+        "title" : "soc",
+        "code" : "340",
+        "fullName" : "soc340",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e077cd93dbfdbca81e"),
+        "title" : "soc",
+        "code" : "344",
+        "fullName" : "soc344",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e277cd93dbfdbca827"),
+        "title" : "tkl",
+        "code" : "48e",
+        "fullName" : "tkl48e",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e277cd93dbfdbca82a"),
+        "title" : "tkl",
+        "code" : "48f",
+        "fullName" : "tkl48f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e377cd93dbfdbca82d"),
+        "title" : "pred",
+        "code" : "489",
+        "fullName" : "pred489",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e477cd93dbfdbca831"),
+        "title" : "al",
+        "code" : "488",
+        "fullName" : "al488",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e477cd93dbfdbca838"),
+        "title" : "fa",
+        "code" : "49l",
+        "fullName" : "fa49l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e477cd93dbfdbca839"),
+        "title" : "fa",
+        "code" : "49y",
+        "fullName" : "fa49y",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e477cd93dbfdbca840"),
+        "title" : "fa",
+        "code" : "482",
+        "fullName" : "fa482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e477cd93dbfdbca842"),
+        "title" : "fa",
+        "code" : "48l",
+        "fullName" : "fa48l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c7e477cd93dbfdbca843"),
+        "title" : "fa",
+        "code" : "49v",
+        "fullName" : "fa49v",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9affb7a31dc6b52570e"),
+        "title" : "asia",
+        "code" : "523",
+        "fullName" : "asia523",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9b1fb7a31dc6b525714"),
+        "title" : "ata",
+        "code" : "681",
+        "fullName" : "ata681",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9b5fb7a31dc6b525723"),
+        "title" : "bm",
+        "code" : "530",
+        "fullName" : "bm530",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9b6fb7a31dc6b525727"),
+        "title" : "bis",
+        "code" : "585",
+        "fullName" : "bis585",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9b9fb7a31dc6b525732"),
+        "title" : "che",
+        "code" : "520",
+        "fullName" : "che520",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9b9fb7a31dc6b525734"),
+        "title" : "che",
+        "code" : "484",
+        "fullName" : "che484",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9b9fb7a31dc6b525735"),
+        "title" : "che",
+        "code" : "488",
+        "fullName" : "che488",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9b9fb7a31dc6b525736"),
+        "title" : "che",
+        "code" : "516",
+        "fullName" : "che516",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9b9fb7a31dc6b525739"),
+        "title" : "che",
+        "code" : "611",
+        "fullName" : "che611",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9bbfb7a31dc6b525740"),
+        "title" : "chem",
+        "code" : "520",
+        "fullName" : "chem520",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9bbfb7a31dc6b525741"),
+        "title" : "chem",
+        "code" : "536",
+        "fullName" : "chem536",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9bbfb7a31dc6b525745"),
+        "title" : "chem",
+        "code" : "597",
+        "fullName" : "chem597",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9bcfb7a31dc6b52574a"),
+        "title" : "chem",
+        "code" : "584",
+        "fullName" : "chem584",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9bcfb7a31dc6b52574d"),
+        "title" : "sts",
+        "code" : "482",
+        "fullName" : "sts482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9bdfb7a31dc6b52574f"),
+        "title" : "ce",
+        "code" : "538",
+        "fullName" : "ce538",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9befb7a31dc6b525751"),
+        "title" : "ce",
+        "code" : "59f",
+        "fullName" : "ce59f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9befb7a31dc6b525756"),
+        "title" : "ce",
+        "code" : "463",
+        "fullName" : "ce463",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9befb7a31dc6b525758"),
+        "title" : "ce",
+        "code" : "530",
+        "fullName" : "ce530",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9befb7a31dc6b525759"),
+        "title" : "ce",
+        "code" : "563",
+        "fullName" : "ce563",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9bffb7a31dc6b52575c"),
+        "title" : "cogs",
+        "code" : "580",
+        "fullName" : "cogs580",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c1fb7a31dc6b525761"),
+        "title" : "cet",
+        "code" : "48a",
+        "fullName" : "cet48a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c3fb7a31dc6b525764"),
+        "title" : "cmpe",
+        "code" : "478",
+        "fullName" : "cmpe478",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c3fb7a31dc6b525768"),
+        "title" : "cmpe",
+        "code" : "59j",
+        "fullName" : "cmpe59j",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c4fb7a31dc6b52576b"),
+        "title" : "cmpe",
+        "code" : "529",
+        "fullName" : "cmpe529",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c4fb7a31dc6b52576d"),
+        "title" : "cmpe",
+        "code" : "59g",
+        "fullName" : "cmpe59g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c4fb7a31dc6b52576e"),
+        "title" : "cmpe",
+        "code" : "59l",
+        "fullName" : "cmpe59l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c5fb7a31dc6b525775"),
+        "title" : "int",
+        "code" : "517",
+        "fullName" : "int517",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c9fb7a31dc6b525778"),
+        "title" : "eqe",
+        "code" : "697",
+        "fullName" : "eqe697",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9c9fb7a31dc6b52577a"),
+        "title" : "eqe",
+        "code" : "696",
+        "fullName" : "eqe696",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cbfb7a31dc6b52577f"),
+        "title" : "ec",
+        "code" : "213",
+        "fullName" : "ec213",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cbfb7a31dc6b525781"),
+        "title" : "ec",
+        "code" : "48h",
+        "fullName" : "ec48h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cbfb7a31dc6b525784"),
+        "title" : "ec",
+        "code" : "48u",
+        "fullName" : "ec48u",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cbfb7a31dc6b525789"),
+        "title" : "ec",
+        "code" : "604",
+        "fullName" : "ec604",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cbfb7a31dc6b52578c"),
+        "title" : "ec",
+        "code" : "452",
+        "fullName" : "ec452",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cbfb7a31dc6b52578e"),
+        "title" : "ec",
+        "code" : "48y",
+        "fullName" : "ec48y",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cdfb7a31dc6b525796"),
+        "title" : "ed",
+        "code" : "522",
+        "fullName" : "ed522",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cdfb7a31dc6b525797"),
+        "title" : "ed",
+        "code" : "532",
+        "fullName" : "ed532",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cdfb7a31dc6b52579a"),
+        "title" : "ed",
+        "code" : "587",
+        "fullName" : "ed587",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9cdfb7a31dc6b52579f"),
+        "title" : "ed",
+        "code" : "524",
+        "fullName" : "ed524",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9d0fb7a31dc6b5257ab"),
+        "title" : "ee",
+        "code" : "574",
+        "fullName" : "ee574",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9d0fb7a31dc6b5257b2"),
+        "title" : "ee",
+        "code" : "58l",
+        "fullName" : "ee58l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9d0fb7a31dc6b5257b6"),
+        "title" : "ee",
+        "code" : "653",
+        "fullName" : "ee653",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9d1fb7a31dc6b5257ba"),
+        "title" : "etm",
+        "code" : "585",
+        "fullName" : "etm585",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9d2fb7a31dc6b5257be"),
+        "title" : "esc",
+        "code" : "592",
+        "fullName" : "esc592",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9d3fb7a31dc6b5257c0"),
+        "title" : "esc",
+        "code" : "634",
+        "fullName" : "esc634",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9d9fb7a31dc6b5257c7"),
+        "title" : "adex",
+        "code" : "536",
+        "fullName" : "adex536",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9dafb7a31dc6b5257cd"),
+        "title" : "fe",
+        "code" : "582",
+        "fullName" : "fe582",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9dbfb7a31dc6b5257cf"),
+        "title" : "pa",
+        "code" : "452",
+        "fullName" : "pa452",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9ddfb7a31dc6b5257d9"),
+        "title" : "fled",
+        "code" : "505",
+        "fullName" : "fled505",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9ddfb7a31dc6b5257dc"),
+        "title" : "fled",
+        "code" : "686",
+        "fullName" : "fled686",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9defb7a31dc6b5257ea"),
+        "title" : "fled",
+        "code" : "417",
+        "fullName" : "fled417",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9defb7a31dc6b5257eb"),
+        "title" : "fled",
+        "code" : "515",
+        "fullName" : "fled515",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9defb7a31dc6b5257ed"),
+        "title" : "fled",
+        "code" : "605",
+        "fullName" : "fled605",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9defb7a31dc6b5257f1"),
+        "title" : "fled",
+        "code" : "699",
+        "fullName" : "fled699",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9dffb7a31dc6b5257f4"),
+        "title" : "flt",
+        "code" : "530",
+        "fullName" : "flt530",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e0fb7a31dc6b5257f6"),
+        "title" : "ged",
+        "code" : "598",
+        "fullName" : "ged598",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e0fb7a31dc6b5257f8"),
+        "title" : "ged",
+        "code" : "502",
+        "fullName" : "ged502",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e1fb7a31dc6b5257fc"),
+        "title" : "gph",
+        "code" : "591",
+        "fullName" : "gph591",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e2fb7a31dc6b5257ff"),
+        "title" : "ed",
+        "code" : "203",
+        "fullName" : "ed203",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e2fb7a31dc6b525802"),
+        "title" : "ed",
+        "code" : "371",
+        "fullName" : "ed371",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e2fb7a31dc6b525807"),
+        "title" : "ed",
+        "code" : "49c",
+        "fullName" : "ed49c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e2fb7a31dc6b52580b"),
+        "title" : "ed",
+        "code" : "282",
+        "fullName" : "ed282",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e2fb7a31dc6b52580d"),
+        "title" : "ed",
+        "code" : "415",
+        "fullName" : "ed415",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e2fb7a31dc6b525810"),
+        "title" : "ed",
+        "code" : "472",
+        "fullName" : "ed472",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e2fb7a31dc6b525813"),
+        "title" : "ed",
+        "code" : "48m",
+        "fullName" : "ed48m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b525818"),
+        "title" : "hist",
+        "code" : "212",
+        "fullName" : "hist212",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b52581b"),
+        "title" : "hist",
+        "code" : "322",
+        "fullName" : "hist322",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b52581c"),
+        "title" : "hist",
+        "code" : "342",
+        "fullName" : "hist342",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b52581f"),
+        "title" : "hist",
+        "code" : "442",
+        "fullName" : "hist442",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b525821"),
+        "title" : "hist",
+        "code" : "582",
+        "fullName" : "hist582",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b525824"),
+        "title" : "hist",
+        "code" : "596",
+        "fullName" : "hist596",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b525825"),
+        "title" : "hist",
+        "code" : "59a",
+        "fullName" : "hist59a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b525827"),
+        "title" : "hist",
+        "code" : "686",
+        "fullName" : "hist686",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b52582a"),
+        "title" : "hist",
+        "code" : "310",
+        "fullName" : "hist310",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b52582c"),
+        "title" : "hist",
+        "code" : "499",
+        "fullName" : "hist499",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b52582d"),
+        "title" : "hist",
+        "code" : "49w",
+        "fullName" : "hist49w",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b52582f"),
+        "title" : "hist",
+        "code" : "581",
+        "fullName" : "hist581",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b525831"),
+        "title" : "hist",
+        "code" : "589",
+        "fullName" : "hist589",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b525833"),
+        "title" : "hist",
+        "code" : "595",
+        "fullName" : "hist595",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e4fb7a31dc6b525836"),
+        "title" : "hist",
+        "code" : "597",
+        "fullName" : "hist597",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e6fb7a31dc6b52583f"),
+        "title" : "ie",
+        "code" : "581",
+        "fullName" : "ie581",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e6fb7a31dc6b525841"),
+        "title" : "eng",
+        "code" : "482",
+        "fullName" : "eng482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e6fb7a31dc6b525845"),
+        "title" : "ie",
+        "code" : "516",
+        "fullName" : "ie516",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e7fb7a31dc6b525847"),
+        "title" : "inct",
+        "code" : "522",
+        "fullName" : "inct522",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9e7fb7a31dc6b52584a"),
+        "title" : "inct",
+        "code" : "582",
+        "fullName" : "inct582",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9eafb7a31dc6b525857"),
+        "title" : "intt",
+        "code" : "402",
+        "fullName" : "intt402",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9ebfb7a31dc6b52585a"),
+        "title" : "intt",
+        "code" : "516",
+        "fullName" : "intt516",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9ecfb7a31dc6b525860"),
+        "title" : "ls",
+        "code" : "656",
+        "fullName" : "ls656",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9edfb7a31dc6b525862"),
+        "title" : "ling",
+        "code" : "334",
+        "fullName" : "ling334",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9edfb7a31dc6b525864"),
+        "title" : "ling",
+        "code" : "581",
+        "fullName" : "ling581",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9edfb7a31dc6b52586b"),
+        "title" : "ling",
+        "code" : "350",
+        "fullName" : "ling350",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9edfb7a31dc6b52586e"),
+        "title" : "ling",
+        "code" : "58c",
+        "fullName" : "ling58c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9effb7a31dc6b525878"),
+        "title" : "ad",
+        "code" : "442",
+        "fullName" : "ad442",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9effb7a31dc6b52587c"),
+        "title" : "ad",
+        "code" : "483",
+        "fullName" : "ad483",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9effb7a31dc6b52587e"),
+        "title" : "ad",
+        "code" : "547",
+        "fullName" : "ad547",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9effb7a31dc6b525880"),
+        "title" : "ad",
+        "code" : "697",
+        "fullName" : "ad697",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9effb7a31dc6b525888"),
+        "title" : "ad",
+        "code" : "413",
+        "fullName" : "ad413",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f1fb7a31dc6b525893"),
+        "title" : "mis",
+        "code" : "583",
+        "fullName" : "mis583",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f1fb7a31dc6b52589e"),
+        "title" : "mis",
+        "code" : "586",
+        "fullName" : "mis586",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f1fb7a31dc6b52589f"),
+        "title" : "mis",
+        "code" : "641",
+        "fullName" : "mis641",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258aa"),
+        "title" : "math",
+        "code" : "334",
+        "fullName" : "math334",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258ac"),
+        "title" : "math",
+        "code" : "432",
+        "fullName" : "math432",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258ae"),
+        "title" : "math",
+        "code" : "475",
+        "fullName" : "math475",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258b3"),
+        "title" : "math",
+        "code" : "541",
+        "fullName" : "math541",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258b4"),
+        "title" : "math",
+        "code" : "584",
+        "fullName" : "math584",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258b7"),
+        "title" : "math",
+        "code" : "58e",
+        "fullName" : "math58e",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258c4"),
+        "title" : "math",
+        "code" : "588",
+        "fullName" : "math588",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258c5"),
+        "title" : "math",
+        "code" : "58g",
+        "fullName" : "math58g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f3fb7a31dc6b5258c7"),
+        "title" : "math",
+        "code" : "681",
+        "fullName" : "math681",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f5fb7a31dc6b5258d1"),
+        "title" : "sced",
+        "code" : "484",
+        "fullName" : "sced484",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f5fb7a31dc6b5258d3"),
+        "title" : "sced",
+        "code" : "572",
+        "fullName" : "sced572",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f5fb7a31dc6b5258d4"),
+        "title" : "sced",
+        "code" : "58e",
+        "fullName" : "sced58e",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f5fb7a31dc6b5258de"),
+        "title" : "sced",
+        "code" : "48l",
+        "fullName" : "sced48l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f5fb7a31dc6b5258e2"),
+        "title" : "sced",
+        "code" : "58g",
+        "fullName" : "sced58g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f5fb7a31dc6b5258e4"),
+        "title" : "sced",
+        "code" : "652",
+        "fullName" : "sced652",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f6fb7a31dc6b5258ea"),
+        "title" : "me",
+        "code" : "482",
+        "fullName" : "me482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f7fb7a31dc6b5258ee"),
+        "title" : "me",
+        "code" : "58h",
+        "fullName" : "me58h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9f7fb7a31dc6b5258f1"),
+        "title" : "meca",
+        "code" : "503",
+        "fullName" : "meca503",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fbfb7a31dc6b5258f6"),
+        "title" : "bio",
+        "code" : "492",
+        "fullName" : "bio492",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fbfb7a31dc6b5258fb"),
+        "title" : "bio",
+        "code" : "583",
+        "fullName" : "bio583",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fbfb7a31dc6b5258fc"),
+        "title" : "bio",
+        "code" : "58e",
+        "fullName" : "bio58e",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fbfb7a31dc6b525903"),
+        "title" : "bio",
+        "code" : "487",
+        "fullName" : "bio487",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fbfb7a31dc6b52590a"),
+        "title" : "bio",
+        "code" : "58a",
+        "fullName" : "bio58a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b52590c"),
+        "title" : "phil",
+        "code" : "473",
+        "fullName" : "phil473",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b52590e"),
+        "title" : "phil",
+        "code" : "482",
+        "fullName" : "phil482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b52590f"),
+        "title" : "phil",
+        "code" : "48n",
+        "fullName" : "phil48n",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b525912"),
+        "title" : "phil",
+        "code" : "536",
+        "fullName" : "phil536",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b525919"),
+        "title" : "phil",
+        "code" : "481",
+        "fullName" : "phil481",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b52591b"),
+        "title" : "phil",
+        "code" : "48l",
+        "fullName" : "phil48l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b52591e"),
+        "title" : "phil",
+        "code" : "506",
+        "fullName" : "phil506",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b52591f"),
+        "title" : "phil",
+        "code" : "550",
+        "fullName" : "phil550",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b525920"),
+        "title" : "phil",
+        "code" : "585",
+        "fullName" : "phil585",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fcfb7a31dc6b525922"),
+        "title" : "phil",
+        "code" : "58y",
+        "fullName" : "phil58y",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fdfb7a31dc6b525927"),
+        "title" : "phil",
+        "code" : "635",
+        "fullName" : "phil635",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fefb7a31dc6b525929"),
+        "title" : "pe",
+        "code" : "126",
+        "fullName" : "pe126",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fefb7a31dc6b52592c"),
+        "title" : "pe",
+        "code" : "130",
+        "fullName" : "pe130",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fefb7a31dc6b52592d"),
+        "title" : "pe",
+        "code" : "138",
+        "fullName" : "pe138",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fefb7a31dc6b525933"),
+        "title" : "pe",
+        "code" : "141",
+        "fullName" : "pe141",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060c9fefb7a31dc6b525936"),
+        "title" : "pe",
+        "code" : "142",
+        "fullName" : "pe142",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca00fb7a31dc6b52593f"),
+        "title" : "phys",
+        "code" : "442",
+        "fullName" : "phys442",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b525943"),
+        "title" : "phys",
+        "code" : "571",
+        "fullName" : "phys571",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b525945"),
+        "title" : "phys",
+        "code" : "58f",
+        "fullName" : "phys58f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b525946"),
+        "title" : "phys",
+        "code" : "58m",
+        "fullName" : "phys58m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b52594a"),
+        "title" : "phys",
+        "code" : "694",
+        "fullName" : "phys694",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b52594d"),
+        "title" : "sts",
+        "code" : "230",
+        "fullName" : "sts230",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b525952"),
+        "title" : "phys",
+        "code" : "290",
+        "fullName" : "phys290",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b525955"),
+        "title" : "phys",
+        "code" : "483",
+        "fullName" : "phys483",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b525959"),
+        "title" : "phys",
+        "code" : "58k",
+        "fullName" : "phys58k",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b52595c"),
+        "title" : "phys",
+        "code" : "68b",
+        "fullName" : "phys68b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b52595f"),
+        "title" : "phys",
+        "code" : "699",
+        "fullName" : "phys699",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca01fb7a31dc6b525962"),
+        "title" : "sts",
+        "code" : "323",
+        "fullName" : "sts323",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca02fb7a31dc6b525965"),
+        "title" : "pols",
+        "code" : "332",
+        "fullName" : "pols332",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca02fb7a31dc6b525969"),
+        "title" : "pols",
+        "code" : "582",
+        "fullName" : "pols582",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca02fb7a31dc6b52596b"),
+        "title" : "pols",
+        "code" : "683",
+        "fullName" : "pols683",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca02fb7a31dc6b52596d"),
+        "title" : "pols",
+        "code" : "308",
+        "fullName" : "pols308",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca02fb7a31dc6b52596f"),
+        "title" : "pols",
+        "code" : "333",
+        "fullName" : "pols333",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca02fb7a31dc6b525972"),
+        "title" : "pols",
+        "code" : "586",
+        "fullName" : "pols586",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525975"),
+        "title" : "psy",
+        "code" : "222",
+        "fullName" : "psy222",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525979"),
+        "title" : "psy",
+        "code" : "490",
+        "fullName" : "psy490",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b52597b"),
+        "title" : "psy",
+        "code" : "49f",
+        "fullName" : "psy49f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b52597c"),
+        "title" : "psy",
+        "code" : "49n",
+        "fullName" : "psy49n",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b52597e"),
+        "title" : "psy",
+        "code" : "49p",
+        "fullName" : "psy49p",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525980"),
+        "title" : "psy",
+        "code" : "49w",
+        "fullName" : "psy49w",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525983"),
+        "title" : "psy",
+        "code" : "562",
+        "fullName" : "psy562",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525984"),
+        "title" : "psy",
+        "code" : "572",
+        "fullName" : "psy572",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525986"),
+        "title" : "psy",
+        "code" : "68f",
+        "fullName" : "psy68f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b52598b"),
+        "title" : "psy",
+        "code" : "69b",
+        "fullName" : "psy69b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b52598c"),
+        "title" : "psy",
+        "code" : "69n",
+        "fullName" : "psy69n",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525991"),
+        "title" : "psy",
+        "code" : "326",
+        "fullName" : "psy326",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525994"),
+        "title" : "psy",
+        "code" : "48t",
+        "fullName" : "psy48t",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b525997"),
+        "title" : "psy",
+        "code" : "49k",
+        "fullName" : "psy49k",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b52599a"),
+        "title" : "psy",
+        "code" : "49r",
+        "fullName" : "psy49r",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b52599d"),
+        "title" : "psy",
+        "code" : "561",
+        "fullName" : "psy561",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b52599f"),
+        "title" : "psy",
+        "code" : "564",
+        "fullName" : "psy564",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca04fb7a31dc6b5259a2"),
+        "title" : "psy",
+        "code" : "69j",
+        "fullName" : "psy69j",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca08fb7a31dc6b5259b0"),
+        "title" : "fr",
+        "code" : "422",
+        "fullName" : "fr422",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca09fb7a31dc6b5259da"),
+        "title" : "sfl",
+        "code" : "rl2",
+        "fullName" : "sflrl2",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca09fb7a31dc6b5259db"),
+        "title" : "sfl",
+        "code" : "rl2",
+        "fullName" : "sflrl2",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca09fb7a31dc6b5259eb"),
+        "title" : "sfl",
+        "code" : "rw2",
+        "fullName" : "sflrw2",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca09fb7a31dc6b5259f4"),
+        "title" : "sfl",
+        "code" : "w02",
+        "fullName" : "sflw02",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca09fb7a31dc6b525a02"),
+        "title" : "ae",
+        "code" : "480",
+        "fullName" : "ae480",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca09fb7a31dc6b525a0f"),
+        "title" : "ita",
+        "code" : "302",
+        "fullName" : "ita302",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca0afb7a31dc6b525a2d"),
+        "title" : "spa",
+        "code" : "322",
+        "fullName" : "spa322",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca0bfb7a31dc6b525a30"),
+        "title" : "spl",
+        "code" : "588",
+        "fullName" : "spl588",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca0cfb7a31dc6b525a37"),
+        "title" : "soc",
+        "code" : "481",
+        "fullName" : "soc481",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca0cfb7a31dc6b525a38"),
+        "title" : "soc",
+        "code" : "485",
+        "fullName" : "soc485",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca0dfb7a31dc6b525a44"),
+        "title" : "swe",
+        "code" : "583",
+        "fullName" : "swe583",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca0dfb7a31dc6b525a45"),
+        "title" : "swe",
+        "code" : "592",
+        "fullName" : "swe592",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca0dfb7a31dc6b525a4c"),
+        "title" : "swe",
+        "code" : "591",
+        "fullName" : "swe591",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca10fb7a31dc6b525a53"),
+        "title" : "trm",
+        "code" : "384",
+        "fullName" : "trm384",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca12fb7a31dc6b525a5a"),
+        "title" : "tr",
+        "code" : "315",
+        "fullName" : "tr315",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca12fb7a31dc6b525a5e"),
+        "title" : "tr",
+        "code" : "630",
+        "fullName" : "tr630",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca12fb7a31dc6b525a63"),
+        "title" : "tr",
+        "code" : "622",
+        "fullName" : "tr622",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca12fb7a31dc6b525a64"),
+        "title" : "tr",
+        "code" : "700",
+        "fullName" : "tr700",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca15fb7a31dc6b525a6c"),
+        "title" : "tkl",
+        "code" : "48d",
+        "fullName" : "tkl48d",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca15fb7a31dc6b525a6e"),
+        "title" : "tkl",
+        "code" : "603",
+        "fullName" : "tkl603",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca15fb7a31dc6b525a6f"),
+        "title" : "tkl",
+        "code" : "68a",
+        "fullName" : "tkl68a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca15fb7a31dc6b525a75"),
+        "title" : "tkl",
+        "code" : "504",
+        "fullName" : "tkl504",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca15fb7a31dc6b525a77"),
+        "title" : "tkl",
+        "code" : "525",
+        "fullName" : "tkl525",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca15fb7a31dc6b525a78"),
+        "title" : "tkl",
+        "code" : "593",
+        "fullName" : "tkl593",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca16fb7a31dc6b525a80"),
+        "title" : "pred",
+        "code" : "481",
+        "fullName" : "pred481",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525a88"),
+        "title" : "el",
+        "code" : "48c",
+        "fullName" : "el48c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525a8e"),
+        "title" : "fa",
+        "code" : "49o",
+        "fullName" : "fa49o",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525a92"),
+        "title" : "dra",
+        "code" : "401",
+        "fullName" : "dra401",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525a97"),
+        "title" : "el",
+        "code" : "488",
+        "fullName" : "el488",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525a98"),
+        "title" : "el",
+        "code" : "589",
+        "fullName" : "el589",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525a9e"),
+        "title" : "fa",
+        "code" : "327",
+        "fullName" : "fa327",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525aa1"),
+        "title" : "fa",
+        "code" : "48a",
+        "fullName" : "fa48a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525aa2"),
+        "title" : "fa",
+        "code" : "48h",
+        "fullName" : "fa48h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ca18fb7a31dc6b525aa6"),
+        "title" : "fa",
+        "code" : "48w",
+        "fullName" : "fa48w",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb06504231dcbfbd6a06"),
+        "title" : "asia",
+        "code" : "522",
+        "fullName" : "asia522",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb06504231dcbfbd6a0b"),
+        "title" : "asia",
+        "code" : "530",
+        "fullName" : "asia530",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb06504231dcbfbd6a0d"),
+        "title" : "asia",
+        "code" : "540",
+        "fullName" : "asia540",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb07504231dcbfbd6a19"),
+        "title" : "ata",
+        "code" : "688",
+        "fullName" : "ata688",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb08504231dcbfbd6a1c"),
+        "title" : "auto",
+        "code" : "591",
+        "fullName" : "auto591",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb08504231dcbfbd6a1e"),
+        "title" : "auto",
+        "code" : "532",
+        "fullName" : "auto532",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0a504231dcbfbd6a22"),
+        "title" : "bm",
+        "code" : "683",
+        "fullName" : "bm683",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0a504231dcbfbd6a24"),
+        "title" : "bm",
+        "code" : "586",
+        "fullName" : "bm586",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0a504231dcbfbd6a25"),
+        "title" : "bm",
+        "code" : "589",
+        "fullName" : "bm589",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0b504231dcbfbd6a2a"),
+        "title" : "bis",
+        "code" : "584",
+        "fullName" : "bis584",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0b504231dcbfbd6a2d"),
+        "title" : "bis",
+        "code" : "557",
+        "fullName" : "bis557",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0d504231dcbfbd6a31"),
+        "title" : "che",
+        "code" : "444",
+        "fullName" : "che444",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0d504231dcbfbd6a35"),
+        "title" : "che",
+        "code" : "463",
+        "fullName" : "che463",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0d504231dcbfbd6a37"),
+        "title" : "che",
+        "code" : "580",
+        "fullName" : "che580",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0f504231dcbfbd6a42"),
+        "title" : "chem",
+        "code" : "537",
+        "fullName" : "chem537",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb0f504231dcbfbd6a48"),
+        "title" : "chem",
+        "code" : "413",
+        "fullName" : "chem413",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb10504231dcbfbd6a4d"),
+        "title" : "chem",
+        "code" : "589",
+        "fullName" : "chem589",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a53"),
+        "title" : "ce",
+        "code" : "421",
+        "fullName" : "ce421",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a55"),
+        "title" : "ce",
+        "code" : "505",
+        "fullName" : "ce505",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a56"),
+        "title" : "ce",
+        "code" : "535",
+        "fullName" : "ce535",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a58"),
+        "title" : "ce",
+        "code" : "549",
+        "fullName" : "ce549",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a5b"),
+        "title" : "ce",
+        "code" : "560",
+        "fullName" : "ce560",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a5d"),
+        "title" : "ce",
+        "code" : "587",
+        "fullName" : "ce587",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a60"),
+        "title" : "ce",
+        "code" : "431",
+        "fullName" : "ce431",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a63"),
+        "title" : "ce",
+        "code" : "49z",
+        "fullName" : "ce49z",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a65"),
+        "title" : "ce",
+        "code" : "544",
+        "fullName" : "ce544",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb13504231dcbfbd6a67"),
+        "title" : "ce",
+        "code" : "593",
+        "fullName" : "ce593",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb17504231dcbfbd6a78"),
+        "title" : "cet",
+        "code" : "484",
+        "fullName" : "cet484",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb19504231dcbfbd6a7a"),
+        "title" : "cmpe",
+        "code" : "434",
+        "fullName" : "cmpe434",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb19504231dcbfbd6a7c"),
+        "title" : "cmpe",
+        "code" : "489",
+        "fullName" : "cmpe489",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb19504231dcbfbd6a7f"),
+        "title" : "cmpe",
+        "code" : "521",
+        "fullName" : "cmpe521",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb19504231dcbfbd6a81"),
+        "title" : "cmpe",
+        "code" : "549",
+        "fullName" : "cmpe549",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb19504231dcbfbd6a8a"),
+        "title" : "cmpe",
+        "code" : "422",
+        "fullName" : "cmpe422",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb19504231dcbfbd6a8b"),
+        "title" : "cmpe",
+        "code" : "446",
+        "fullName" : "cmpe446",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1a504231dcbfbd6a91"),
+        "title" : "cmpe",
+        "code" : "698",
+        "fullName" : "cmpe698",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1a504231dcbfbd6a95"),
+        "title" : "int",
+        "code" : "502",
+        "fullName" : "int502",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1a504231dcbfbd6a97"),
+        "title" : "int",
+        "code" : "506",
+        "fullName" : "int506",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1a504231dcbfbd6a98"),
+        "title" : "int",
+        "code" : "512",
+        "fullName" : "int512",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1a504231dcbfbd6a9d"),
+        "title" : "int",
+        "code" : "504",
+        "fullName" : "int504",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1a504231dcbfbd6a9e"),
+        "title" : "int",
+        "code" : "510",
+        "fullName" : "int510",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1a504231dcbfbd6aa0"),
+        "title" : "int",
+        "code" : "514",
+        "fullName" : "int514",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1b504231dcbfbd6aa5"),
+        "title" : "cem",
+        "code" : "597",
+        "fullName" : "cem597",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1d504231dcbfbd6aaa"),
+        "title" : "pred",
+        "code" : "570",
+        "fullName" : "pred570",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1e504231dcbfbd6ab4"),
+        "title" : "eqe",
+        "code" : "695",
+        "fullName" : "eqe695",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1f504231dcbfbd6abb"),
+        "title" : "ec",
+        "code" : "416",
+        "fullName" : "ec416",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1f504231dcbfbd6abc"),
+        "title" : "ec",
+        "code" : "483",
+        "fullName" : "ec483",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1f504231dcbfbd6ac4"),
+        "title" : "ec",
+        "code" : "48j",
+        "fullName" : "ec48j",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb1f504231dcbfbd6ac5"),
+        "title" : "ec",
+        "code" : "48s",
+        "fullName" : "ec48s",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb22504231dcbfbd6ad6"),
+        "title" : "ed",
+        "code" : "521",
+        "fullName" : "ed521",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb22504231dcbfbd6ad9"),
+        "title" : "ed",
+        "code" : "585",
+        "fullName" : "ed585",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb22504231dcbfbd6adb"),
+        "title" : "ed",
+        "code" : "528",
+        "fullName" : "ed528",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb22504231dcbfbd6add"),
+        "title" : "ed",
+        "code" : "551",
+        "fullName" : "ed551",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb22504231dcbfbd6ade"),
+        "title" : "ed",
+        "code" : "584",
+        "fullName" : "ed584",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb22504231dcbfbd6ae1"),
+        "title" : "cet",
+        "code" : "590",
+        "fullName" : "cet590",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb27504231dcbfbd6aef"),
+        "title" : "esc",
+        "code" : "550",
+        "fullName" : "esc550",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb27504231dcbfbd6af5"),
+        "title" : "esc",
+        "code" : "596",
+        "fullName" : "esc596",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb2c504231dcbfbd6b08"),
+        "title" : "pa",
+        "code" : "451",
+        "fullName" : "pa451",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb2d504231dcbfbd6b0d"),
+        "title" : "fled",
+        "code" : "509",
+        "fullName" : "fled509",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb2d504231dcbfbd6b10"),
+        "title" : "fled",
+        "code" : "680",
+        "fullName" : "fled680",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb2d504231dcbfbd6b12"),
+        "title" : "fled",
+        "code" : "696",
+        "fullName" : "fled696",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb2d504231dcbfbd6b17"),
+        "title" : "fled",
+        "code" : "507",
+        "fullName" : "fled507",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb2d504231dcbfbd6b1d"),
+        "title" : "fled",
+        "code" : "695",
+        "fullName" : "fled695",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb2f504231dcbfbd6b25"),
+        "title" : "ged",
+        "code" : "590",
+        "fullName" : "ged590",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb2f504231dcbfbd6b28"),
+        "title" : "ged",
+        "code" : "594",
+        "fullName" : "ged594",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb31504231dcbfbd6b2e"),
+        "title" : "ed",
+        "code" : "301",
+        "fullName" : "ed301",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb31504231dcbfbd6b31"),
+        "title" : "ed",
+        "code" : "403",
+        "fullName" : "ed403",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb31504231dcbfbd6b33"),
+        "title" : "ed",
+        "code" : "451",
+        "fullName" : "ed451",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb31504231dcbfbd6b37"),
+        "title" : "ed",
+        "code" : "49b",
+        "fullName" : "ed49b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb36504231dcbfbd6b44"),
+        "title" : "hist",
+        "code" : "221",
+        "fullName" : "hist221",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb36504231dcbfbd6b46"),
+        "title" : "hist",
+        "code" : "552",
+        "fullName" : "hist552",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb36504231dcbfbd6b49"),
+        "title" : "hist",
+        "code" : "583",
+        "fullName" : "hist583",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb36504231dcbfbd6b4a"),
+        "title" : "hist",
+        "code" : "58v",
+        "fullName" : "hist58v",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb36504231dcbfbd6b4e"),
+        "title" : "hist",
+        "code" : "211",
+        "fullName" : "hist211",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb36504231dcbfbd6b50"),
+        "title" : "hist",
+        "code" : "341",
+        "fullName" : "hist341",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb36504231dcbfbd6b52"),
+        "title" : "hist",
+        "code" : "48n",
+        "fullName" : "hist48n",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb36504231dcbfbd6b55"),
+        "title" : "hist",
+        "code" : "59x",
+        "fullName" : "hist59x",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb37504231dcbfbd6b59"),
+        "title" : "hum",
+        "code" : "101",
+        "fullName" : "hum101",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb39504231dcbfbd6b5f"),
+        "title" : "ie",
+        "code" : "486",
+        "fullName" : "ie486",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb39504231dcbfbd6b61"),
+        "title" : "ie",
+        "code" : "523",
+        "fullName" : "ie523",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb39504231dcbfbd6b67"),
+        "title" : "ie",
+        "code" : "597",
+        "fullName" : "ie597",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb3b504231dcbfbd6b6b"),
+        "title" : "mir",
+        "code" : "563",
+        "fullName" : "mir563",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb3f504231dcbfbd6b78"),
+        "title" : "ls",
+        "code" : "625",
+        "fullName" : "ls625",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb3f504231dcbfbd6b79"),
+        "title" : "ls",
+        "code" : "669",
+        "fullName" : "ls669",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb40504231dcbfbd6b80"),
+        "title" : "ling",
+        "code" : "48p",
+        "fullName" : "ling48p",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb40504231dcbfbd6b84"),
+        "title" : "ling",
+        "code" : "58t",
+        "fullName" : "ling58t",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb43504231dcbfbd6b8e"),
+        "title" : "ad",
+        "code" : "451",
+        "fullName" : "ad451",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb43504231dcbfbd6b92"),
+        "title" : "ad",
+        "code" : "520",
+        "fullName" : "ad520",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb43504231dcbfbd6b94"),
+        "title" : "ad",
+        "code" : "570",
+        "fullName" : "ad570",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb43504231dcbfbd6b96"),
+        "title" : "ad",
+        "code" : "576",
+        "fullName" : "ad576",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb43504231dcbfbd6b98"),
+        "title" : "ad",
+        "code" : "593",
+        "fullName" : "ad593",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb43504231dcbfbd6ba2"),
+        "title" : "ad",
+        "code" : "594",
+        "fullName" : "ad594",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb43504231dcbfbd6ba5"),
+        "title" : "ad",
+        "code" : "594",
+        "fullName" : "ad594",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb44504231dcbfbd6bb5"),
+        "title" : "ad",
+        "code" : "696",
+        "fullName" : "ad696",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb44504231dcbfbd6bbc"),
+        "title" : "ad",
+        "code" : "550",
+        "fullName" : "ad550",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb44504231dcbfbd6bbe"),
+        "title" : "ad",
+        "code" : "588",
+        "fullName" : "ad588",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb46504231dcbfbd6bdc"),
+        "title" : "mis",
+        "code" : "578",
+        "fullName" : "mis578",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6bf8"),
+        "title" : "math",
+        "code" : "105",
+        "fullName" : "math105",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6bff"),
+        "title" : "math",
+        "code" : "327",
+        "fullName" : "math327",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c00"),
+        "title" : "math",
+        "code" : "331",
+        "fullName" : "math331",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c02"),
+        "title" : "math",
+        "code" : "474",
+        "fullName" : "math474",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c04"),
+        "title" : "math",
+        "code" : "483",
+        "fullName" : "math483",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c06"),
+        "title" : "math",
+        "code" : "486",
+        "fullName" : "math486",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c09"),
+        "title" : "math",
+        "code" : "521",
+        "fullName" : "math521",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c0a"),
+        "title" : "math",
+        "code" : "551",
+        "fullName" : "math551",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c0d"),
+        "title" : "math",
+        "code" : "58f",
+        "fullName" : "math58f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c17"),
+        "title" : "math",
+        "code" : "485",
+        "fullName" : "math485",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c19"),
+        "title" : "math",
+        "code" : "531",
+        "fullName" : "math531",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c1b"),
+        "title" : "math",
+        "code" : "577",
+        "fullName" : "math577",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c1c"),
+        "title" : "math",
+        "code" : "581",
+        "fullName" : "math581",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb48504231dcbfbd6c1e"),
+        "title" : "math",
+        "code" : "58y",
+        "fullName" : "math58y",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4e504231dcbfbd6c33"),
+        "title" : "bio",
+        "code" : "491",
+        "fullName" : "bio491",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4e504231dcbfbd6c38"),
+        "title" : "bio",
+        "code" : "58b",
+        "fullName" : "bio58b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4e504231dcbfbd6c3b"),
+        "title" : "bio",
+        "code" : "483",
+        "fullName" : "bio483",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4e504231dcbfbd6c42"),
+        "title" : "bio",
+        "code" : "58d",
+        "fullName" : "bio58d",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4f504231dcbfbd6c49"),
+        "title" : "phil",
+        "code" : "375",
+        "fullName" : "phil375",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4f504231dcbfbd6c4b"),
+        "title" : "phil",
+        "code" : "493",
+        "fullName" : "phil493",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4f504231dcbfbd6c4e"),
+        "title" : "phil",
+        "code" : "504",
+        "fullName" : "phil504",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4f504231dcbfbd6c50"),
+        "title" : "phil",
+        "code" : "588",
+        "fullName" : "phil588",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb4f504231dcbfbd6c52"),
+        "title" : "phil",
+        "code" : "58a",
+        "fullName" : "phil58a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb50504231dcbfbd6c59"),
+        "title" : "phil",
+        "code" : "402",
+        "fullName" : "phil402",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb50504231dcbfbd6c5c"),
+        "title" : "phil",
+        "code" : "58c",
+        "fullName" : "phil58c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb51504231dcbfbd6c61"),
+        "title" : "pe",
+        "code" : "117",
+        "fullName" : "pe117",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb51504231dcbfbd6c63"),
+        "title" : "pe",
+        "code" : "125",
+        "fullName" : "pe125",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb51504231dcbfbd6c67"),
+        "title" : "pe",
+        "code" : "129",
+        "fullName" : "pe129",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb51504231dcbfbd6c69"),
+        "title" : "pe",
+        "code" : "135",
+        "fullName" : "pe135",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb51504231dcbfbd6c6a"),
+        "title" : "pe",
+        "code" : "137",
+        "fullName" : "pe137",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb52504231dcbfbd6c6e"),
+        "title" : "pe",
+        "code" : "151",
+        "fullName" : "pe151",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb52504231dcbfbd6c6f"),
+        "title" : "pe",
+        "code" : "153",
+        "fullName" : "pe153",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb52504231dcbfbd6c74"),
+        "title" : "pe",
+        "code" : "155",
+        "fullName" : "pe155",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb52504231dcbfbd6c75"),
+        "title" : "pe",
+        "code" : "155",
+        "fullName" : "pe155",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c7c"),
+        "title" : "phys",
+        "code" : "443",
+        "fullName" : "phys443",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c81"),
+        "title" : "phys",
+        "code" : "58j",
+        "fullName" : "phys58j",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c84"),
+        "title" : "phys",
+        "code" : "688",
+        "fullName" : "phys688",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c86"),
+        "title" : "phys",
+        "code" : "68l",
+        "fullName" : "phys68l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c91"),
+        "title" : "phys",
+        "code" : "48z",
+        "fullName" : "phys48z",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c93"),
+        "title" : "phys",
+        "code" : "551",
+        "fullName" : "phys551",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c96"),
+        "title" : "phys",
+        "code" : "687",
+        "fullName" : "phys687",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c98"),
+        "title" : "phys",
+        "code" : "68g",
+        "fullName" : "phys68g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c9c"),
+        "title" : "phys",
+        "code" : "693",
+        "fullName" : "phys693",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb54504231dcbfbd6c9f"),
+        "title" : "sts",
+        "code" : "322",
+        "fullName" : "sts322",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb56504231dcbfbd6ca4"),
+        "title" : "pols",
+        "code" : "326",
+        "fullName" : "pols326",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb56504231dcbfbd6ca5"),
+        "title" : "pols",
+        "code" : "348",
+        "fullName" : "pols348",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb56504231dcbfbd6cab"),
+        "title" : "pols",
+        "code" : "522",
+        "fullName" : "pols522",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb56504231dcbfbd6cae"),
+        "title" : "pols",
+        "code" : "634",
+        "fullName" : "pols634",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb56504231dcbfbd6cb3"),
+        "title" : "pols",
+        "code" : "483",
+        "fullName" : "pols483",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cb8"),
+        "title" : "psy",
+        "code" : "48m",
+        "fullName" : "psy48m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cba"),
+        "title" : "psy",
+        "code" : "49c",
+        "fullName" : "psy49c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cbc"),
+        "title" : "psy",
+        "code" : "49i",
+        "fullName" : "psy49i",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cbe"),
+        "title" : "psy",
+        "code" : "565",
+        "fullName" : "psy565",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cbf"),
+        "title" : "psy",
+        "code" : "569",
+        "fullName" : "psy569",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cc2"),
+        "title" : "psy",
+        "code" : "69a",
+        "fullName" : "psy69a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cc3"),
+        "title" : "psy",
+        "code" : "69m",
+        "fullName" : "psy69m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cc7"),
+        "title" : "psy",
+        "code" : "482",
+        "fullName" : "psy482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cc9"),
+        "title" : "psy",
+        "code" : "49a",
+        "fullName" : "psy49a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cca"),
+        "title" : "psy",
+        "code" : "49h",
+        "fullName" : "psy49h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cd1"),
+        "title" : "psy",
+        "code" : "567",
+        "fullName" : "psy567",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cd2"),
+        "title" : "psy",
+        "code" : "68e",
+        "fullName" : "psy68e",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cd6"),
+        "title" : "psy",
+        "code" : "69e",
+        "fullName" : "psy69e",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb59504231dcbfbd6cd7"),
+        "title" : "psy",
+        "code" : "69i",
+        "fullName" : "psy69i",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb5d504231dcbfbd6cdf"),
+        "title" : "ae",
+        "code" : "241",
+        "fullName" : "ae241",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb5e504231dcbfbd6cf2"),
+        "title" : "gr",
+        "code" : "301",
+        "fullName" : "gr301",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb5e504231dcbfbd6d18"),
+        "title" : "sfl",
+        "code" : "41b",
+        "fullName" : "sfl41b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb5e504231dcbfbd6d1d"),
+        "title" : "sfl",
+        "code" : "42b",
+        "fullName" : "sfl42b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb5f504231dcbfbd6d26"),
+        "title" : "spa",
+        "code" : "321",
+        "fullName" : "spa321",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb5f504231dcbfbd6d29"),
+        "title" : "ae",
+        "code" : "281",
+        "fullName" : "ae281",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb60504231dcbfbd6d51"),
+        "title" : "spl",
+        "code" : "586",
+        "fullName" : "spl586",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb62504231dcbfbd6d59"),
+        "title" : "soc",
+        "code" : "368",
+        "fullName" : "soc368",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb62504231dcbfbd6d5e"),
+        "title" : "soc",
+        "code" : "287",
+        "fullName" : "soc287",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb62504231dcbfbd6d60"),
+        "title" : "soc",
+        "code" : "471",
+        "fullName" : "soc471",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb62504231dcbfbd6d61"),
+        "title" : "soc",
+        "code" : "480",
+        "fullName" : "soc480",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb63504231dcbfbd6d69"),
+        "title" : "swe",
+        "code" : "582",
+        "fullName" : "swe582",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb68504231dcbfbd6d77"),
+        "title" : "int",
+        "code" : "419",
+        "fullName" : "int419",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb68504231dcbfbd6d79"),
+        "title" : "tr",
+        "code" : "201",
+        "fullName" : "tr201",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb68504231dcbfbd6d7c"),
+        "title" : "tr",
+        "code" : "403",
+        "fullName" : "tr403",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb68504231dcbfbd6d7e"),
+        "title" : "tr",
+        "code" : "601",
+        "fullName" : "tr601",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb68504231dcbfbd6d85"),
+        "title" : "tr",
+        "code" : "611",
+        "fullName" : "tr611",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb68504231dcbfbd6d87"),
+        "title" : "tr",
+        "code" : "680",
+        "fullName" : "tr680",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6b504231dcbfbd6d8c"),
+        "title" : "tkl",
+        "code" : "38b",
+        "fullName" : "tkl38b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6b504231dcbfbd6d8f"),
+        "title" : "tkl",
+        "code" : "483",
+        "fullName" : "tkl483",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6b504231dcbfbd6d92"),
+        "title" : "tkl",
+        "code" : "503",
+        "fullName" : "tkl503",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6b504231dcbfbd6d94"),
+        "title" : "tkl",
+        "code" : "591",
+        "fullName" : "tkl591",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6b504231dcbfbd6d96"),
+        "title" : "tkl",
+        "code" : "622",
+        "fullName" : "tkl622",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6b504231dcbfbd6d97"),
+        "title" : "tkl",
+        "code" : "687",
+        "fullName" : "tkl687",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6b504231dcbfbd6d9d"),
+        "title" : "tkl",
+        "code" : "506",
+        "fullName" : "tkl506",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6b504231dcbfbd6da0"),
+        "title" : "tkl",
+        "code" : "658",
+        "fullName" : "tkl658",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6c504231dcbfbd6da5"),
+        "title" : "pred",
+        "code" : "331",
+        "fullName" : "pred331",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6da9"),
+        "title" : "cl",
+        "code" : "48m",
+        "fullName" : "cl48m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dab"),
+        "title" : "cl",
+        "code" : "492",
+        "fullName" : "cl492",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6db1"),
+        "title" : "el",
+        "code" : "484",
+        "fullName" : "el484",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dbc"),
+        "title" : "fa",
+        "code" : "49b",
+        "fullName" : "fa49b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dbd"),
+        "title" : "fa",
+        "code" : "49k",
+        "fullName" : "fa49k",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dc1"),
+        "title" : "cl",
+        "code" : "489",
+        "fullName" : "cl489",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dc2"),
+        "title" : "cl",
+        "code" : "48n",
+        "fullName" : "cl48n",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dc3"),
+        "title" : "cl",
+        "code" : "498",
+        "fullName" : "cl498",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dc9"),
+        "title" : "el",
+        "code" : "48b",
+        "fullName" : "el48b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dcd"),
+        "title" : "el",
+        "code" : "588",
+        "fullName" : "el588",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cb6e504231dcbfbd6dd3"),
+        "title" : "fa",
+        "code" : "49j",
+        "fullName" : "fa49j",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc7c0eff43dd0a0bbb22"),
+        "title" : "ec",
+        "code" : "48p",
+        "fullName" : "ec48p",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc7c0eff43dd0a0bbb28"),
+        "title" : "ec",
+        "code" : "48w",
+        "fullName" : "ec48w",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc7f0eff43dd0a0bbb37"),
+        "title" : "adex",
+        "code" : "535",
+        "fullName" : "adex535",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc7f0eff43dd0a0bbb38"),
+        "title" : "adex",
+        "code" : "566",
+        "fullName" : "adex566",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc7f0eff43dd0a0bbb3e"),
+        "title" : "adex",
+        "code" : "58k",
+        "fullName" : "adex58k",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc7f0eff43dd0a0bbb43"),
+        "title" : "adex",
+        "code" : "573",
+        "fullName" : "adex573",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc7f0eff43dd0a0bbb44"),
+        "title" : "adex",
+        "code" : "585",
+        "fullName" : "adex585",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc800eff43dd0a0bbb4a"),
+        "title" : "pa",
+        "code" : "393",
+        "fullName" : "pa393",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc800eff43dd0a0bbb4b"),
+        "title" : "pa",
+        "code" : "395",
+        "fullName" : "pa395",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc820eff43dd0a0bbb50"),
+        "title" : "hist",
+        "code" : "48r",
+        "fullName" : "hist48r",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc820eff43dd0a0bbb53"),
+        "title" : "hist",
+        "code" : "49s",
+        "fullName" : "hist49s",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc820eff43dd0a0bbb54"),
+        "title" : "hist",
+        "code" : "49v",
+        "fullName" : "hist49v",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc820eff43dd0a0bbb59"),
+        "title" : "hist",
+        "code" : "426",
+        "fullName" : "hist426",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc820eff43dd0a0bbb5c"),
+        "title" : "hist",
+        "code" : "49r",
+        "fullName" : "hist49r",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc820eff43dd0a0bbb5f"),
+        "title" : "hist",
+        "code" : "49u",
+        "fullName" : "hist49u",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc850eff43dd0a0bbb68"),
+        "title" : "ad",
+        "code" : "453",
+        "fullName" : "ad453",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc870eff43dd0a0bbb73"),
+        "title" : "math",
+        "code" : "345",
+        "fullName" : "math345",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc890eff43dd0a0bbb7c"),
+        "title" : "bio",
+        "code" : "48e",
+        "fullName" : "bio48e",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc890eff43dd0a0bbb89"),
+        "title" : "phil",
+        "code" : "444",
+        "fullName" : "phil444",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc890eff43dd0a0bbb8a"),
+        "title" : "phil",
+        "code" : "49r",
+        "fullName" : "phil49r",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8c0eff43dd0a0bbb99"),
+        "title" : "pols",
+        "code" : "408",
+        "fullName" : "pols408",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8c0eff43dd0a0bbb9b"),
+        "title" : "pols",
+        "code" : "320",
+        "fullName" : "pols320",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8c0eff43dd0a0bbb9c"),
+        "title" : "pols",
+        "code" : "409",
+        "fullName" : "pols409",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8c0eff43dd0a0bbba0"),
+        "title" : "psy",
+        "code" : "48h",
+        "fullName" : "psy48h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8c0eff43dd0a0bbba5"),
+        "title" : "psy",
+        "code" : "48g",
+        "fullName" : "psy48g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8e0eff43dd0a0bbbbb"),
+        "title" : "sfl",
+        "code" : "rw1",
+        "fullName" : "sflrw1",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8f0eff43dd0a0bbbd8"),
+        "title" : "soc",
+        "code" : "442",
+        "fullName" : "soc442",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8f0eff43dd0a0bbbd9"),
+        "title" : "soc",
+        "code" : "468",
+        "fullName" : "soc468",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc8f0eff43dd0a0bbbe1"),
+        "title" : "soc",
+        "code" : "479",
+        "fullName" : "soc479",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc900eff43dd0a0bbbe4"),
+        "title" : "tr",
+        "code" : "494",
+        "fullName" : "tr494",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc960eff43dd0a0bbbec"),
+        "title" : "cl",
+        "code" : "48o",
+        "fullName" : "cl48o",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc960eff43dd0a0bbbf0"),
+        "title" : "fa",
+        "code" : "49g",
+        "fullName" : "fa49g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cc960eff43dd0a0bbbf1"),
+        "title" : "fa",
+        "code" : "49p",
+        "fullName" : "fa49p",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2765b800dd4da33647"),
+        "title" : "asia",
+        "code" : "512",
+        "fullName" : "asia512",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2865b800dd4da3364b"),
+        "title" : "ata",
+        "code" : "59d",
+        "fullName" : "ata59d",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2865b800dd4da3364e"),
+        "title" : "ata",
+        "code" : "68b",
+        "fullName" : "ata68b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2a65b800dd4da33652"),
+        "title" : "bm",
+        "code" : "596",
+        "fullName" : "bm596",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2b65b800dd4da33654"),
+        "title" : "bm",
+        "code" : "554",
+        "fullName" : "bm554",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2b65b800dd4da33655"),
+        "title" : "bm",
+        "code" : "583",
+        "fullName" : "bm583",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2b65b800dd4da33658"),
+        "title" : "bm",
+        "code" : "616",
+        "fullName" : "bm616",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2b65b800dd4da33659"),
+        "title" : "bm",
+        "code" : "684",
+        "fullName" : "bm684",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2d65b800dd4da3365d"),
+        "title" : "che",
+        "code" : "590",
+        "fullName" : "che590",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2d65b800dd4da33664"),
+        "title" : "che",
+        "code" : "592",
+        "fullName" : "che592",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2d65b800dd4da33666"),
+        "title" : "che",
+        "code" : "685",
+        "fullName" : "che685",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd2f65b800dd4da3366a"),
+        "title" : "chem",
+        "code" : "488",
+        "fullName" : "chem488",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3065b800dd4da33671"),
+        "title" : "chem",
+        "code" : "417",
+        "fullName" : "chem417",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3265b800dd4da33675"),
+        "title" : "ce",
+        "code" : "312",
+        "fullName" : "ce312",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3265b800dd4da33677"),
+        "title" : "ce",
+        "code" : "334",
+        "fullName" : "ce334",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3265b800dd4da3367a"),
+        "title" : "ce",
+        "code" : "497",
+        "fullName" : "ce497",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3265b800dd4da3367b"),
+        "title" : "ce",
+        "code" : "49x",
+        "fullName" : "ce49x",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3265b800dd4da33680"),
+        "title" : "ce",
+        "code" : "578",
+        "fullName" : "ce578",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3265b800dd4da33686"),
+        "title" : "ce",
+        "code" : "202",
+        "fullName" : "ce202",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3265b800dd4da33689"),
+        "title" : "ce",
+        "code" : "332",
+        "fullName" : "ce332",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3265b800dd4da3368c"),
+        "title" : "ce",
+        "code" : "412",
+        "fullName" : "ce412",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3765b800dd4da3369b"),
+        "title" : "cmpe",
+        "code" : "49j",
+        "fullName" : "cmpe49j",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3765b800dd4da3369c"),
+        "title" : "cmpe",
+        "code" : "516",
+        "fullName" : "cmpe516",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3765b800dd4da3369f"),
+        "title" : "cmpe",
+        "code" : "557",
+        "fullName" : "cmpe557",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3765b800dd4da336a5"),
+        "title" : "eng",
+        "code" : "101",
+        "fullName" : "eng101",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3765b800dd4da336a9"),
+        "title" : "cmpe",
+        "code" : "490",
+        "fullName" : "cmpe490",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3865b800dd4da336ac"),
+        "title" : "cmpe",
+        "code" : "565",
+        "fullName" : "cmpe565",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3865b800dd4da336b0"),
+        "title" : "int",
+        "code" : "503",
+        "fullName" : "int503",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3865b800dd4da336b1"),
+        "title" : "int",
+        "code" : "508",
+        "fullName" : "int508",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3865b800dd4da336b3"),
+        "title" : "int",
+        "code" : "511",
+        "fullName" : "int511",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3865b800dd4da336b5"),
+        "title" : "int",
+        "code" : "501",
+        "fullName" : "int501",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3965b800dd4da336b8"),
+        "title" : "int",
+        "code" : "505",
+        "fullName" : "int505",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3965b800dd4da336ba"),
+        "title" : "int",
+        "code" : "509",
+        "fullName" : "int509",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3965b800dd4da336bc"),
+        "title" : "cem",
+        "code" : "531",
+        "fullName" : "cem531",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3965b800dd4da336be"),
+        "title" : "cem",
+        "code" : "577",
+        "fullName" : "cem577",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3965b800dd4da336c1"),
+        "title" : "cem",
+        "code" : "578",
+        "fullName" : "cem578",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3a65b800dd4da336c6"),
+        "title" : "cem",
+        "code" : "590",
+        "fullName" : "cem590",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3a65b800dd4da336d0"),
+        "title" : "cem",
+        "code" : "595",
+        "fullName" : "cem595",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3e65b800dd4da336dd"),
+        "title" : "ec",
+        "code" : "48m",
+        "fullName" : "ec48m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd3e65b800dd4da336e6"),
+        "title" : "ec",
+        "code" : "449",
+        "fullName" : "ec449",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4465b800dd4da336f4"),
+        "title" : "ed",
+        "code" : "700",
+        "fullName" : "ed700",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4765b800dd4da336fb"),
+        "title" : "ee",
+        "code" : "430",
+        "fullName" : "ee430",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da336ff"),
+        "title" : "esc",
+        "code" : "501",
+        "fullName" : "esc501",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da33704"),
+        "title" : "esc",
+        "code" : "59f",
+        "fullName" : "esc59f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da33706"),
+        "title" : "esc",
+        "code" : "59m",
+        "fullName" : "esc59m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da3370a"),
+        "title" : "esc",
+        "code" : "306",
+        "fullName" : "esc306",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da3370b"),
+        "title" : "esc",
+        "code" : "500",
+        "fullName" : "esc500",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da3370c"),
+        "title" : "esc",
+        "code" : "502",
+        "fullName" : "esc502",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da3370e"),
+        "title" : "esc",
+        "code" : "543",
+        "fullName" : "esc543",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da33712"),
+        "title" : "esc",
+        "code" : "589",
+        "fullName" : "esc589",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da33713"),
+        "title" : "esc",
+        "code" : "598",
+        "fullName" : "esc598",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da33714"),
+        "title" : "esc",
+        "code" : "59l",
+        "fullName" : "esc59l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4a65b800dd4da33717"),
+        "title" : "esc",
+        "code" : "615",
+        "fullName" : "esc615",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4b65b800dd4da3371a"),
+        "title" : "esc",
+        "code" : "565",
+        "fullName" : "esc565",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4d65b800dd4da3371c"),
+        "title" : "adex",
+        "code" : "513",
+        "fullName" : "adex513",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd4d65b800dd4da33725"),
+        "title" : "adex",
+        "code" : "534",
+        "fullName" : "adex534",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5165b800dd4da3372d"),
+        "title" : "fled",
+        "code" : "551",
+        "fullName" : "fled551",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5165b800dd4da33730"),
+        "title" : "fled",
+        "code" : "634",
+        "fullName" : "fled634",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5165b800dd4da33732"),
+        "title" : "fled",
+        "code" : "698",
+        "fullName" : "fled698",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5165b800dd4da33737"),
+        "title" : "fled",
+        "code" : "522",
+        "fullName" : "fled522",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5165b800dd4da33738"),
+        "title" : "fled",
+        "code" : "585",
+        "fullName" : "fled585",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5165b800dd4da3373c"),
+        "title" : "fled",
+        "code" : "697",
+        "fullName" : "fled697",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5265b800dd4da3373e"),
+        "title" : "ged",
+        "code" : "554",
+        "fullName" : "ged554",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5265b800dd4da3373f"),
+        "title" : "ged",
+        "code" : "592",
+        "fullName" : "ged592",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5465b800dd4da33748"),
+        "title" : "ed",
+        "code" : "400",
+        "fullName" : "ed400",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5465b800dd4da3374c"),
+        "title" : "ed",
+        "code" : "48c",
+        "fullName" : "ed48c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5665b800dd4da33757"),
+        "title" : "hist",
+        "code" : "234",
+        "fullName" : "hist234",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5665b800dd4da3375a"),
+        "title" : "hist",
+        "code" : "48e",
+        "fullName" : "hist48e",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da3375d"),
+        "title" : "hist",
+        "code" : "49h",
+        "fullName" : "hist49h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da3375f"),
+        "title" : "hist",
+        "code" : "573",
+        "fullName" : "hist573",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33761"),
+        "title" : "hist",
+        "code" : "585",
+        "fullName" : "hist585",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33762"),
+        "title" : "hist",
+        "code" : "58l",
+        "fullName" : "hist58l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33764"),
+        "title" : "hist",
+        "code" : "58p",
+        "fullName" : "hist58p",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33765"),
+        "title" : "hist",
+        "code" : "58u",
+        "fullName" : "hist58u",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33770"),
+        "title" : "hist",
+        "code" : "351",
+        "fullName" : "hist351",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33771"),
+        "title" : "hist",
+        "code" : "48z",
+        "fullName" : "hist48z",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33776"),
+        "title" : "hist",
+        "code" : "49n",
+        "fullName" : "hist49n",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33778"),
+        "title" : "hist",
+        "code" : "58i",
+        "fullName" : "hist58i",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33779"),
+        "title" : "hist",
+        "code" : "58m",
+        "fullName" : "hist58m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da3377a"),
+        "title" : "hist",
+        "code" : "592",
+        "fullName" : "hist592",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5765b800dd4da33781"),
+        "title" : "lat",
+        "code" : "312",
+        "fullName" : "lat312",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5a65b800dd4da3378b"),
+        "title" : "ie",
+        "code" : "548",
+        "fullName" : "ie548",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5a65b800dd4da3378f"),
+        "title" : "ie",
+        "code" : "305",
+        "fullName" : "ie305",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5a65b800dd4da33792"),
+        "title" : "ie",
+        "code" : "442",
+        "fullName" : "ie442",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5e65b800dd4da337aa"),
+        "title" : "intt",
+        "code" : "48f",
+        "fullName" : "intt48f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5e65b800dd4da337af"),
+        "title" : "intt",
+        "code" : "48c",
+        "fullName" : "intt48c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5f65b800dd4da337b2"),
+        "title" : "ls",
+        "code" : "628",
+        "fullName" : "ls628",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd5f65b800dd4da337b5"),
+        "title" : "ls",
+        "code" : "612",
+        "fullName" : "ls612",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6065b800dd4da337bd"),
+        "title" : "ling",
+        "code" : "440",
+        "fullName" : "ling440",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6065b800dd4da337be"),
+        "title" : "ling",
+        "code" : "48k",
+        "fullName" : "ling48k",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6165b800dd4da337c3"),
+        "title" : "ling",
+        "code" : "48g",
+        "fullName" : "ling48g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6665b800dd4da337c5"),
+        "title" : "ad",
+        "code" : "320",
+        "fullName" : "ad320",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6665b800dd4da337c7"),
+        "title" : "ad",
+        "code" : "403",
+        "fullName" : "ad403",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6665b800dd4da337ca"),
+        "title" : "ad",
+        "code" : "48a",
+        "fullName" : "ad48a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6665b800dd4da337cc"),
+        "title" : "ad",
+        "code" : "596",
+        "fullName" : "ad596",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6665b800dd4da337ce"),
+        "title" : "ad",
+        "code" : "656",
+        "fullName" : "ad656",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6765b800dd4da337d1"),
+        "title" : "ad",
+        "code" : "462",
+        "fullName" : "ad462",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6765b800dd4da337d4"),
+        "title" : "ad",
+        "code" : "662",
+        "fullName" : "ad662",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6765b800dd4da337d8"),
+        "title" : "ad",
+        "code" : "688",
+        "fullName" : "ad688",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6965b800dd4da337de"),
+        "title" : "mis",
+        "code" : "596",
+        "fullName" : "mis596",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6965b800dd4da337e2"),
+        "title" : "mis",
+        "code" : "485",
+        "fullName" : "mis485",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6965b800dd4da337e6"),
+        "title" : "mis",
+        "code" : "594",
+        "fullName" : "mis594",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6a65b800dd4da337ed"),
+        "title" : "math",
+        "code" : "332",
+        "fullName" : "math332",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6a65b800dd4da337f2"),
+        "title" : "math",
+        "code" : "525",
+        "fullName" : "math525",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6a65b800dd4da337f4"),
+        "title" : "math",
+        "code" : "533",
+        "fullName" : "math533",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6a65b800dd4da337fd"),
+        "title" : "math",
+        "code" : "325",
+        "fullName" : "math325",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd6f65b800dd4da33817"),
+        "title" : "meca",
+        "code" : "577",
+        "fullName" : "meca577",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7065b800dd4da33819"),
+        "title" : "bio",
+        "code" : "478",
+        "fullName" : "bio478",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7065b800dd4da3381a"),
+        "title" : "bio",
+        "code" : "48c",
+        "fullName" : "bio48c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7065b800dd4da3381f"),
+        "title" : "bio",
+        "code" : "529",
+        "fullName" : "bio529",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7065b800dd4da33823"),
+        "title" : "bio",
+        "code" : "684",
+        "fullName" : "bio684",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33832"),
+        "title" : "phil",
+        "code" : "412",
+        "fullName" : "phil412",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33834"),
+        "title" : "phil",
+        "code" : "453",
+        "fullName" : "phil453",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33836"),
+        "title" : "phil",
+        "code" : "49n",
+        "fullName" : "phil49n",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33837"),
+        "title" : "phil",
+        "code" : "49p",
+        "fullName" : "phil49p",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da3383a"),
+        "title" : "phil",
+        "code" : "525",
+        "fullName" : "phil525",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da3383c"),
+        "title" : "phil",
+        "code" : "59i",
+        "fullName" : "phil59i",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33840"),
+        "title" : "phil",
+        "code" : "421",
+        "fullName" : "phil421",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33842"),
+        "title" : "phil",
+        "code" : "49o",
+        "fullName" : "phil49o",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33843"),
+        "title" : "phil",
+        "code" : "515",
+        "fullName" : "phil515",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33845"),
+        "title" : "phil",
+        "code" : "543",
+        "fullName" : "phil543",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33848"),
+        "title" : "phil",
+        "code" : "59h",
+        "fullName" : "phil59h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7265b800dd4da33849"),
+        "title" : "phil",
+        "code" : "59j",
+        "fullName" : "phil59j",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7465b800dd4da3384c"),
+        "title" : "pe",
+        "code" : "102",
+        "fullName" : "pe102",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7465b800dd4da3384e"),
+        "title" : "pe",
+        "code" : "114",
+        "fullName" : "pe114",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da33857"),
+        "title" : "phys",
+        "code" : "48m",
+        "fullName" : "phys48m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da33858"),
+        "title" : "phys",
+        "code" : "48v",
+        "fullName" : "phys48v",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da3385d"),
+        "title" : "phys",
+        "code" : "58r",
+        "fullName" : "phys58r",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da3385e"),
+        "title" : "phys",
+        "code" : "58x",
+        "fullName" : "phys58x",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da33860"),
+        "title" : "phys",
+        "code" : "684",
+        "fullName" : "phys684",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da33861"),
+        "title" : "phys",
+        "code" : "68f",
+        "fullName" : "phys68f",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da33863"),
+        "title" : "phys",
+        "code" : "68y",
+        "fullName" : "phys68y",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da3386b"),
+        "title" : "phys",
+        "code" : "58l",
+        "fullName" : "phys58l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da3386d"),
+        "title" : "phys",
+        "code" : "686",
+        "fullName" : "phys686",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7665b800dd4da3386f"),
+        "title" : "phys",
+        "code" : "68s",
+        "fullName" : "phys68s",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7c65b800dd4da33879"),
+        "title" : "pols",
+        "code" : "455",
+        "fullName" : "pols455",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7c65b800dd4da3387c"),
+        "title" : "pols",
+        "code" : "592",
+        "fullName" : "pols592",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7c65b800dd4da3387f"),
+        "title" : "pols",
+        "code" : "622",
+        "fullName" : "pols622",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7c65b800dd4da33882"),
+        "title" : "pols",
+        "code" : "691",
+        "fullName" : "pols691",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7c65b800dd4da33886"),
+        "title" : "pols",
+        "code" : "353",
+        "fullName" : "pols353",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7c65b800dd4da33887"),
+        "title" : "pols",
+        "code" : "404",
+        "fullName" : "pols404",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7c65b800dd4da3388a"),
+        "title" : "pols",
+        "code" : "449",
+        "fullName" : "pols449",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7c65b800dd4da33890"),
+        "title" : "pols",
+        "code" : "684",
+        "fullName" : "pols684",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7d65b800dd4da3389b"),
+        "title" : "psy",
+        "code" : "69l",
+        "fullName" : "psy69l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd7d65b800dd4da338a1"),
+        "title" : "psy",
+        "code" : "49d",
+        "fullName" : "psy49d",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8165b800dd4da338a6"),
+        "title" : "ae",
+        "code" : "271",
+        "fullName" : "ae271",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8265b800dd4da338f9"),
+        "title" : "sfl",
+        "code" : "c02",
+        "fullName" : "sflc02",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8465b800dd4da338fb"),
+        "title" : "sced",
+        "code" : "599",
+        "fullName" : "sced599",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8465b800dd4da338ff"),
+        "title" : "spl",
+        "code" : "510",
+        "fullName" : "spl510",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8465b800dd4da33900"),
+        "title" : "spl",
+        "code" : "582",
+        "fullName" : "spl582",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8565b800dd4da33904"),
+        "title" : "soc",
+        "code" : "320",
+        "fullName" : "soc320",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8565b800dd4da33905"),
+        "title" : "soc",
+        "code" : "341",
+        "fullName" : "soc341",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8565b800dd4da33908"),
+        "title" : "soc",
+        "code" : "496",
+        "fullName" : "soc496",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8565b800dd4da3390c"),
+        "title" : "soc",
+        "code" : "273",
+        "fullName" : "soc273",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8965b800dd4da33915"),
+        "title" : "swe",
+        "code" : "587",
+        "fullName" : "swe587",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8965b800dd4da33918"),
+        "title" : "swe",
+        "code" : "594",
+        "fullName" : "swe594",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8c65b800dd4da33922"),
+        "title" : "sco",
+        "code" : "592",
+        "fullName" : "sco592",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8d65b800dd4da33926"),
+        "title" : "trm",
+        "code" : "48v",
+        "fullName" : "trm48v",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8f65b800dd4da33939"),
+        "title" : "tr",
+        "code" : "202",
+        "fullName" : "tr202",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8f65b800dd4da3393d"),
+        "title" : "tr",
+        "code" : "482",
+        "fullName" : "tr482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8f65b800dd4da3393f"),
+        "title" : "tr",
+        "code" : "48c",
+        "fullName" : "tr48c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8f65b800dd4da33948"),
+        "title" : "tr",
+        "code" : "206",
+        "fullName" : "tr206",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd8f65b800dd4da3394f"),
+        "title" : "tr",
+        "code" : "481",
+        "fullName" : "tr481",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9265b800dd4da33955"),
+        "title" : "tkl",
+        "code" : "642",
+        "fullName" : "tkl642",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9265b800dd4da3395a"),
+        "title" : "tkl",
+        "code" : "590",
+        "fullName" : "tkl590",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9265b800dd4da3395b"),
+        "title" : "tkl",
+        "code" : "660",
+        "fullName" : "tkl660",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9365b800dd4da33963"),
+        "title" : "pred",
+        "code" : "486",
+        "fullName" : "pred486",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9565b800dd4da3396c"),
+        "title" : "al",
+        "code" : "481",
+        "fullName" : "al481",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9565b800dd4da3396e"),
+        "title" : "cl",
+        "code" : "480",
+        "fullName" : "cl480",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9565b800dd4da33978"),
+        "title" : "fa",
+        "code" : "48c",
+        "fullName" : "fa48c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9565b800dd4da3397b"),
+        "title" : "fa",
+        "code" : "48y",
+        "fullName" : "fa48y",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9565b800dd4da3397e"),
+        "title" : "al",
+        "code" : "302",
+        "fullName" : "al302",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9565b800dd4da33982"),
+        "title" : "cl",
+        "code" : "48p",
+        "fullName" : "cl48p",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060cd9565b800dd4da33987"),
+        "title" : "fa",
+        "code" : "49m",
+        "fullName" : "fa49m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce0fd7c843dd9687ca57"),
+        "title" : "ata",
+        "code" : "59c",
+        "fullName" : "ata59c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce10d7c843dd9687ca5a"),
+        "title" : "ata",
+        "code" : "521",
+        "fullName" : "ata521",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce17d7c843dd9687ca5d"),
+        "title" : "bm",
+        "code" : "595",
+        "fullName" : "bm595",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce17d7c843dd9687ca61"),
+        "title" : "bm",
+        "code" : "594",
+        "fullName" : "bm594",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce18d7c843dd9687ca64"),
+        "title" : "bis",
+        "code" : "548",
+        "fullName" : "bis548",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce1cd7c843dd9687ca6e"),
+        "title" : "chem",
+        "code" : "498",
+        "fullName" : "chem498",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce1ed7c843dd9687ca77"),
+        "title" : "ce",
+        "code" : "245",
+        "fullName" : "ce245",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce1ed7c843dd9687ca78"),
+        "title" : "ce",
+        "code" : "311",
+        "fullName" : "ce311",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce1ed7c843dd9687ca7b"),
+        "title" : "ce",
+        "code" : "353",
+        "fullName" : "ce353",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce1ed7c843dd9687ca7e"),
+        "title" : "ce",
+        "code" : "534",
+        "fullName" : "ce534",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce1fd7c843dd9687ca83"),
+        "title" : "ce",
+        "code" : "331",
+        "fullName" : "ce331",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce1fd7c843dd9687ca85"),
+        "title" : "ce",
+        "code" : "536",
+        "fullName" : "ce536",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce22d7c843dd9687ca8d"),
+        "title" : "cet",
+        "code" : "499",
+        "fullName" : "cet499",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce24d7c843dd9687ca94"),
+        "title" : "cmpe",
+        "code" : "58s",
+        "fullName" : "cmpe58s",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce24d7c843dd9687ca97"),
+        "title" : "cmpe",
+        "code" : "59h",
+        "fullName" : "cmpe59h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce25d7c843dd9687ca9d"),
+        "title" : "cmpe",
+        "code" : "547",
+        "fullName" : "cmpe547",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce25d7c843dd9687ca9e"),
+        "title" : "cmpe",
+        "code" : "58c",
+        "fullName" : "cmpe58c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce26d7c843dd9687caa7"),
+        "title" : "cem",
+        "code" : "517",
+        "fullName" : "cem517",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce26d7c843dd9687caa8"),
+        "title" : "cem",
+        "code" : "562",
+        "fullName" : "cem562",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce27d7c843dd9687caad"),
+        "title" : "pred",
+        "code" : "584",
+        "fullName" : "pred584",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce2ad7c843dd9687cab6"),
+        "title" : "ec",
+        "code" : "447",
+        "fullName" : "ec447",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce2ad7c843dd9687cab9"),
+        "title" : "ec",
+        "code" : "482",
+        "fullName" : "ec482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce2ad7c843dd9687caba"),
+        "title" : "ec",
+        "code" : "48d",
+        "fullName" : "ec48d",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce2ad7c843dd9687cac2"),
+        "title" : "ec",
+        "code" : "475",
+        "fullName" : "ec475",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce2ad7c843dd9687cac5"),
+        "title" : "ec",
+        "code" : "558",
+        "fullName" : "ec558",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce2cd7c843dd9687cac9"),
+        "title" : "ed",
+        "code" : "58t",
+        "fullName" : "ed58t",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce2fd7c843dd9687cad3"),
+        "title" : "ee",
+        "code" : "683",
+        "fullName" : "ee683",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce2fd7c843dd9687cad6"),
+        "title" : "ee",
+        "code" : "698",
+        "fullName" : "ee698",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce30d7c843dd9687cadb"),
+        "title" : "etm",
+        "code" : "58c",
+        "fullName" : "etm58c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce32d7c843dd9687cade"),
+        "title" : "esc",
+        "code" : "556",
+        "fullName" : "esc556",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce32d7c843dd9687cae1"),
+        "title" : "esc",
+        "code" : "601",
+        "fullName" : "esc601",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce3bd7c843dd9687caf2"),
+        "title" : "fled",
+        "code" : "687",
+        "fullName" : "fled687",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce3cd7c843dd9687cafc"),
+        "title" : "ged",
+        "code" : "541",
+        "fullName" : "ged541",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce3dd7c843dd9687cb00"),
+        "title" : "gph",
+        "code" : "645",
+        "fullName" : "gph645",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce3ed7c843dd9687cb07"),
+        "title" : "ed",
+        "code" : "437",
+        "fullName" : "ed437",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce3ed7c843dd9687cb08"),
+        "title" : "ed",
+        "code" : "460",
+        "fullName" : "ed460",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb12"),
+        "title" : "hist",
+        "code" : "49c",
+        "fullName" : "hist49c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb13"),
+        "title" : "hist",
+        "code" : "49l",
+        "fullName" : "hist49l",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb16"),
+        "title" : "hist",
+        "code" : "58o",
+        "fullName" : "hist58o",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb18"),
+        "title" : "hist",
+        "code" : "59d",
+        "fullName" : "hist59d",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb19"),
+        "title" : "hist",
+        "code" : "59u",
+        "fullName" : "hist59u",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb1c"),
+        "title" : "hist",
+        "code" : "69h",
+        "fullName" : "hist69h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb25"),
+        "title" : "hist",
+        "code" : "422",
+        "fullName" : "hist422",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb26"),
+        "title" : "hist",
+        "code" : "489",
+        "fullName" : "hist489",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb28"),
+        "title" : "hist",
+        "code" : "48u",
+        "fullName" : "hist48u",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb2b"),
+        "title" : "hist",
+        "code" : "49q",
+        "fullName" : "hist49q",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb2d"),
+        "title" : "hist",
+        "code" : "58h",
+        "fullName" : "hist58h",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb30"),
+        "title" : "hist",
+        "code" : "59q",
+        "fullName" : "hist59q",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce40d7c843dd9687cb33"),
+        "title" : "lat",
+        "code" : "311",
+        "fullName" : "lat311",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce43d7c843dd9687cb3a"),
+        "title" : "ie",
+        "code" : "413",
+        "fullName" : "ie413",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce43d7c843dd9687cb3d"),
+        "title" : "ie",
+        "code" : "515",
+        "fullName" : "ie515",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce45d7c843dd9687cb46"),
+        "title" : "mir",
+        "code" : "522",
+        "fullName" : "mir522",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce49d7c843dd9687cb50"),
+        "title" : "ls",
+        "code" : "615",
+        "fullName" : "ls615",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce49d7c843dd9687cb52"),
+        "title" : "ls",
+        "code" : "627",
+        "fullName" : "ls627",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce4bd7c843dd9687cb59"),
+        "title" : "ling",
+        "code" : "420",
+        "fullName" : "ling420",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce4bd7c843dd9687cb60"),
+        "title" : "ling",
+        "code" : "482",
+        "fullName" : "ling482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce4dd7c843dd9687cb69"),
+        "title" : "ad",
+        "code" : "482",
+        "fullName" : "ad482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce4ed7c843dd9687cb77"),
+        "title" : "ad",
+        "code" : "429",
+        "fullName" : "ad429",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce4ed7c843dd9687cb7a"),
+        "title" : "ad",
+        "code" : "540",
+        "fullName" : "ad540",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce50d7c843dd9687cb86"),
+        "title" : "mis",
+        "code" : "494",
+        "fullName" : "mis494",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce51d7c843dd9687cb89"),
+        "title" : "mis",
+        "code" : "650",
+        "fullName" : "mis650",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce51d7c843dd9687cb8b"),
+        "title" : "mis",
+        "code" : "682",
+        "fullName" : "mis682",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce52d7c843dd9687cb95"),
+        "title" : "math",
+        "code" : "401",
+        "fullName" : "math401",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce52d7c843dd9687cb97"),
+        "title" : "math",
+        "code" : "471",
+        "fullName" : "math471",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce52d7c843dd9687cb9a"),
+        "title" : "math",
+        "code" : "529",
+        "fullName" : "math529",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce52d7c843dd9687cb9b"),
+        "title" : "math",
+        "code" : "576",
+        "fullName" : "math576",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce52d7c843dd9687cba1"),
+        "title" : "math",
+        "code" : "411",
+        "fullName" : "math411",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce52d7c843dd9687cba6"),
+        "title" : "math",
+        "code" : "58q",
+        "fullName" : "math58q",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce52d7c843dd9687cba8"),
+        "title" : "math",
+        "code" : "632",
+        "fullName" : "math632",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce54d7c843dd9687cbae"),
+        "title" : "sced",
+        "code" : "48s",
+        "fullName" : "sced48s",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce54d7c843dd9687cbb4"),
+        "title" : "sced",
+        "code" : "483",
+        "fullName" : "sced483",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce54d7c843dd9687cbb6"),
+        "title" : "sced",
+        "code" : "48g",
+        "fullName" : "sced48g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce57d7c843dd9687cbbf"),
+        "title" : "meca",
+        "code" : "578",
+        "fullName" : "meca578",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce57d7c843dd9687cbc1"),
+        "title" : "meca",
+        "code" : "523",
+        "fullName" : "meca523",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5dd7c843dd9687cbcd"),
+        "title" : "bio",
+        "code" : "49a",
+        "fullName" : "bio49a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5dd7c843dd9687cbd7"),
+        "title" : "bio",
+        "code" : "585",
+        "fullName" : "bio585",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbdd"),
+        "title" : "phil",
+        "code" : "480",
+        "fullName" : "phil480",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbdf"),
+        "title" : "phil",
+        "code" : "48m",
+        "fullName" : "phil48m",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbe1"),
+        "title" : "phil",
+        "code" : "586",
+        "fullName" : "phil586",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbe2"),
+        "title" : "phil",
+        "code" : "58d",
+        "fullName" : "phil58d",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbe5"),
+        "title" : "phil",
+        "code" : "59b",
+        "fullName" : "phil59b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbe7"),
+        "title" : "phil",
+        "code" : "59d",
+        "fullName" : "phil59d",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbeb"),
+        "title" : "phil",
+        "code" : "48g",
+        "fullName" : "phil48g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbec"),
+        "title" : "phil",
+        "code" : "48t",
+        "fullName" : "phil48t",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce5fd7c843dd9687cbef"),
+        "title" : "phil",
+        "code" : "59c",
+        "fullName" : "phil59c",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce61d7c843dd9687cbf1"),
+        "title" : "pe",
+        "code" : "101",
+        "fullName" : "pe101",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce61d7c843dd9687cbf6"),
+        "title" : "pe",
+        "code" : "113",
+        "fullName" : "pe113",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce64d7c843dd9687cc0e"),
+        "title" : "phys",
+        "code" : "390",
+        "fullName" : "phys390",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce64d7c843dd9687cc14"),
+        "title" : "phys",
+        "code" : "58u",
+        "fullName" : "phys58u",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce64d7c843dd9687cc16"),
+        "title" : "phys",
+        "code" : "68a",
+        "fullName" : "phys68a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce64d7c843dd9687cc18"),
+        "title" : "phys",
+        "code" : "125",
+        "fullName" : "phys125",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce66d7c843dd9687cc22"),
+        "title" : "pols",
+        "code" : "406",
+        "fullName" : "pols406",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce67d7c843dd9687cc2f"),
+        "title" : "psy",
+        "code" : "472",
+        "fullName" : "psy472",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce67d7c843dd9687cc31"),
+        "title" : "psy",
+        "code" : "497",
+        "fullName" : "psy497",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce67d7c843dd9687cc33"),
+        "title" : "psy",
+        "code" : "49s",
+        "fullName" : "psy49s",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce67d7c843dd9687cc36"),
+        "title" : "psy",
+        "code" : "68a",
+        "fullName" : "psy68a",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce67d7c843dd9687cc3b"),
+        "title" : "psy",
+        "code" : "484",
+        "fullName" : "psy484",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce67d7c843dd9687cc3d"),
+        "title" : "psy",
+        "code" : "499",
+        "fullName" : "psy499",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce6cd7c843dd9687cc7e"),
+        "title" : "ger",
+        "code" : "105",
+        "fullName" : "ger105",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce6dd7c843dd9687cc95"),
+        "title" : "spa",
+        "code" : "401",
+        "fullName" : "spa401",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce6ed7c843dd9687cc97"),
+        "title" : "spl",
+        "code" : "580",
+        "fullName" : "spl580",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce6ed7c843dd9687cc9a"),
+        "title" : "spl",
+        "code" : "584",
+        "fullName" : "spl584",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce70d7c843dd9687cc9c"),
+        "title" : "soc",
+        "code" : "353",
+        "fullName" : "soc353",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce70d7c843dd9687cc9f"),
+        "title" : "soc",
+        "code" : "494",
+        "fullName" : "soc494",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce70d7c843dd9687cca1"),
+        "title" : "soc",
+        "code" : "497",
+        "fullName" : "soc497",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce70d7c843dd9687cca4"),
+        "title" : "soc",
+        "code" : "595",
+        "fullName" : "soc595",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce70d7c843dd9687cca6"),
+        "title" : "soc",
+        "code" : "285",
+        "fullName" : "soc285",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce70d7c843dd9687cca7"),
+        "title" : "soc",
+        "code" : "430",
+        "fullName" : "soc430",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce70d7c843dd9687ccaa"),
+        "title" : "soc",
+        "code" : "495",
+        "fullName" : "soc495",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce71d7c843dd9687ccb2"),
+        "title" : "swe",
+        "code" : "589",
+        "fullName" : "swe589",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce74d7c843dd9687ccbf"),
+        "title" : "trm",
+        "code" : "48k",
+        "fullName" : "trm48k",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce74d7c843dd9687ccc0"),
+        "title" : "trm",
+        "code" : "48t",
+        "fullName" : "trm48t",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce75d7c843dd9687ccc5"),
+        "title" : "trm",
+        "code" : "476",
+        "fullName" : "trm476",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce77d7c843dd9687ccce"),
+        "title" : "tr",
+        "code" : "407",
+        "fullName" : "tr407",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce77d7c843dd9687cccf"),
+        "title" : "tr",
+        "code" : "420",
+        "fullName" : "tr420",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce77d7c843dd9687ccd3"),
+        "title" : "tr",
+        "code" : "49b",
+        "fullName" : "tr49b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce78d7c843dd9687cce0"),
+        "title" : "tr",
+        "code" : "410",
+        "fullName" : "tr410",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce78d7c843dd9687cce5"),
+        "title" : "tr",
+        "code" : "48u",
+        "fullName" : "tr48u",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce78d7c843dd9687cce6"),
+        "title" : "tr",
+        "code" : "612",
+        "fullName" : "tr612",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce7bd7c843dd9687ccf3"),
+        "title" : "tkl",
+        "code" : "477",
+        "fullName" : "tkl477",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce7ed7c843dd9687ccff"),
+        "title" : "pred",
+        "code" : "482",
+        "fullName" : "pred482",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce80d7c843dd9687cd03"),
+        "title" : "cl",
+        "code" : "48g",
+        "fullName" : "cl48g",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce80d7c843dd9687cd08"),
+        "title" : "fa",
+        "code" : "49u",
+        "fullName" : "fa49u",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce80d7c843dd9687cd09"),
+        "title" : "al",
+        "code" : "304",
+        "fullName" : "al304",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce80d7c843dd9687cd0c"),
+        "title" : "cl",
+        "code" : "487",
+        "fullName" : "cl487",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce80d7c843dd9687cd0d"),
+        "title" : "cl",
+        "code" : "493",
+        "fullName" : "cl493",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce80d7c843dd9687cd15"),
+        "title" : "fa",
+        "code" : "48b",
+        "fullName" : "fa48b",
+        "__v" : 0
+    },
+    {
+        "_id" : ObjectId("6060ce80d7c843dd9687cd17"),
+        "title" : "fa",
+        "code" : "49s",
+        "fullName" : "fa49s",
+        "__v" : 0
     }
 ]
