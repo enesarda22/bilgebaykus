@@ -64,8 +64,8 @@ const options = {
 
 mongoose.Promise = global.Promise;
 ////uncomment to use local db
-mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
-// mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
+// mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
+mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
 mongoose.set("useCreateIndex", true);
 mongoose.set('useFindAndModify', false);
 
@@ -141,35 +141,35 @@ function escapeRegex(text) {
 };
 
 
-User.find({}, function(err, foundUsers) {
+// User.find({}, function(err, foundUsers) {
+//
+//   foundUsers.forEach(function(user) {
+//
+//     user.reportedBy = [];
+//     user.reviewedInstructors = [];
+//     user.isBanned = false;
+//     user.save();
+//
+//   });
+//
+// });
 
-  foundUsers.forEach(function(user) {
-
-    user.reportedBy = [];
-    user.reviewedInstructors = [];
-    user.isBanned = false;
-    user.save();
-
-  });
-
-});
-
-Instructor.findOneAndUpdate({
-  name: "enes arda"
-}, {
-  overallAvg: 50,
-  lecturingAvg: 50,
-  studentRelAvg: 50,
-  difficultyAvg: 50,
-  gradingAvg: 50,
-  numberOfYes: 0,
-  reviews: [],
-  courses: []
-}, function(err) {
-  if (err) {
-    console.log(err);
-  }
-});
+// Instructor.findOneAndUpdate({
+//   name: "enes arda"
+// }, {
+//   overallAvg: 50,
+//   lecturingAvg: 50,
+//   studentRelAvg: 50,
+//   difficultyAvg: 50,
+//   gradingAvg: 50,
+//   numberOfYes: 0,
+//   reviews: [],
+//   courses: []
+// }, function(err) {
+//   if (err) {
+//     console.log(err);
+//   }
+// });
 
 app.get("/", function(req, res) {
 
