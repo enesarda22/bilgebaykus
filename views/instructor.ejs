@@ -114,9 +114,13 @@
                       <h5 class="card-title review-title">değerlendirme yok 😔</h5>
                       <p class="card-text">bu hocayı henüz kimse değerlendirmedi. ilk değerlendiren sen olmak istiyorsan aşağıdaki butona tıklayabilirsin!</p>
                       <%if(isAuth){%>
-                      <form action="/rate" method="get">
-                        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
-                      </form>
+                        <%if(hasAlreadyReviewed){%>
+                          <p class="reviewed-alert" style="color: green;"><i class="far fa-check-circle"></i> bu hocayı değerlendirdiniz</p>
+                        <%}else {%>
+                          <form action="/rate" method="get">
+                            <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
+                          </form>
+                        <%}%>
                       <%}else {%>
                       <span class="d-inline-block disabledButton" data-trigger="hover" data-toggle="popover" data-content="değerlendirmek için giriş yapmanız gerekiyor">
                         <button class="btn btn-primary review-button" style="pointer-events: none;" type="button" disabled>hocayı değerlendir</button>
@@ -269,7 +273,7 @@
 
 
 
-                      <%if(hasAlreadyReviewed) {%>
+                      <%if(hasAlreadyReviewed && initialReview!=null) {%>
                       <div class="row initial-row">
                         <div style="width: 100%;" class="card border-primary">
                           <div class="card-body review-card">

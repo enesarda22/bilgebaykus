@@ -35,7 +35,27 @@
 
   <div class="container-fluid p-3">
     <div class="container-fluid bg-light px-3 py-3">
-      <h2><%=course%> veren hocalar:</h2>
+      <div class="row">
+          <div class="col-lg-6 col-12">
+            <h2><%=course%> veren hocalar:</h2>
+          </div>
+          <div class="col-lg-6 col-12">
+            <div class="form-select row sort-select-form">
+              <div class="col-lg-6 col-12">
+                <form action="/courses/<%=course%>?sort=" method="GET">
+                  <select name="sort" class="form-control input-small select-sort" onchange="this.form.submit()" id="sel1">
+                    <option value="0" <%=sort == "0" ? "selected" : ""%>>genel puan</option>
+                    <option value="1" <%=sort == "1" ? "selected" : ""%>>ders anlatımı</option>
+                    <option value="2" <%=sort == "2" ? "selected" : ""%>>öğrenciyle iletişim</option>
+                    <option value="3" <%=sort == "3" ? "selected" : ""%>>notlandırma</option>
+                    <option value="4" <%=sort == "4" ? "selected" : ""%>>sınav zorluğu</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+
       <div class="row">
 
         <%instructors.forEach(function(instructor) {%>

@@ -64,8 +64,8 @@ const options = {
 
 mongoose.Promise = global.Promise;
 ////uncomment to use local db
-// mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
-mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
+mongoose.connect("mongodb://localhost:27017/bilgebaykusDB", options);
+// mongoose.connect("mongodb+srv://admin-enes:" + process.env.PASSWORD + "@cluster0.drsol.mongodb.net/bilgebaykusDB", options);
 mongoose.set("useCreateIndex", true);
 mongoose.set('useFindAndModify', false);
 
@@ -74,6 +74,10 @@ const userSchema = new mongoose.Schema({
   password: String,
   reviewedInstructors: [String],
   isConfirmed: {
+    type: Boolean,
+    default: false
+  },
+  isBanned: {
     type: Boolean,
     default: false
   }
@@ -124,36 +128,48 @@ const instructorSchema = new mongoose.Schema({
 });
 const Instructor = mongoose.model("instructor", instructorSchema);
 
+const reportSchema = new mongoose.Schema({
+  reportedBy: String,
+  instructor: String,
+  reportedReview: String,
+  text: String
+});
+const Report = mongoose.model("report", reportSchema);
+
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
 
-// User.find({},function(err, foundUsers) {
-//
-//   foundUsers.forEach(function(user) {
-//
-//     user.reportedBy = [];
-//     user.save();
-//
-//   });
-//
-// });
+User.find({}, function(err, foundUsers) {
 
-// Instructor.findOneAndUpdate({name: "enes arda"}, {
-//   overallAvg: 50,
-//   lecturingAvg: 50,
-//   studentRelAvg: 50,
-//   difficultyAvg: 50,
-//   gradingAvg: 50,
-//   numberOfYes: 0,
-//   reviews: [],
-//   courses: []
-// }, function(err){
-//   if(err) {
-//     console.log(err);
-//   }
-// });
+  foundUsers.forEach(function(user) {
+
+    user.reportedBy = [];
+    user.reviewedInstructors = [];
+    user.isBanned = false;
+    user.save();
+
+  });
+
+});
+
+Instructor.findOneAndUpdate({
+  name: "enes arda"
+}, {
+  overallAvg: 50,
+  lecturingAvg: 50,
+  studentRelAvg: 50,
+  difficultyAvg: 50,
+  gradingAvg: 50,
+  numberOfYes: 0,
+  reviews: [],
+  courses: []
+}, function(err) {
+  if (err) {
+    console.log(err);
+  }
+});
 
 app.get("/", function(req, res) {
 
@@ -325,9 +341,8 @@ app.get("/index", function(req, res) {
 
 app.get("/instructors/:instructorName", function(req, res) {
 
-
   let page;
-  if(req.query.page == null) {
+  if (req.query.page == null) {
     page = 1;
   } else {
     page = Number(req.query.page);
@@ -342,7 +357,7 @@ app.get("/instructors/:instructorName", function(req, res) {
       if (foundInstructor) {
         let initialReview;
         let hasAlreadyReviewed = false;
-        const numberOfPages = Math.ceil(foundInstructor.reviews.length/10);
+        const numberOfPages = Math.ceil(foundInstructor.reviews.length / 10);
 
         if (req.user != null && req.user.reviewedInstructors.includes(foundInstructor.name)) {
 
@@ -376,12 +391,54 @@ app.get("/instructors/:instructorName", function(req, res) {
 
 app.get("/courses/:courseName", function(req, res) {
 
+  let sort = "0";
+
+  if (req.query) {
+    sort = req.query.sort;
+  }
+
+  let sortQuery;
+  switch (sort) {
+    case "0":
+      sortQuery = {
+        overallAvg: -1
+      };
+      break;
+    case "1":
+      sortQuery = {
+        lecturingAvg: -1
+      };
+      break;
+    case "2":
+      sortQuery = {
+        studentRelAvg: -1
+      };
+      break;
+    case "3":
+      sortQuery = {
+        gradingAvg: -1
+      };
+      break;
+    case "4":
+      sortQuery = {
+        difficultyAvg: 1
+      };
+      break;
+    default:
+      sortQuery = {
+        overallAvg: -1
+      };
+      break;
+  }
+
+
   Course.findOne({
     fullName: req.params.courseName
   }, function(err, foundCourse) {
     if (err) {
       res.render("error");
     } else {
+
       Instructor.find({
         courses: {
           $elemMatch: {
@@ -389,13 +446,12 @@ app.get("/courses/:courseName", function(req, res) {
             code: foundCourse.code
           }
         }
-      }).sort({
-        overallAvg: -1
-      }).exec(function(err, foundInstructors) {
+      }).sort(sortQuery).exec(function(err, foundInstructors) {
         res.render("course", {
           instructors: foundInstructors,
           course: req.params.courseName,
-          isAuth: req.isAuthenticated()
+          isAuth: req.isAuthenticated(),
+          sort: sort
         });
       });
     }
@@ -650,23 +706,29 @@ app.post("/login", function(req, res, next) {
         res.redirect("/login");
       } else {
 
-        passport.authenticate('local', function(err, user, info) {
-          if (err) {
-            return next(err);
-          }
-          if (!user) {
-            req.flash('error', 'hatalı kullanıcı adı ya da şifre');
-            return res.redirect('/login');
-          }
-          req.logIn(user, function(err) {
+        if (foundUser.isBanned) {
+
+          req.flash('error', 'hesabınız engellendi');
+          res.redirect("/login");
+
+        } else {
+          passport.authenticate('local', function(err, user, info) {
             if (err) {
               return next(err);
             }
-            req.flash('success', 'başarılı bir şekilde giriş yaptınız.');
-            return res.redirect(page);
-          });
-        })(req, res, next);
-
+            if (!user) {
+              req.flash('error', 'hatalı kullanıcı adı ya da şifre');
+              return res.redirect('/login');
+            }
+            req.logIn(user, function(err) {
+              if (err) {
+                return next(err);
+              }
+              req.flash('success', 'başarılı bir şekilde giriş yaptınız.');
+              return res.redirect(page);
+            });
+          })(req, res, next);
+        }
       }
     }
 
@@ -861,8 +923,8 @@ app.get("/report", function(req, res) {
         if (!err) {
 
           foundInstructor.reviews.forEach(function(review) {
-            if(review._id == req.query.review) {
-              if(review.reportedBy.includes(req.user._id)) {
+            if (review._id == req.query.review) {
+              if (review.reportedBy.includes(req.user._id)) {
                 req.flash('error', 'bu yorumu zaten raporladınız');
                 res.redirect("/instructors/" + foundInstructor.name);
               } else {
@@ -893,23 +955,31 @@ app.post("/report", function(req, res) {
     Instructor.findById(req.body.instructor, function(err, foundInstructor) {
 
       foundInstructor.reviews.forEach(function(review) {
-        if(review._id == req.body.reportedReview) {
-          if(review.reportedBy.includes(req.user._id)) {
+        if (review._id == req.body.reportedReview) {
+          if (review.reportedBy.includes(req.user._id)) {
             req.flash('success', 'bu yorumu zaten raporladınız');
-            res.redirect("/instructors/" + req.body.instructor);
+            res.redirect("/instructors/" + foundInstructor.name);
           } else {
             review.reportedBy.push(req.user._id);
             foundInstructor.save(function(err) {
-              if(!err) {
-                sendEmail({
-                  subject: "Yeni Rapor",
-                  text: req.user._id + " tarafindan " + req.body.reportedReview + " " + req.body.instructor + "'a yazdigi yorumdan dolayi rapor edildi. Nedeni: " + req.body.reportText,
-                  to: "enesarda22@gmail.com",
-                  from: process.env.FASTMAIL_USERNAME
+              if (!err) {
+                const newReport = new Report({
+                  reportedBy: req.user._id,
+                  instructor: req.body.instructor,
+                  reportedReview: review._id,
+                  text: req.body.reportText
+                });
+                newReport.save(function(err) {
+                  if (!err) {
+                    req.flash('success', 'raporunuz başarılı bir şekilde gönderildi.');
+                    res.redirect("/instructors/" + foundInstructor.name);
+                  } else {
+                    req.flash('error', 'bir hata gerçekleşti');
+                    res.redirect("/");
+                  }
                 });
 
-                req.flash('success', 'raporunuz başarılı bir şekilde gönderildi.');
-                res.redirect("/instructors/" + foundInstructor.name);
+
               } else {
                 req.flash('error', 'bir hata gerçekleşti');
                 res.redirect("/");
@@ -927,6 +997,106 @@ app.post("/report", function(req, res) {
   }
 
 });
+
+app.get("/read_report", function(req, res) {
+  if (req.isAuthenticated() && req.user.username == "enes.arda") {
+    Report.findOne({}, function(err, foundReport) {
+      if (!foundReport) {
+        res.send("there are no reports");
+      } else {
+        Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
+          let doesInclude = false;
+          foundInstructor.reviews.forEach(function(review) {
+            if (review._id == foundReport.reportedReview) {
+              doesInclude = true;
+              res.render("readreport", {
+                report: foundReport,
+                review: review
+              });
+            }
+          });
+          if (!doesInclude) {
+            Report.findByIdAndDelete(foundReport._id, function(err) {
+              if (!err) {
+                res.redirect("/read_report");
+              }
+            });
+          }
+        });
+      }
+    });
+
+  } else {
+    res.redirect("/");
+  }
+});
+
+app.post("/read_report", function(req, res) {
+  console.log(req.body);
+
+  if (req.isAuthenticated() && req.user.username == "enes.arda") {
+
+    if (req.body.action == 0) {
+      Report.findByIdAndDelete(req.body.report, function(err) {
+        if (!err) {
+          res.redirect("/read_report");
+        }
+      });
+    } else if (req.body.action == 1) {
+
+      Report.findByIdAndDelete(req.body.report, function(err, foundReport) {
+        if (foundReport) {
+          Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
+            if (foundInstructor) {
+              foundInstructor.reviews.forEach(function(review) {
+                if (review._id == foundReport.reportedReview) {
+                  foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
+                }
+              });
+              foundInstructor.save(function(err) {
+                if (!err) {
+                  res.redirect("/read_report");
+                }
+              })
+            } else {
+              res.send("no instructor")
+            }
+          });
+        }
+      });
+
+    } else {
+      Report.findByIdAndDelete(req.body.report, function(err, foundReport) {
+        if (foundReport) {
+          Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
+            if (foundInstructor) {
+              foundInstructor.reviews.forEach(function(review) {
+                if (review._id == foundReport.reportedReview) {
+                  User.findByIdAndUpdate(review.userID, {
+                    isBanned: true
+                  }, function(err) {
+                    if (!err) {
+                      foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
+                    }
+                  });
+                }
+              });
+              foundInstructor.save(function(err) {
+                if (!err) {
+                  res.redirect("/read_report");
+                }
+              })
+            } else {
+              res.send("no instructor")
+            }
+          });
+        }
+      });
+    }
+  }
+
+});
+
 app.get('*', function(req, res) {
   res.render('error');
 });

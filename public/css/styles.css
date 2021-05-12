@@ -112,6 +112,15 @@ textarea {
   margin-top: 0.3rem;
 }
 
+/* course section */
+.select-sort {
+  width: auto;
+}
+
+.sort-select-form {
+  float: right;
+}
+
 /* rate section */
 .btn-rate.btn-danger {
   margin-left: 0.5rem;
@@ -244,6 +253,17 @@ textarea {
     width: 6rem;
     height: 6rem;
     font-size: 3rem;
+  }
+
+  /* course section */
+  .select-sort {
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  .sort-select-form {
+    float: left;
+    margin-top: 1.5rem;
   }
 
   /* rate section */
@@ -390,7 +410,7 @@ textarea {
   }
 
   .row, .card.course-card {
-    margin-bottom: 3rem;
+    margin-bottom: 2.3rem;
   }
 
   .main-progress.progress {

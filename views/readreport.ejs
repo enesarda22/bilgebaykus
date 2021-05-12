@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+<form class="" action="/read_report" method="post">
+
+  <div class="row">
+    <div class="col-12">
+      <div style="width: 100%;" class="card">
+        <div class="card-body review-card">
+
+          <p class="date"><%=review.date%></p>
+          <%=review.text%>
+          <br>
+          <span class="review-author"><strong>ders: </strong><%=review.course%> <span class="ml-2"><strong>yazar: </strong></span><%=review.author%></span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div style="width: 100%;" class="card">
+        <div class="card-body review-card">
+
+          <%=report.text%>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <input type="hidden" name="report" value=<%=report._id%> />
+  <button type="submit" name="action" value=0 class="btn btn-success">bir şey yapma</button>
+  <button type="submit" name="action" value=1 class="btn btn-warning">sadece sil</button>
+  <button type="submit" name="action" value=2 class="btn btn-danger">banla</button>
+
+</form>
+
+
+<%- include('partials/footer') %>
