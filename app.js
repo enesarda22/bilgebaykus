@@ -16,7 +16,7 @@ const {
 } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const jwt = require('jsonwebtoken');
-var ObjectId = require('mongodb').ObjectID;
+var Int32 = require('mongoose-int32');
 
 const createTransporter = async () => {
 
@@ -121,12 +121,34 @@ const instructorSchema = new mongoose.Schema({
   name: String,
   courses: [courseSchema],
   reviews: [reviewSchema],
-  overallAvg: Number,
-  lecturingAvg: Number,
-  studentRelAvg: Number,
-  difficultyAvg: Number,
-  gradingAvg: Number,
-  numberOfYes: Number
+  overallAvg: {
+    type: Int32,
+    minimum: 0,
+    maximum: 100
+  },
+  lecturingAvg: {
+    type: Int32,
+    minimum: 0,
+    maximum: 100
+  },
+  studentRelAvg: {
+    type: Int32,
+    minimum: 0,
+    maximum: 100
+  },
+  difficultyAvg: {
+    type: Int32,
+    minimum: 0,
+    maximum: 100
+  },
+  gradingAvg: {
+    type: Int32,
+    minimum: 0,
+    maximum: 100
+  },
+  numberOfYes: {
+    type: Int32
+  },
 });
 const Instructor = mongoose.model("instructor", instructorSchema);
 
@@ -148,7 +170,7 @@ function escapeRegex(text) {
 //   foundUsers.forEach(function(user) {
 //
 //     user.reportedBy = [];
-//     // user.reviewedInstructors = [];
+//     user.reviewedInstructors = [];
 //     user.isBanned = false;
 //     user.save();
 //
@@ -374,7 +396,7 @@ app.get("/instructors/:instructorName", function(req, res) {
         let hasAlreadyReviewed = false;
         const numberOfPages = Math.ceil(foundInstructor.reviews.length / 10);
 
-        if (req.user != null && req.user.reviewedInstructors.includes(foundInstructor.name)) {
+        if (req.user != null && req.user.reviewedInstructors.includes(foundInstructor._id)) {
 
           hasAlreadyReviewed = true;
           foundInstructor.reviews.forEach(function(review) {
@@ -423,7 +445,9 @@ app.post("/like", function(req, res) {
             }
           }
 
-          foundInstructor.reviews.sort(function(a, b){return b.likedBy.length - a.likedBy.length});
+          foundInstructor.reviews.sort(function(a, b) {
+            return b.likedBy.length - a.likedBy.length
+          });
 
         });
 
@@ -509,14 +533,12 @@ app.get("/rate", function(req, res) {
 
   if (req.isAuthenticated()) {
 
-    Instructor.findOne({
-      name: req.query.instructor
-    }, function(err, foundInstructor) {
+    Instructor.findById(req.query.instructor, function(err, foundInstructor) {
       if (err) {
         res.render("error");
       } else {
         if (foundInstructor && !req.user.reviewedInstructors.includes(req.query.instructor)) {
-          if (!req.user.reviewedInstructors.includes(foundInstructor.name)) {
+          if (!req.user.reviewedInstructors.includes(foundInstructor._id)) {
             res.render("rate", {
               instructor: foundInstructor
             });
@@ -566,16 +588,14 @@ app.post("/rate", function(req, res) {
       course: req.body.course
     }
 
-    Instructor.findOne({
-      name: req.body.instructor
-    }, function(err, foundInstructor) {
+    Instructor.findById(req.body.instructor, function(err, foundInstructor) {
       if (err) {
         res.render("error");
-      } else {
-        const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.lecturingValue) * 10) / (foundInstructor.reviews.length + 2);
-        const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length + 1) + Number(req.body.studentRelValue) * 10) / (foundInstructor.reviews.length + 2);
-        const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length + 1) + Number(req.body.difficultyValue) * 10) / (foundInstructor.reviews.length + 2);
-        const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length + 1) + Number(req.body.gradingValue) * 10) / (foundInstructor.reviews.length + 2);
+      } else if (foundInstructor) {
+        const lecturingAvg = (foundInstructor.lecturingAvg * (foundInstructor.reviews.length) + Number(req.body.lecturingValue) * 10) / (foundInstructor.reviews.length + 1);
+        const studentRelAvg = (foundInstructor.studentRelAvg * (foundInstructor.reviews.length) + Number(req.body.studentRelValue) * 10) / (foundInstructor.reviews.length + 1);
+        const difficultyAvg = (foundInstructor.difficultyAvg * (foundInstructor.reviews.length) + Number(req.body.difficultyValue) * 10) / (foundInstructor.reviews.length + 1);
+        const gradingAvg = (foundInstructor.gradingAvg * (foundInstructor.reviews.length) + Number(req.body.gradingValue) * 10) / (foundInstructor.reviews.length + 1);
         const overallAvg = (lecturingAvg + studentRelAvg + gradingAvg) / 3
 
         foundInstructor.lecturingAvg = parseInt(lecturingAvg);
@@ -587,7 +607,7 @@ app.post("/rate", function(req, res) {
           foundInstructor.numberOfYes++;
         }
         foundInstructor.reviews.push(newReview);
-        req.user.reviewedInstructors.push(foundInstructor.name);
+        req.user.reviewedInstructors.push(foundInstructor._id);
         req.user.save(function(err) {
           if (!err) {
             foundInstructor.save(function(err) {
@@ -615,7 +635,7 @@ app.post("/rate", function(req, res) {
 });
 
 app.post("/update", function(req, res) {
-  if (req.user._id == req.body.userID) {
+  if (req.isAuthenticated() && req.user._id == req.body.userID) {
 
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -637,10 +657,8 @@ app.post("/update", function(req, res) {
       course: req.body.course
     }
 
-    Instructor.findOne({
-      name: req.body.instructor
-    }, function(err, foundInstructor) {
-      if (!err) {
+    Instructor.findById(req.body.instructor, function(err, foundInstructor) {
+      if (!err && foundInstructor) {
 
         foundInstructor.reviews.forEach(function(review) {
           if (review.userID == req.user._id) {
@@ -650,7 +668,7 @@ app.post("/update", function(req, res) {
         foundInstructor.reviews.push(newReview);
         foundInstructor.save(function(err) {
           if (!err) {
-            res.redirect("/instructors/" + req.body.instructor);
+            res.redirect("/instructors/" + foundInstructor.name);
           }
         });
 
@@ -965,7 +983,7 @@ app.get("/report", function(req, res) {
 
       Instructor.findById(req.query.instructor, function(err, foundInstructor) {
 
-        if (!err) {
+        if (!err && foundInstructor) {
 
           foundInstructor.reviews.forEach(function(review) {
             if (review._id == req.query.review) {
@@ -1076,71 +1094,71 @@ app.get("/read_report", function(req, res) {
   }
 });
 
-app.post("/read_report", function(req, res) {
-  console.log(req.body);
-
-  if (req.isAuthenticated() && req.user.username == "enes.arda") {
-
-    if (req.body.action == 0) {
-      Report.findByIdAndDelete(req.body.report, function(err) {
-        if (!err) {
-          res.redirect("/read_report");
-        }
-      });
-    } else if (req.body.action == 1) {
-
-      Report.findByIdAndDelete(req.body.report, function(err, foundReport) {
-        if (foundReport) {
-          Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
-            if (foundInstructor) {
-              foundInstructor.reviews.forEach(function(review) {
-                if (review._id == foundReport.reportedReview) {
-                  foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
-                }
-              });
-              foundInstructor.save(function(err) {
-                if (!err) {
-                  res.redirect("/read_report");
-                }
-              })
-            } else {
-              res.send("no instructor")
-            }
-          });
-        }
-      });
-
-    } else {
-      Report.findByIdAndDelete(req.body.report, function(err, foundReport) {
-        if (foundReport) {
-          Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
-            if (foundInstructor) {
-              foundInstructor.reviews.forEach(function(review) {
-                if (review._id == foundReport.reportedReview) {
-                  User.findByIdAndUpdate(review.userID, {
-                    isBanned: true
-                  }, function(err) {
-                    if (!err) {
-                      foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
-                    }
-                  });
-                }
-              });
-              foundInstructor.save(function(err) {
-                if (!err) {
-                  res.redirect("/read_report");
-                }
-              })
-            } else {
-              res.send("no instructor")
-            }
-          });
-        }
-      });
-    }
-  }
-
-});
+// app.post("/read_report", function(req, res) {
+//   console.log(req.body);
+//
+//   if (req.isAuthenticated() && req.user.username == "enes.arda") {
+//
+//     if (req.body.action == 0) {
+//       Report.findByIdAndDelete(req.body.report, function(err) {
+//         if (!err) {
+//           res.redirect("/read_report");
+//         }
+//       });
+//     } else if (req.body.action == 1) {
+//
+//       Report.findByIdAndDelete(req.body.report, function(err, foundReport) {
+//         if (foundReport) {
+//           Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
+//             if (foundInstructor) {
+//               foundInstructor.reviews.forEach(function(review) {
+//                 if (review._id == foundReport.reportedReview) {
+//                   foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
+//                 }
+//               });
+//               foundInstructor.save(function(err) {
+//                 if (!err) {
+//                   res.redirect("/read_report");
+//                 }
+//               })
+//             } else {
+//               res.send("no instructor")
+//             }
+//           });
+//         }
+//       });
+//
+//     } else {
+//       Report.findByIdAndDelete(req.body.report, function(err, foundReport) {
+//         if (foundReport) {
+//           Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
+//             if (foundInstructor) {
+//               foundInstructor.reviews.forEach(function(review) {
+//                 if (review._id == foundReport.reportedReview) {
+//                   User.findByIdAndUpdate(review.userID, {
+//                     isBanned: true
+//                   }, function(err) {
+//                     if (!err) {
+//                       foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
+//                     }
+//                   });
+//                 }
+//               });
+//               foundInstructor.save(function(err) {
+//                 if (!err) {
+//                   res.redirect("/read_report");
+//                 }
+//               })
+//             } else {
+//               res.send("no instructor")
+//             }
+//           });
+//         }
+//       });
+//     }
+//   }
+//
+// });
 
 app.get('*', function(req, res) {
   res.render('error');

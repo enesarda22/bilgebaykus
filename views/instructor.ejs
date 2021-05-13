@@ -118,7 +118,7 @@
                       <p class="reviewed-alert" style="color: green;"><i class="far fa-check-circle"></i> bu hocayı değerlendirdiniz</p>
                       <%}else {%>
                       <form action="/rate" method="get">
-                        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
+                        <button type="submit" name="instructor" value="<%=instructor._id%>" class="btn btn-primary review-button">hocayı değerlendir</button>
                       </form>
                       <%}%>
                       <%}else {%>
@@ -253,7 +253,7 @@
                       <%if(isAuth) {%>
                       <%if(!hasAlreadyReviewed) {%>
                       <form action="/rate" method="get">
-                        <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary review-button">hocayı değerlendir</button>
+                        <button type="submit" name="instructor" value="<%=instructor._id%>" class="btn btn-primary review-button">hocayı değerlendir</button>
                       </form>
                       <%} else {%>
                       <p class="reviewed-alert" style="color: green;"><i class="far fa-check-circle"></i> bu hocayı değerlendirdiniz</p>
@@ -332,7 +332,7 @@
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">çıkış</button>
                               <input type="hidden" name="userID" value="<%=initialReview.userID%>"/>
-                                    <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-primary">kaydet</button>
+                                    <button type="submit" name="instructor" value="<%=instructor._id%>" class="btn btn-primary">kaydet</button>
                                 </div>
                             </form>
                           </div>

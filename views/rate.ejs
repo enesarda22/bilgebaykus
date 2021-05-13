@@ -28,28 +28,28 @@
           <div class="form-group">
             <label for="formControlRange">ders anlatımı: </label>
             <output id="amount0" name="amount0" for="lecturingValue" class="range-value">5</output>
-            <input type="range" name="lecturingValue" min="0" max="10" class="form-control-range" id="lecturingValue" oninput="amount0.value=lecturingValue.value">
+            <input type="range" name="lecturingValue" min="1" max="10" class="form-control-range" id="lecturingValue" oninput="amount0.value=lecturingValue.value">
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
             <label for="formControlRange">öğrenciyle iletişim: </label>
             <output id="amount1" name="amount1" for="studentRelValue" class="range-value">5</output>
-            <input type="range" name="studentRelValue" min="0" max="10" class="form-control-range" id="studentRelValue" oninput="amount1.value=studentRelValue.value">
+            <input type="range" name="studentRelValue" min="1" max="10" class="form-control-range" id="studentRelValue" oninput="amount1.value=studentRelValue.value">
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
             <label for="formControlRange">notlandırma: </label>
             <output id="amount2" name="amount2" for="gradingValue" class="range-value">5</output>
-            <input type="range" name="gradingValue" min="0" max="10" class="form-control-range" id="gradingValue" oninput="amount2.value=gradingValue.value">
+            <input type="range" name="gradingValue" min="1" max="10" class="form-control-range" id="gradingValue" oninput="amount2.value=gradingValue.value">
           </div>
         </div>
         <div class="col-lg-3 col-md-12">
           <div class="form-group">
             <label for="formControlRange">sınav zorluğu (fazlaysa zor): </label>
             <output id="amount3" name="amount3" for="difficultyValue" class="range-value">5</output>
-            <input type="range" name="difficultyValue" min="0" max="10" class="form-control-range" id="difficultyValue" oninput="amount3.value=difficultyValue.value">
+            <input type="range" name="difficultyValue" min="1" max="10" class="form-control-range" id="difficultyValue" oninput="amount3.value=difficultyValue.value">
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
         </div>
       </div>
 
-      <button type="submit" name="instructor" value="<%=instructor.name%>" class="btn btn-success btn-rate">gönder</button>
+      <button type="submit" name="instructor" value="<%=instructor._id%>" class="btn btn-success btn-rate">gönder</button>
       <a href="/instructors/<%=instructor.name%>" class="btn btn-danger btn-rate">iptal</a>
     </form>
   </div>
