@@ -7,6 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <ul class="navbar-nav ml-auto mr-3">
+
       <%if(!isAuth) {%>
         <li class="navbar-item"><a class="nav-link" href="/login">giriş</a></li>
         <li class="navbar-item"><a class="nav-link" href="/register">üye ol</a></li>
@@ -18,6 +19,7 @@
     <input class="form-control mr-sm-2" type="search" name="search" placeholder="ee202..." autocomplete="off">
     <button class="btn btn-outline-light my-2 my-sm-0" name="page" value=1 type="submit">ara</button>
   </form>
+
   <%if(isAuth) {%>
     <form action="/logout" method="post" class="form-inline">
       <button type="submit" class="btn btn-outline-dark exit-button">çıkış</button>

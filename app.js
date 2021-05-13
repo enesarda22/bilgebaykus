@@ -16,6 +16,7 @@ const {
 } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const jwt = require('jsonwebtoken');
+var ObjectId = require('mongodb').ObjectID;
 
 const createTransporter = async () => {
 
@@ -111,7 +112,8 @@ const reviewSchema = {
   userID: String,
   date: String,
   reportedBy: [String],
-  course: String
+  course: String,
+  likedBy: [String]
 }
 
 
@@ -144,9 +146,9 @@ function escapeRegex(text) {
 // User.find({}, function(err, foundUsers) {
 //
 //   foundUsers.forEach(function(user) {
-//
+// 
 //     user.reportedBy = [];
-//     user.reviewedInstructors = [];
+//     // user.reviewedInstructors = [];
 //     user.isBanned = false;
 //     user.save();
 //
@@ -169,6 +171,19 @@ function escapeRegex(text) {
 //   if (err) {
 //     console.log(err);
 //   }
+// });
+
+// Instructor.find({}, function(err, foundInstructors) {
+//
+//   foundInstructors.forEach(function(instructor) {
+//
+//     instructor.reviews.forEach(function(review) {
+//       review.likedBy = [];
+//     });
+//
+//     instructor.save();
+//   });
+//
 // });
 
 app.get("/", function(req, res) {
@@ -378,7 +393,8 @@ app.get("/instructors/:instructorName", function(req, res) {
           initialReview: initialReview,
           hasAlreadyReviewed: hasAlreadyReviewed,
           numberOfPages: numberOfPages,
-          page: page
+          page: page,
+          user: req.isAuthenticated() ? req.user._id : null
         });
 
 
@@ -387,6 +403,35 @@ app.get("/instructors/:instructorName", function(req, res) {
       }
     }
   });
+});
+
+app.post("/like", function(req, res) {
+
+  if (req.isAuthenticated()) {
+
+    Instructor.findById(req.body.instructor, function(err, foundInstructor) {
+
+      if (foundInstructor) {
+        foundInstructor.reviews.forEach(function(review) {
+
+          if (review._id == req.body.review) {
+
+            if (req.body.liked == "true" && !review.likedBy.includes(req.user._id)) {
+              review.likedBy.push(req.user._id);
+            } else {
+              review.likedBy = review.likedBy.filter(elem => elem != req.user._id);
+            }
+          }
+
+          foundInstructor.reviews.sort(function(a, b){return b.likedBy.length - a.likedBy.length});
+
+        });
+
+        foundInstructor.save();
+      }
+    });
+  }
+
 });
 
 app.get("/courses/:courseName", function(req, res) {

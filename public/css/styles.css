@@ -83,10 +83,9 @@ textarea {
 }
 
 .review-author {
-  /* font-size: 1.2rem; */
   margin-top: 0.5rem;
   margin-bottom: -0.5rem;
-  float: right;
+  text-align: right;
 }
 
 .review-content {
@@ -100,6 +99,22 @@ textarea {
 
 .initial-row {
   margin-bottom: 1rem;
+}
+
+.review-card {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.like-btn {
+  float: left;
+  margin-top: 0.2rem;
+  margin-bottom: -0.2rem;
+  cursor: pointer;
+}
+
+.like-count {
+  font-size: 0.9rem;
 }
 
 .date {
@@ -447,6 +462,13 @@ textarea {
     font-size: 3rem;
   }
 
+  .like-btn {
+    margin-top: -0.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+
+
   .card-body .review-button {
     margin-bottom: 2rem;
   }
@@ -455,8 +477,13 @@ textarea {
     display: none;
   }
 
-  .date {
+  .date, .review-author {
     font-size: 2.5rem;
+  }
+
+  .like-count {
+    margin-top: 0.3rem;
+    font-size: 2rem;
   }
 
   .reviewed-alert {
