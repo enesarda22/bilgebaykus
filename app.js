@@ -649,23 +649,23 @@ app.post("/update", function(req, res) {
     } else {
       author = _.lowerCase(req.user.username);
     }
-    const newReview = {
-      author: author,
-      text: req.body.reviewText,
-      userID: req.user._id,
-      date: today,
-      course: req.body.course
-    }
 
     Instructor.findById(req.body.instructor, function(err, foundInstructor) {
       if (!err && foundInstructor) {
+        foundInstructor.reviews.forEach(function(review){
 
-        foundInstructor.reviews.forEach(function(review) {
-          if (review.userID == req.user._id) {
-            foundInstructor.reviews = foundInstructor.reviews.filter(item => item !== review);
+          if(review._id == req.body.reviewID) {
+
+            review.author = author;
+            review.text = req.body.reviewText;
+            review.date = today;
+            review.course = req.body.course;
+            review.reportedBy = [];
+
           }
+
         });
-        foundInstructor.reviews.push(newReview);
+
         foundInstructor.save(function(err) {
           if (!err) {
             res.redirect("/instructors/" + foundInstructor.name);
@@ -677,7 +677,7 @@ app.post("/update", function(req, res) {
 
 
   } else {
-    res.redirect("/instructors/" + req.body.instructor);
+    res.redirect("/error");
   }
 });
 
@@ -1061,38 +1061,38 @@ app.post("/report", function(req, res) {
 
 });
 
-app.get("/read_report", function(req, res) {
-  if (req.isAuthenticated() && req.user.username == "enes.arda") {
-    Report.findOne({}, function(err, foundReport) {
-      if (!foundReport) {
-        res.send("there are no reports");
-      } else {
-        Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
-          let doesInclude = false;
-          foundInstructor.reviews.forEach(function(review) {
-            if (review._id == foundReport.reportedReview) {
-              doesInclude = true;
-              res.render("readreport", {
-                report: foundReport,
-                review: review
-              });
-            }
-          });
-          if (!doesInclude) {
-            Report.findByIdAndDelete(foundReport._id, function(err) {
-              if (!err) {
-                res.redirect("/read_report");
-              }
-            });
-          }
-        });
-      }
-    });
-
-  } else {
-    res.redirect("/");
-  }
-});
+// app.get("/read_report", function(req, res) {
+//   if (req.isAuthenticated() && req.user.username == "enes.arda") {
+//     Report.findOne({}, function(err, foundReport) {
+//       if (!foundReport) {
+//         res.send("there are no reports");
+//       } else {
+//         Instructor.findById(foundReport.instructor, function(err, foundInstructor) {
+//           let doesInclude = false;
+//           foundInstructor.reviews.forEach(function(review) {
+//             if (review._id == foundReport.reportedReview) {
+//               doesInclude = true;
+//               res.render("readreport", {
+//                 report: foundReport,
+//                 review: review
+//               });
+//             }
+//           });
+//           if (!doesInclude) {
+//             Report.findByIdAndDelete(foundReport._id, function(err) {
+//               if (!err) {
+//                 res.redirect("/read_report");
+//               }
+//             });
+//           }
+//         });
+//       }
+//     });
+//
+//   } else {
+//     res.redirect("/");
+//   }
+// });
 
 // app.post("/read_report", function(req, res) {
 //   console.log(req.body);

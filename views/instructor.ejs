@@ -331,6 +331,7 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">çıkış</button>
+                              <input type="hidden" name="reviewID" value="<%=initialReview._id%>"/>
                               <input type="hidden" name="userID" value="<%=initialReview.userID%>"/>
                                     <button type="submit" name="instructor" value="<%=instructor._id%>" class="btn btn-primary">kaydet</button>
                                 </div>
@@ -477,25 +478,7 @@
         success: function() {
             console.log("success")
         }
-    });
-
-
-      // getInstructor.reviews.forEach(function(review) {
-      //
-      //   if(review._id == id) {
-
-      // console.log(review.likeCount);
-      //
-      // if (!$(x).hasClass("text-success")) {
-      //   review.likeCount--;
-      // } else {
-      //   review.likeCount++;
-      // }
-
-      //   }
-      //
-      // });
-
+      });
 
     }
   </script>
