@@ -146,7 +146,7 @@ function escapeRegex(text) {
 // User.find({}, function(err, foundUsers) {
 //
 //   foundUsers.forEach(function(user) {
-// 
+//
 //     user.reportedBy = [];
 //     // user.reviewedInstructors = [];
 //     user.isBanned = false;
